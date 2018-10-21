@@ -11,6 +11,7 @@ $USERS = array(
 	'deepak'=>'tw79secret'); // set usernames and strong passwords
 $DEBUG = false;				// true | false
 $CLEAN_BACKUP = true; 		// during backuping a file, remove overmuch backups
+$FOLD_JS = true; 			// if javascript files have been expanded during download the fold them
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 //}}}
 /***
@@ -20,48 +21,59 @@ No change needed under
 //{{{
 
 /***
- * storeTiddler.php - upload a tiddler to a TiddlyWiki file in this directory
- * version: 1.2.1 - 2008-05-06 - BidiX@BidiX.info
+ * store.php - upload a file in this directory
+ * version :1.6.1 - 2007/08/01 - BidiX@BidiX.info
  * 
- * tiddler is POST as <FORM> with :
- *	FORM = 
- *		title=<the title of the tiddler>
- *		tiddler=<result of externalizeTiddler() : the div in StoreArea format>
- *		[oldTitle=<the previous title of the tiddler>] 
- *		[fileName=<tiddlyWiki filename>] (default: index.html)
- *		[backupDir=<backupdir>] (default: .)
- *		[user=<user>] (no default)
- *		[password=<password>] (no default)
- *		[uploadir=<uploaddir>] (default: .)
- *		[debug=1]] (default: false)
  * see : 
- *	http://tiddlywiki.bidi.info/#UploadTiddlerPlugin for usage
- *  http://tiddlywiki.bidi.info/#UploadPlugin for parameter descriptions
+ *	http://tiddlywiki.bidi.info/#UploadPlugin for usage
+ *	http://www.php.net/manual/en/features.file-upload.php 
+ *		for details on uploading files
  * usage : 
- *	POST FORM
- *		Update <tiddler> in <fileName> TiddlyWiki
+ *	POST  
+ *		UploadPlugin[backupDir=<backupdir>;user=<user>;password=<password>;uploadir=<uploaddir>;[debug=1];;]
+ *		userfile <file>
  *	GET
- *		Display a form for 
+ *
+ * each external javascript file included by download.php is change by a reference (src=...)
  *
  * Revision history
- * V1.2.1 - 2008-05-06
- * bug correction : Filename is always 'index.html'. The fileName variable isn't used to initialize tiddlyWiki filename. 
- * V1.2.0 - 2008-03-23
- * Exclusive lock to serialize rewrite of file  
- * V1.1.0 - 2008/03/05
- * Delete tiddler with oldTitle
- * V1.0.0 - 2008/02/24
- * First public Version
- * V0.3.0 - 2008/02/23
- * minor adjustments
- * V0.2.0 - 2008/02/23
- * Correction bug on large regex
- * V0.1.0 - 2008/02/09
- * Initial: First working version
- * V0.0.1 - 2008/02/02
- * Initial: Proof Of Concept
+ * V1.6.1 - 2007/08/01
+ * Enhancement: Add javascript folding
+ * V1.6.0 - 2007/05/17
+ * Enhancement: Add backup management
+ * V1.5.2 - 2007/02/13
+ * Enhancement: Add optional debug option in client parameters
+ * V1.5.1 - 2007/02/01
+ * Enhancement: Check value of file_uploads in php.ini. Thanks to Didier Corbière
+ * V1.5.0 - 2007/01/15
+ * Correct: a bug in moving uploadFile in uploadDir thanks to DaniGutiérrez for reporting
+ * Refactoring
+ * V 1.4.3 - 2006/10/17 
+ * Test if $filename.lock exists for GroupAuthoring compatibility
+ * return mtime, destfile and backupfile after the message line
+ * V 1.4.2 - 2006/10/12
+ *  add error_reporting(E_PARSE);
+ * v 1.4.1 - 2006/03/15
+ *	add chmo 0664 on the uploadedFile
+ * v 1.4 - 2006/02/23
+ * 	add uploaddir option :  a path for the uploaded file relative to the current directory
+ *	backupdir is a relative path
+ *	make recusively directories if necessary for backupDir and uploadDir
+ * v 1.3 - 2006/02/17
+ *	presence and value of user are checked with $USERS Array (thanks to PauloSoares)
+ * v 1.2 - 2006/02/12 
+  *	POST  
+ *		UploadPlugin[backupDir=<backupdir>;user=<user>;password=<password>;]
+ *		userfile <file>
+*	if $AUTHENTICATE_USER
+ *		presence and value of user and password are checked with 
+ *		$USER and $PASSWORD
+ * v 1.1 - 2005/12/23 
+ *	POST  UploadPlugin[backupDir=<backupdir>]  userfile <file>
+ * v 1.0 - 2005/12/12 
+ *	POST userfile <file>
  *
- * Copyright (c) BidiX@BidiX.info 2005-2008
+ * Copyright (c) BidiX@BidiX.info 2005-2007
  ***/
 //}}}
 
@@ -76,65 +88,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-		<title>BidiX.info - TiddlyWiki UploadTiddlerPlugin - Store script</title>
+		<title>BidiX.info - TiddlyWiki UploadPlugin - Store script</title>
 	</head>
 	<body>
 		<p>
-		<p>storeTiddler.php V 1.2.0
+		<p>store.php V 1.6.1
 		<p>BidiX@BidiX.info
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
-		<p align="center">This page is designed to upload a <a href="http://www.tiddlywiki.com/#Tiddler">Tiddler<a>.</p>
-		<p align="center">for details see : <a href="http://TiddlyWiki.bidix.info/#HowToUpload">TiddlyWiki.bidix.info/#HowToUpload<a>.</p>
-		<hr>
-		<form action="storeTiddler.php" method=POST>
-			<center>
-				<table>
-					<tr>
-						<td align=RIGHT>Title:</td>
-						<td><input type=TEXT name="title" size=80></td>
-					</tr>
-					<tr>
-						<td align=RIGHT>Tiddler (in StoreArea format):</td>
-						<td><TEXTAREA NAME="tiddler" COLS=80 ROWS=10>
-&lt;div title=&quot;New Tiddler&quot; modifier=&quot;BidiX&quot; created=&quot;200802161401&quot; tags=&quot;test&quot; changecount=&quot;1&quot;&gt;
-&lt;pre&gt;Type the text for &#x27;New Tiddler&#x27;&lt;/pre&gt;
-&lt;/div&gt;
-						</TEXTAREA></td>
-					</tr>
-					<tr>
-						<td align=RIGHT>Old Title:</td>
-						<td><input type=TEXT name="oldTitle" size=80 value=''></td>
-					</tr>
-					<tr>
-						<td align=RIGHT>fileName:</td>
-						<td><input type=TEXT name="fileName" size=80></td>
-					</tr>
-					<tr>
-						<td align=RIGHT>backupDir:</td>
-						<td><input type=TEXT name="backupDir" size=80></td>
-					</tr>
-					<tr>
-						<td align=RIGHT>user:</td>
-						<td><input type=TEXT name="user" size=80></td>
-					</tr>
-					<tr>
-						<td align=RIGHT>password:</td>
-						<td><input type=TEXT name="password" size=80></td>
-					</tr>
-					<tr>
-						<td align=RIGHT>uploadir:</td>
-						<td><input type=TEXT name="uploadir" size=80></td>
-					</tr>
-					<tr>
-						<td align=RIGHT>debug:</td>
-						<td><input type=TEXT name="debug" size=80 value=1></td>
-					</tr>
-				</table>
-				<input type=SUBMIT align="CENTER" value="Upload tiddler">
-			</center>
-		</form>
+		<p align="center">This page is designed to upload a <a href="http://www.tiddlywiki.com/">TiddlyWiki<a>.</p>
+		<p align="center">for details see : <a href="http://TiddlyWiki.bidix.info/#HowToUpload">TiddlyWiki.bidix.info/#HowToUpload<a>.</p>	
 	</body>
 </html>
 <?php
@@ -144,160 +108,148 @@ exit;
 /*
  * POST Request
  */
-
-/*
- * Functions included from store.php
- */
-
-	// Recursive mkdir
-	function mkdirs($dir) {
-		if( is_null($dir) || $dir === "" ){
-			return false;
-		}
-		if( is_dir($dir) || $dir === "/" ){
-			return true;
-		}
-		if( mkdirs(dirname($dir)) ){
-			return mkdir($dir);
-		}
+	 
+// Recursive mkdir
+function mkdirs($dir) {
+	if( is_null($dir) || $dir === "" ){
 		return false;
 	}
-
-	function toExit() {
-		global $DEBUG, $filename, $backupFilename, $options;
-		if ($DEBUG) {
-			echo ("\nHere is some debugging info : \n");
-			echo("\$filename : $filename \n");
-			echo("\$backupFilename : $backupFilename \n");
-			print ("\$_FILES : \n");
-			print_r($_FILES);
-			print ("\$options : \n");
-			print_r($options);
+	if( is_dir($dir) || $dir === "/" ){
+		return true;
 	}
-	exit;
+	if( mkdirs(dirname($dir)) ){
+		return mkdir($dir);
 	}
-
-	function ParseTWFileDate($s) {
-		// parse date element
-		preg_match ( '/^(\d\d\d\d)(\d\d)(\d\d)\.(\d\d)(\d\d)(\d\d)/', $s , $m );
-		// make a date object
-		$d = mktime($m[4], $m[5], $m[6], $m[2], $m[3], $m[1]);
-		// get the week number
-		$w = date("W",$d);
-
-		return array(
-			'year' => $m[1], 
-			'mon' => $m[2], 
-			'mday' => $m[3], 
-			'hours' => $m[4], 
-			'minutes' => $m[5], 
-			'seconds' => $m[6], 
-			'week' => $w);
-	}
-
-	function cleanFiles($dirname, $prefix) {
-		$now = getdate();
-		$now['week'] = date("W");
-
-		$hours = Array();
-		$mday = Array();
-		$year = Array();
-
-		$toDelete = Array();
-
-		// need files recent first
-		$files = Array();
-		($dir = opendir($dirname)) || die ("can't open dir '$dirname'");
-		while (false !== ($file = readdir($dir))) {
-			if (preg_match("/^$prefix/", $file))
-	        array_push($files, $file);
-	    }
-		$files = array_reverse($files);
-
-		// decides for each file
-		foreach ($files as $file) {
-			$fileTime = ParseTWFileDate(substr($file,strpos($file, '.')+1,strrpos($file,'.') - strpos($file, '.') -1));
-			if (($now['year'] == $fileTime['year']) &&
-				($now['mon'] == $fileTime['mon']) &&
-				($now['mday'] == $fileTime['mday']) &&
-				($now['hours'] == $fileTime['hours']))
-					continue;
-			elseif (($now['year'] == $fileTime['year']) &&
-				($now['mon'] == $fileTime['mon']) &&
-				($now['mday'] == $fileTime['mday'])) {
-					if (isset($hours[$fileTime['hours']]))
-						array_push($toDelete, $file);
-					else 
-						$hours[$fileTime['hours']] = true;
-				}
-			elseif 	(($now['year'] == $fileTime['year']) &&
-				($now['mon'] == $fileTime['mon'])) {
-					if (isset($mday[$fileTime['mday']]))
-						array_push($toDelete, $file);
-					else
-						$mday[$fileTime['mday']] = true;
-				}
-			else {
-				if (isset($year[$fileTime['year']][$fileTime['mon']]))
-					array_push($toDelete, $file);
-				else
-					$year[$fileTime['year']][$fileTime['mon']] = true;
-			}
-		}
-		return $toDelete;
-	}
-
-/*
- * End Functions included from store.php
- */
-
-/*
- * parse and print a TiddlyWiki file
- */
-
-Function readTiddlyWiki($tw) {	
-	if (preg_match ("/(.*?<div id=\"storeArea\">.*?)(<div.*)/ms", $tw,$matches)) {
-		$head = $matches[1];
-		$h = $matches[2];
-		$tiddlers = array();
-		while (preg_match ("/(.*?)(<div title=\"(.*?)\".*?<\/div>)(.*)/ms", $h,$matches)) {
-			$h=$matches[4];
-			$tiddlers[$matches[3]] = $matches[2];
-		}
-		$tail = ltrim($h);
-	}
-	else {
-		echo("The file '$file' isn't a valid TiddlyWiki");
-		toExit();
-	}
-	return array($head, $tiddlers ,$tail);
+	return false;
 }
 
-Function writeTiddlyWiki($head,$tiddlers,$tail) {
-	$content = $head;
-	sort($tiddlers);
-	foreach ($tiddlers as $t => $c) {
-		$content .= $c . "\n";
+function toExit() {
+	global $DEBUG, $filename, $backupFilename, $options;
+	if ($DEBUG) {
+		echo ("\nHere is some debugging info : \n");
+		echo("\$filename : $filename \n");
+		echo("\$backupFilename : $backupFilename \n");
+		print ("\$_FILES : \n");
+		print_r($_FILES);
+		print ("\$options : \n");
+		print_r($options);
+}
+exit;
+}
+
+function ParseTWFileDate($s) {
+	// parse date element
+	preg_match ( '/^(\d\d\d\d)(\d\d)(\d\d)\.(\d\d)(\d\d)(\d\d)/', $s , $m );
+	// make a date object
+	$d = mktime($m[4], $m[5], $m[6], $m[2], $m[3], $m[1]);
+	// get the week number
+	$w = date("W",$d);
+
+	return array(
+		'year' => $m[1], 
+		'mon' => $m[2], 
+		'mday' => $m[3], 
+		'hours' => $m[4], 
+		'minutes' => $m[5], 
+		'seconds' => $m[6], 
+		'week' => $w);
+}
+
+function cleanFiles($dirname, $prefix) {
+	$now = getdate();
+	$now['week'] = date("W");
+
+	$hours = Array();
+	$mday = Array();
+	$year = Array();
+	
+	$toDelete = Array();
+
+	// need files recent first
+	$files = Array();
+	($dir = opendir($dirname)) || die ("can't open dir '$dirname'");
+	while (false !== ($file = readdir($dir))) {
+		if (preg_match("/^$prefix/", $file))
+        array_push($files, $file);
+    }
+	$files = array_reverse($files);
+	
+	// decides for each file
+	foreach ($files as $file) {
+		$fileTime = ParseTWFileDate(substr($file,strpos($file, '.')+1,strrpos($file,'.') - strpos($file, '.') -1));
+		if (($now['year'] == $fileTime['year']) &&
+			($now['mon'] == $fileTime['mon']) &&
+			($now['mday'] == $fileTime['mday']) &&
+			($now['hours'] == $fileTime['hours']))
+				continue;
+		elseif (($now['year'] == $fileTime['year']) &&
+			($now['mon'] == $fileTime['mon']) &&
+			($now['mday'] == $fileTime['mday'])) {
+				if (isset($hours[$fileTime['hours']]))
+					array_push($toDelete, $file);
+				else 
+					$hours[$fileTime['hours']] = true;
+			}
+		elseif 	(($now['year'] == $fileTime['year']) &&
+			($now['mon'] == $fileTime['mon'])) {
+				if (isset($mday[$fileTime['mday']]))
+					array_push($toDelete, $file);
+				else
+					$mday[$fileTime['mday']] = true;
+			}
+		else {
+			if (isset($year[$fileTime['year']][$fileTime['mon']]))
+				array_push($toDelete, $file);
+			else
+				$year[$fileTime['year']][$fileTime['mon']] = true;
+		}
 	}
-	$content .= $tail;
-	return $content;
+	return $toDelete;
+}
+
+function replaceJSContentIn($content) {
+	if (preg_match ("/(.*?)<!--DOWNLOAD-INSERT-FILE:\"(.*?)\"--><script\s+type=\"text\/javascript\">(.*)/ms", $content,$matches)) {
+		$front = $matches[1];
+		$js = $matches[2];
+		$tail = $matches[3];
+		if (preg_match ("/<\/script>(.*)/ms", $tail,$matches2)) {		
+			$tail = $matches2[1];
+		}
+		$jsContent = "<script type=\"text/javascript\" src=\"$js\"></script>";
+		$tail = replaceJSContentIn($tail);
+		return($front.$jsContent.$tail);
+	}
+	else
+		return $content;
+}
+
+// Check if file_uploads is active in php config
+if (ini_get('file_uploads') != '1') {
+   echo "Error : File upload is not active in php.ini\n";
+   toExit();
 }
 
 // var definitions
 $uploadDir = './';
 $uploadDirError = false;
 $backupError = false;
+$optionStr = $_POST['UploadPlugin'];
+$optionArr=explode(';',$optionStr);
+$options = array();
 $backupFilename = '';
-$filename = "index.html";
+$filename = $_FILES['userfile']['name'];
 $destfile = $filename;
 
-$options = $_POST; // for store.php name compatibility
+// get options
+foreach($optionArr as $o) {
+	list($key, $value) = split('=', $o);
+	$options[$key] = $value;
+}
 
 // debug activated by client
 if ($options['debug'] == 1) {
 	$DEBUG = true;
 }
-
 
 // authenticate User
 if (($AUTHENTICATE_USER)
@@ -307,9 +259,6 @@ if (($AUTHENTICATE_USER)
 	toExit();
 }
 
-
-if ($options['fileName'])
-	$filename = $options['fileName'];
 
 
 // make uploadDir
@@ -343,7 +292,7 @@ if (file_exists($destfile) && ($options['backupDir'])) {
 	}
 	$backupFilename = $options['backupDir'].'/'.substr($filename, 0, strrpos($filename, '.'))
 				.date('.Ymd.His').substr($filename,strrpos($filename,'.'));
-	copy($destfile, $backupFilename) or ($backupError = "rename error");
+	rename($destfile, $backupFilename) or ($backupError = "rename error");
 	// remove overmuch backup
 	if ($CLEAN_BACKUP) {
 		$toDelete = cleanFiles($options['backupDir'], substr($filename, 0, strrpos($filename, '.')));
@@ -357,57 +306,43 @@ if (file_exists($destfile) && ($options['backupDir'])) {
 	}
 }
 
-
-if (file_exists($destfile)) {
-	$f = fopen($destfile,'r+');
-	if (flock($f, LOCK_EX)) { 
-		while (!feof($f)) {
-		    $contents .= fread($f, 8192);
-		}
-		list($head,$tiddlers,$tail) = readTiddlyWiki($contents);
-		$title = $_POST['title'];
-		$oldTitle = $_POST['oldTitle'];
-		if ($oldTitle && ($title != $oldTitle)) {
-			unset($tiddlers[$oldTitle]);
-		}
-		$tiddlers[$title] = stripslashes($_POST['tiddler']);
-		$contents = writeTiddlyWiki($head,$tiddlers,$tail);
-		if (!rewind($f)) {
-			echo("rewind error");
-			toExit();
-		} 
-		if (!ftruncate($f, 0)) {
-			echo("ftruncate error");
-			toExit();
-		};
-		if (!fwrite($f, $contents)) {
-			echo("fwrite error");
-			toExit();			
-		}
-		fclose($f);	// fclose also unlock the file
-		if($DEBUG) {
-			echo "Debug mode \n\n";
-		}
-		if (!$backupError) {
-			echo "0 - Tiddler successfully updated in " .$destfile. "\n";
-		} else {
-			echo "BackupError : $backupError - Tiddler successfully updated in " .$destfile. "\n";
-		}
-		echo("destfile:$destfile \n");
-		if (($backupFilename) && (!$backupError)) {
-			echo "backupfile:$backupFilename\n";
-		}
-		$mtime = filemtime($destfile);
-		echo("mtime:$mtime");
-	
+// move uploaded file to uploadDir
+if (move_uploaded_file($_FILES['userfile']['tmp_name'], $destfile)) {
+	if ($FOLD_JS) {
+		// rewrite the file to replace JS content
+		$fileContent = file_get_contents ($destfile);
+		$fileContent = replaceJSContentIn($fileContent);
+		if (!$handle = fopen($destfile, 'w')) {
+	         echo "Cannot open file ($destfile)";
+	         exit;
+	    }
+	    if (fwrite($handle, $fileContent) === FALSE) {
+	        echo "Cannot write to file ($destfile)";
+	        exit;
+	    }
+	    fclose($handle);
 	}
-	else {
-		echo "Error : '" . $filename . "' couldn't be locked - File NOT updated !\n";
+    
+	chmod($destfile, 0644);
+	if($DEBUG) {
+		echo "Debug mode \n\n";
 	}
-}
+	if (!$backupError) {
+		echo "0 - File successfully loaded in " .$destfile. "\n";
+	} else {
+		echo "BackupError : $backupError - File successfully loaded in " .$destfile. "\n";
+	}
+	echo("destfile:$destfile \n");
+	if (($backupFilename) && (!$backupError)) {
+		echo "backupfile:$backupFilename\n";
+	}
+	$mtime = filemtime($destfile);
+	echo("mtime:$mtime");
+} 
 else {
-	echo "Error : '" . $filename . "' doesn't exist - File NOT updated !\n";
+	echo "Error : " . $_FILES['error']." - File NOT uploaded !\n";
+
 }
 toExit();
-
+//}}}
 ?>
