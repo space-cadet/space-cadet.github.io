@@ -1,0 +1,126 @@
+# Project Rules and Guidelines: Deepak Vaid's Portfolio
+
+## Code Structure and Organization
+
+### HTML Patterns
+- Use semantic HTML elements (`<section>`, `<article>`, `<nav>`, etc.)
+- Maintain logical nesting of elements
+- Use `id` attributes for section anchors and JavaScript targets
+- Use `class` attributes for styling hooks
+- Keep indentation consistent (2 spaces)
+- Include appropriate ARIA attributes for accessibility
+
+### CSS Organization
+- Follow section-based organization, grouping styles by portfolio section
+- Use BEM-inspired naming: `.block__element--modifier`
+- Leverage CSS variables for theming and consistency
+- Maintain mobile-first approach, adding media queries for larger screens
+- Keep related properties grouped (positioning, dimensions, typography, etc.)
+- Add comments for complex or non-obvious styling
+
+### JavaScript Patterns
+- Use event delegation where appropriate
+- Prefer const/let over var
+- Use consistent camelCase naming for variables and functions
+- Add comments for function purpose and complex logic
+- Organize by functionality
+- Avoid global variables
+
+## Content Guidelines
+
+### Writing Style
+- Professional but accessible tone
+- Clear, concise descriptions of technical concepts
+- First-person voice for personal sections
+- Third-person for publications and formal content
+- Balance technical terminology with explanations
+
+### Visual Design
+- Maintain consistent spacing (multiples of 8px)
+- Follow the established color palette
+- Use quantum physics-inspired visual elements where appropriate
+- Ensure sufficient contrast for readability
+- Maintain consistent card heights within sections
+
+## Implementation Preferences
+
+### Animation Usage
+- Subtle animations that enhance rather than distract
+- Keep animations under 300ms for UI responses
+- Use physics-based animations for quantum-themed elements
+- Ensure animations can be reduced/disabled for users with motion sensitivity
+
+### Responsive Breakpoints
+- Mobile: Base styles
+- Tablet: 768px and above
+- Desktop: 1024px and above
+- Large Desktop: 1440px and above
+
+### Performance Guidelines
+- Optimize images before adding to the project
+- Minimize DOM manipulations
+- Use CSS transforms/opacity for animations
+- Ensure text remains visible during webfont loading
+
+## Modification Workflow
+
+### Adding New Content
+1. Identify the appropriate section
+2. Follow existing HTML structure patterns
+3. Add necessary CSS following section conventions
+4. Test responsiveness across breakpoints
+5. Update Memory Bank documentation if adding new patterns
+
+### Updating Existing Content
+1. Maintain the established structure
+2. Preserve class names for consistency
+3. Test changes across all viewport sizes
+4. Document significant changes in changelog.md
+
+## File Naming Conventions
+
+- HTML files: lowercase, hyphenated (e.g., `research-detail.html`)
+- CSS files: lowercase, descriptive (e.g., `research-section.css`)
+- JS files: camelCase, functional description (e.g., `particleAnimation.js`)
+- Images: lowercase, descriptive with dimension suffix (e.g., `profile-photo-800w.jpg`)
+
+## Design Decisions and Preferences
+
+### Typography
+- Headings: Playfair Display (serif)
+- Body text: Inter (sans-serif)
+- Font sizes using relative units (rem)
+- Base text size: 16px (1rem)
+- Line heights: 1.5-1.6 for body text, 1.2-1.3 for headings
+
+### Color Usage
+- Primary color (#2C3E50) for main elements and emphasis
+- Secondary color (#3498DB) for interactive elements and accents
+- Quantum theme colors for specialized elements
+- Light background (#ECF0F1) for alternating sections
+- Dark background (#1A252F) for footer and contrast areas
+
+## Project-Specific Knowledge
+
+### Section Purpose and Intent
+- **Hero Section**: First impression and identity establishment
+- **About Section**: Professional background and credentials
+- **Research Section**: Main academic focus areas
+- **Publications Section**: Academic credibility and contributions
+- **Teaching Section**: Educational impact and outreach
+- **Blog Section**: Thought leadership and ongoing contributions
+- **Code Section**: Technical capabilities and open-source work
+- **Contact Section**: Professional networking and opportunities
+
+### Interactive Elements
+- Particle animation represents quantum physics concepts
+- Card hover effects provide tactile feedback
+- Smooth scrolling navigation enhances user experience
+- Statistics are visually emphasized to quantify achievements
+
+### Future Expansion Areas
+- Publication database with filtering
+- Interactive research visualizations
+- Dark mode toggle
+- Expanded teaching resources section
+- Dedicated subpages for main research areas
