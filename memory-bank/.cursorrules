@@ -118,9 +118,15 @@
 - Smooth scrolling navigation enhances user experience
 - Statistics are visually emphasized to quantify achievements
 
+### Current Multi-Page Structure
+- Main portfolio site (`index.html`) with comprehensive sections
+- Dedicated projects page (`projects/index.html`) showcasing software and documentation
+- Enhanced navigation linking between pages
+
 ### Future Expansion Areas
 - Publication database with filtering
 - Interactive research visualizations
 - Dark mode toggle
 - Expanded teaching resources section
 - Dedicated subpages for main research areas
+- Individual project documentation pages

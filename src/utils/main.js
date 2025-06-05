@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     animateParticles();
 });
 
-// Function to animate quantum particles
+// Function to animate quantum particles - now with tetrahedra
 function animateParticles() {
     const physicsAnimation = document.querySelector('.physics-animation');
     
@@ -42,7 +42,7 @@ function animateParticles() {
         particle.style.animationDelay = `${Math.random() * 2}s`;
         
         physicsAnimation.appendChild(particle);
-    }
+}
 }
 
 // Smooth scrolling for anchor links

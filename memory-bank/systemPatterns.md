@@ -31,7 +31,7 @@ Although not using a component framework, the HTML structure is organized into c
 index.html
 │
 ├── Header Component
-│   ├── Navigation
+│   ├── Navigation (includes Projects link)
 │   └── Hero Section
 │
 ├── About Component
@@ -47,6 +47,18 @@ index.html
 ├── Code Component
 │
 ├── Contact Component
+│
+└── Footer Component
+
+projects/index.html
+│
+├── Header Component
+│   └── Navigation (back to main site)
+│
+├── Projects Component
+│   ├── Development Tools Section
+│   ├── Quantum Physics & Research Section
+│   └── Categorized Project Cards
 │
 └── Footer Component
 ```
@@ -104,6 +116,7 @@ The navigation component directly references section IDs for smooth scrolling:
 Navigation Links → Section IDs
   "About" link → #about section
   "Research" link → #research section
+  "Projects" link → projects/index.html
   etc.
 ```
 
@@ -151,15 +164,16 @@ User Click → Event Handler → State Change → Visual Feedback
 ### 1. Card Pattern
 Used throughout the site for consistent content containers:
 - Research cards
-- Publication entries
+- Publication entries with enhanced styling (year badges, borders)
 - Blog posts
 - Repository showcases
+- Project cards with technology tags and documentation links
 
 ### 2. Stats and Metrics Pattern
-Quantitative information displayed in a consistent format:
-- Teaching statistics
+Quantitative information with enhanced visual treatment:
+- Teaching statistics with gradient backgrounds and improved styling
 - GitHub metrics
-- YouTube views/subscribers
+- YouTube views/subscribers with enhanced card design
 
 ### 3. Featured Content Pattern
 Highlighting key information in each section:
@@ -193,10 +207,12 @@ The particle animation in the hero section follows a pattern inspired by quantum
 The architecture is designed with these extension points:
 
 ### 1. Additional Pages
-Structure allows for adding detailed pages for:
-- Individual research areas
-- Publication collections
-- Teaching resources
+Multi-page structure now includes:
+- Dedicated projects page with categorized software showcases
+- Structure allows for additional detailed pages:
+  - Individual research areas
+  - Publication collections
+  - Teaching resources
 
 ### 2. Content Management
 Could be extended to use a static site generator without changing the core architecture

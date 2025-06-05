@@ -112,15 +112,22 @@ Animations are used sparingly and purposefully:
 
 ### Code Organization
 ```
-/portfolio
+/space-cadet.github.io
 │
 ├── /assets           # Static assets
+├── /backup           # Backup files
+├── /content          # Content management
+├── /projects         # Projects showcase page
+│   └── index.html    # Projects listing
+├── /public           # Public assets
 ├── /src
-│   ├── /components   # Future component organization
-│   ├── /styles       # CSS files
-│   ├── /utils        # JavaScript utilities
-│
+│   ├── /styles       # CSS files (main.css)
+│   └── /utils        # JavaScript utilities (main.js)
+├── arxivite.svg      # Brand asset (atomic orbital design)
+├── favicon.svg       # Quantum physics-themed favicon
 ├── index.html        # Main entry point
+├── package.json      # Project configuration
+└── *.code-workspace  # VS Code workspace
 ```
 
 ### Naming Conventions

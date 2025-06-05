@@ -1,5 +1,25 @@
 # Changelog: Deepak Vaid's Portfolio Website
 
+## June 5, 2025 - Portfolio Enhancement Phase
+
+### Added
+- Created dedicated projects page (`projects/index.html`) showcasing software projects and documentation
+- Added quantum physics-themed SVG favicon and brand assets (`arxivite.svg`, `favicon.svg`)
+- Implemented comprehensive `.gitignore` with system files, IDE, and build exclusions
+- Added "Projects" navigation link to main site navigation
+- Created VS Code workspace configuration (`space-cadet.github.io.code-workspace`)
+
+### Enhanced
+- Improved publication card styling with year badges, enhanced borders, and hover effects
+- Enhanced YouTube statistics display with gradient backgrounds and better visual hierarchy
+- Refined CSS section spacing from 80px to 40px for better mobile experience
+- Fixed JavaScript syntax error in particle animation function (missing closing brace)
+
+### Technical
+- Expanded from basic backup exclusion to comprehensive gitignore system
+- Added proper workspace configuration for development environment
+- Implemented brand identity with atomic orbital designs in SVG format
+
 ## April 8, 2025 - Initial Implementation
 
 ### Added
