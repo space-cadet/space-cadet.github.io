@@ -5,17 +5,42 @@
 
 /* ====== BASE STYLES ====== */
 :root {
-    /* Color Palette */
-    --primary-color: #2C3E50;         /* Dark blue/slate */
-    --secondary-color: #3498DB;       /* Bright blue */
-    --accent-color: #E74C3C;          /* Red */
-    --light-color: #ECF0F1;           /* Off-white */
-    --dark-color: #1A252F;            /* Darker blue */
-    --text-color: #333333;            /* Near black */
-    --text-light: #7F8C8D;            /* Gray */
-    --quantum-color-1: #9B59B6;       /* Purple */
-    --quantum-color-2: #2ECC71;       /* Green */
-    --quantum-color-3: #F39C12;       /* Orange */
+    /* Light Theme Colors */
+    --primary-color-light: #1e293b;
+    --secondary-color-light: #3b82f6;
+    --accent-color-light: #6366f1;
+    --bg-color-light: #ffffff;
+    --text-color-light: #1e293b;
+    --text-light-light: #64748b;
+    --card-bg-light: #ffffff;
+    --border-light: #e2e8f0;
+    
+    /* Dark Theme Colors */
+    --primary-color-dark: #1a1f37;
+    --secondary-color-dark: #4F7EFF;
+    --accent-color-dark: #6366F1;
+    --bg-color-dark: linear-gradient(135deg, #1a1f37 0%, #0f1629 30%, #0f1629 70%, #1a1f37 100%);
+    --text-color-dark: #e2e8f0;
+    --text-light-dark: #94a3b8;
+    --card-bg-dark: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --border-dark: rgba(255, 255, 255, 0.1);
+    
+    /* Default to light theme */
+    --primary-color: var(--primary-color-light);
+    --secondary-color: var(--secondary-color-light);
+    --accent-color: var(--accent-color-light);
+    --bg-color: var(--bg-color-light);
+    --text-color: var(--text-color-light);
+    --text-light: var(--text-light-light);
+    --card-bg: var(--card-bg-light);
+    --border-color: var(--border-light);
+    
+    /* Shared colors */
+    --light-color: #F8FAFC;
+    --dark-color: #0f1629;
+    --quantum-color-1: #8B5CF6;
+    --quantum-color-2: #10B981;
+    --quantum-color-3: #F59E0B;
     
     /* Fonts */
     --heading-font: 'Playfair Display', serif;
@@ -41,14 +66,21 @@ body {
     font-family: var(--body-font);
     color: var(--text-color);
     line-height: 1.6;
-    background-color: #FFFFFF;
+    background: var(--bg-color);
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+body.dark-theme {
+    background: var(--bg-color-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     font-weight: 700;
     margin-bottom: 20px;
-    color: var(--primary-color);
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 p {
@@ -81,11 +113,11 @@ ul {
 }
 
 .section-alt {
-    background: linear-gradient(135deg, var(--light-color) 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, rgba(26, 31, 55, 0.8) 0%, rgba(15, 22, 41, 0.9) 100%);
 }
 
 .section-subtle {
-    background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%);
+    background: linear-gradient(135deg, rgba(26, 31, 55, 0.6) 0%, rgba(15, 22, 41, 0.7) 100%);
 }
 
 .section-title {
@@ -153,9 +185,47 @@ ul {
     margin-bottom: 5px;
 }
 
+/* Dark theme override */
+body.dark-theme {
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --accent-color: var(--accent-color-dark);
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+    --text-light: var(--text-light-dark);
+    --card-bg: var(--card-bg-dark);
+    --border-color: var(--border-dark);
+}
+
+/* ====== THEME TOGGLE ====== */
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
 /* ====== HEADER & NAVIGATION ====== */
 .header {
-    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 50%, #0a0f1c 100%);
     color: white;
     padding: 20px 0 80px;
     position: relative;
@@ -174,6 +244,22 @@ ul {
     font-size: 2rem;
     font-weight: 700;
     color: white;
+}
+
+.logo img {
+    height: 48px;
+    width: 48px;
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 4px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.logo img:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -327,12 +413,18 @@ ul {
 }
 
 .stat-box {
-    background-color: white;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .stat-box {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .stat-box:hover {
@@ -363,10 +455,12 @@ ul {
 }
 
 .research-card {
-    background-color: white;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
@@ -721,7 +815,7 @@ ul {
 
 /* ====== FOOTER ====== */
 .footer {
-    background-color: var(--dark-color);
+    background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 50%, #0a0f1c 100%);
     color: white;
     padding: 40px 0;
 }
@@ -736,6 +830,21 @@ ul {
     font-family: var(--heading-font);
     font-size: 1.8rem;
     font-weight: 700;
+}
+
+.footer-logo img {
+    height: 36px;
+    width: 36px;
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 4px;
+    transition: all 0.3s ease;
+}
+
+.footer-logo img:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
 }
 
 .footer-copyright {

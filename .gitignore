@@ -1,6 +1,6 @@
 # System Files
 .DS_Store
-*/.DS_Store
+*/**/.DS_Store?
 .DS_Store?
 ._*
 .Spotlight-V100
@@ -50,7 +50,7 @@ logs/
 .env.production.local
 
 # Memory bank files (if you don't want to track these in the website repo)
-memory-bank/
+# memory-bank/
 
 # Profile and working files
 profile_summary.md

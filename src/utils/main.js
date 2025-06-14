@@ -1,6 +1,9 @@
 // Main JavaScript for Deepak Vaid's Portfolio
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme toggle
+    initThemeToggle();
+    
     // Add scroll event listener to handle navbar appearance
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.header');
@@ -14,6 +17,45 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add animated particles for the quantum effect in the hero section
     animateParticles();
 });
+
+// Theme toggle functionality
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Apply the saved theme
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-theme');
+        themeIcon.className = 'fas fa-moon';
+    } else {
+        body.classList.remove('dark-theme');
+        themeIcon.className = 'fas fa-sun';
+    }
+    
+    // Theme toggle click handler
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-theme');
+        
+        // Update icon and save preference
+        if (body.classList.contains('dark-theme')) {
+            themeIcon.className = 'fas fa-moon';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeIcon.className = 'fas fa-sun';
+            localStorage.setItem('theme', 'light');
+        }
+        
+        // Add a small animation to the icon
+        themeIcon.style.transform = 'scale(0.8)';
+        setTimeout(() => {
+            themeIcon.style.transform = 'scale(1)';
+        }, 150);
+    });
+}
 
 // Function to animate quantum particles - now with tetrahedra
 function animateParticles() {
