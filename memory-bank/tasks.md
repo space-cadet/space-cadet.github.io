@@ -1,10 +1,11 @@
 # Task Registry
-*Last Updated: 2025-06-14 14:41:54 IST*
+*Last Updated: 2025-06-15 13:25:42 IST*
 
 ## Active Tasks
 | ID | Title | Status | Priority | Started | Dependencies |
 |----|-------|--------|----------|---------|--------------|
 | META-1 | Memory Bank System Maintenance | 🔄 | HIGH | 2025-06-05 | - |
+| T6 | Apply arXivite Styling to Academic Website | 🔄 | HIGH | 2025-06-15 | - |
 
 ## Task Details
 
@@ -14,6 +15,13 @@
 **Criteria**: Maintain v6.4.2 standards, keep documentation current, ensure proper structure
 **Files**: `tasks.md`, `session_cache.md`, `edit_history.md`, all memory bank files
 **Notes**: Foundational meta-task for memory bank functionality and maintenance
+
+### T6: Apply arXivite Styling to Academic Website
+**Description**: Comprehensive migration from custom CSS to arXivite's TailwindCSS-based styling system
+**Status**: 🔄 **Last**: 2025-06-15 13:25:42 IST
+**Criteria**: TailwindCSS migration, dark theme implementation, glass morphism effects, Chart.js integration, responsive design
+**Files**: `index.html`, `src/styles/main.css`, `src/utils/main.js`, implementation plan
+**Notes**: 6-phase migration with modern styling and maintained functionality
 
 ## Completed Tasks
 | ID | Title | Completed |

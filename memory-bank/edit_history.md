@@ -1,6 +1,13 @@
 # Edit History
 *Created: 2025-06-05*
 
+### 2025-06-15
+
+#### 13:25 - T6: Task Creation - Apply arXivite Styling
+- Created `tasks/T6.md` - New task file for arXivite styling migration
+- Updated `tasks.md` - Added T6 to active tasks registry with details
+- Created `implementation-details/arxivite-styling-migration-plan.md` - Comprehensive implementation plan
+
 ### 2025-06-14
 
 #### 14:40 - T5: Student Supervision Showcase Page
