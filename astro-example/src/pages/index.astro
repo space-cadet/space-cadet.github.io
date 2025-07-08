@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Deepak Vaid - Physicist & Researcher">
+  <!-- Hero Section with Quantum Animation -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Deepak Vaid</h1>
+        <h2>Theoretical Physicist</h2>
+        <p class="tagline">Exploring the quantum nature of spacetime and gravity</p>
+        <div class="social-links">
+          <a href="https://github.com/space-cadet" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.youtube.com/@vaidphysics/" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.quantumofgravity.com/blog/" target="_blank"><i class="fas fa-blog"></i></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="physics-animation">
+          <div class="quantum-particle"></div>
+          <div class="quantum-particle"></div>
+          <div class="quantum-particle"></div>
+          <div class="quantum-particle"></div>
+          <div class="quantum-particle"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-content">
+          <p>I am a theoretical physicist with expertise in quantum gravity, quantum information, and many-body physics. My research focuses on understanding the fundamental nature of spacetime and gravity through the lens of quantum mechanics.</p>
+          <p>Previously, I served as an Assistant Professor at the National Institute of Technology Karnataka (2013-2023) and as a Visiting Associate at the Inter-University Center for Astronomy and Astrophysics (IUCAA).</p>
+          <p>My work bridges multiple theoretical frameworks, particularly Loop Quantum Gravity and String Theory, seeking a unified understanding of quantum geometry.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-box">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Years Teaching</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">3</span>
+            <span class="stat-label">PhD Students Guided</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">MSc Projects Supervised</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">320</span>
+            <span class="stat-label">YouTube Lectures</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Research Focus</h2>
+      <div class="research-areas">
+        <div class="research-card">
+          <div class="research-icon">
+            <i class="fas fa-atom"></i>
+          </div>
+          <h3>Quantum Gravity</h3>
+          <p>Investigating the quantum nature of spacetime and developing frameworks to understand gravity at the quantum level.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <h3>Many-Body Physics</h3>
+          <p>Exploring how collective behaviors in many-body systems can inform our understanding of spacetime geometries.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Quantum Information</h3>
+          <p>Applying principles of quantum information theory to fundamental questions in quantum gravity.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h3>Black Hole Thermodynamics</h3>
+          <p>Studying the thermodynamic properties of black holes in anti-deSitter space and their microscopic origins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-content">
+        <p>I'm always interested in collaborations, discussions, and opportunities related to quantum gravity, quantum information, and physics education.</p>
+        <div class="contact-links">
+          <a href="mailto:dvaid79@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> dvaid79@gmail.com</a>
+          <a href="https://www.quantumofgravity.com" class="contact-link" target="_blank"><i class="fas fa-globe"></i> www.quantumofgravity.com</a>
+          <a href="https://github.com/space-cadet" class="contact-link" target="_blank"><i class="fab fa-github"></i> github.com/space-cadet</a>
+          <a href="https://www.youtube.com/@vaidphysics/" class="contact-link" target="_blank"><i class="fab fa-youtube"></i> youtube.com/@vaidphysics</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<!-- Page-specific JavaScript for particle animation -->
+<script>
+  function animateParticles() {
+    const physicsAnimation = document.querySelector('.physics-animation');
+    if (!physicsAnimation) return; // Only run on pages with animation container
+    
+    // Add more particles dynamically
+    for (let i = 0; i < 5; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('quantum-particle');
+      
+      // Randomize position and animation
+      const size = Math.random() * 15 + 5;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      particle.style.left = `${Math.random() * 80 + 10}%`;
+      particle.style.top = `${Math.random() * 80 + 10}%`;
+      
+      // Assign random colors
+      const colors = ['#9B59B6', '#2ECC71', '#F39C12', '#3498DB', '#E74C3C'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      particle.style.backgroundColor = randomColor;
+      
+      // Random animation duration and delay
+      particle.style.animationDuration = `${Math.random() * 4 + 3}s`;
+      particle.style.animationDelay = `${Math.random() * 2}s`;
+      
+      physicsAnimation.appendChild(particle);
+    }
+  }
+
+  // Initialize particles when DOM is ready
+  document.addEventListener('DOMContentLoaded', animateParticles);
+</script>

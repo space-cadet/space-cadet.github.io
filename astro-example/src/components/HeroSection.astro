@@ -1,0 +1,89 @@
+---
+export interface Props {
+  title: string;
+  subtitle: string;
+  stats: Array<{
+    number: string;
+    label: string;
+  }>;
+}
+
+const { title, subtitle, stats } = Astro.props;
+---
+
+<section class="hero-section">
+  <div class="container">
+    <h1>{title}</h1>
+    <p class="hero-subtitle">{subtitle}</p>
+    <div class="hero-stats">
+      {stats.map(stat => (
+        <div class="stat">
+          <span class="stat-number">{stat.number}</span>
+          <span class="stat-label">{stat.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 50%, #0a0f1c 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--light-color);
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+      gap: 40px;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+    }
+  }
+</style>

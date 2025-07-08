@@ -1,0 +1,412 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Deepak Vaid - Theoretical Physicist" } = Astro.props;
+
+// Get current page for navigation highlighting
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    
+    <!-- Immediate theme application - no flicker -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark-theme');
+        }
+      })();
+    </script>
+    
+    <!-- External fonts and icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <div class="logo">
+            <a href="/">
+              <img src="/favicon.svg" alt="Deepak Vaid" />
+            </a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="/" class={currentPath === '/' ? 'active' : ''}>About</a></li>
+            <li><a href="/#research" class={currentPath === '/' ? 'active' : ''}>Research</a></li>
+            <li><a href="/teaching/" class={currentPath.startsWith('/teaching') ? 'active' : ''}>Teaching</a></li>
+            <li><a href="/supervision/" class={currentPath.startsWith('/supervision') ? 'active' : ''}>Supervision</a></li>
+            <li><a href="/#publications" class={currentPath === '/' ? 'active' : ''}>Publications</a></li>
+            <li><a href="/projects/" class={currentPath.startsWith('/projects') ? 'active' : ''}>Projects</a></li>
+            <li><a href="/#contact" class={currentPath === '/' ? 'active' : ''}>Contact</a></li>
+            <li>
+              <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun" id="theme-icon"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="/favicon.svg" alt="Deepak Vaid" />
+          </div>
+          <div class="footer-copyright">
+            &copy; 2025 Deepak Vaid. All rights reserved.
+          </div>
+          <div class="footer-links">
+            <a href="https://github.com/space-cadet" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.youtube.com/@vaidphysics/" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.quantumofgravity.com/blog/" target="_blank"><i class="fas fa-blog"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Inline essential styles for demo -->
+    <style is:global>
+      /* Essential styles from your main.css */
+      :root {
+        --primary-color-light: #1e293b;
+        --secondary-color-light: #3b82f6;
+        --accent-color-light: #6366f1;
+        --bg-color-light: #ffffff;
+        --text-color-light: #1e293b;
+        --text-light-light: #64748b;
+        --card-bg-light: #ffffff;
+        --border-light: #e2e8f0;
+
+        --primary-color-dark: #1a1f37;
+        --secondary-color-dark: #4F7EFF;
+        --accent-color-dark: #6366F1;
+        --bg-color-dark: linear-gradient(135deg, #1a1f37 0%, #0f1629 30%, #0f1629 70%, #1a1f37 100%);
+        --text-color-dark: #e2e8f0;
+        --text-light-dark: #94a3b8;
+        --card-bg-dark: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        --border-dark: rgba(255, 255, 255, 0.1);
+
+        --primary-color: var(--primary-color-light);
+        --secondary-color: var(--secondary-color-light);
+        --accent-color: var(--accent-color-light);
+        --bg-color: var(--bg-color-light);
+        --text-color: var(--text-color-light);
+        --text-light: var(--text-light-light);
+        --card-bg: var(--card-bg-light);
+        --border-color: var(--border-light);
+
+        --light-color: #F8FAFC;
+        --dark-color: #0f1629;
+        --quantum-color-1: #8B5CF6;
+        --quantum-color-2: #10B981;
+        --quantum-color-3: #F59E0B;
+
+        --heading-font: 'Playfair Display', serif;
+        --body-font: 'Inter', sans-serif;
+        --section-spacing: 40px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--body-font);
+        color: var(--text-color);
+        line-height: 1.6;
+        background: var(--bg-color);
+        min-height: 100vh;
+        transition: all 0.3s ease;
+      }
+
+      body.dark-theme {
+        background: var(--bg-color-dark);
+        --primary-color: var(--primary-color-dark);
+        --secondary-color: var(--secondary-color-dark);
+        --accent-color: var(--accent-color-dark);
+        --bg-color: var(--bg-color-dark);
+        --text-color: var(--text-color-dark);
+        --text-light: var(--text-light-dark);
+        --card-bg: var(--card-bg-dark);
+        --border-color: var(--border-dark);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--heading-font);
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text-color);
+        transition: color 0.3s ease;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+
+      a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: var(--accent-color);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: var(--section-spacing) 0;
+      }
+
+      .section-alt {
+        background: linear-gradient(135deg, rgba(26, 31, 55, 0.8) 0%, rgba(15, 22, 41, 0.9) 100%);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 3px;
+        background-color: var(--secondary-color);
+      }
+
+      /* Header & Navigation */
+      .header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 50%, #0a0f1c 100%);
+        color: white;
+        padding: 20px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo img {
+        height: 48px;
+        width: 48px;
+        display: block;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        padding: 4px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .logo img:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: scale(1.05);
+      }
+
+      .nav-links {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin-left: 30px;
+      }
+
+      .nav-links a {
+        color: white;
+        font-weight: 500;
+        position: relative;
+      }
+
+      .nav-links a.active {
+        color: var(--secondary-color);
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--secondary-color);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .theme-toggle {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .theme-toggle:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+      }
+
+      .theme-toggle i {
+        font-size: 18px;
+        transition: transform 0.3s ease;
+      }
+
+      /* Footer */
+      .footer {
+        background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 50%, #0a0f1c 100%);
+        color: white;
+        padding: 40px 0;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-logo img {
+        height: 36px;
+        width: 36px;
+        display: block;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        padding: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-logo img:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: scale(1.05);
+      }
+
+      .footer-copyright {
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer-links a {
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav {
+          flex-direction: column;
+        }
+
+        .nav-links {
+          margin-top: 20px;
+        }
+
+        .nav-links li {
+          margin: 0 10px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          text-align: center;
+          gap: 20px;
+        }
+      }
+    </style>
+
+    <!-- Enhanced theme toggle with no flicker -->
+    <script>
+      function initThemeToggle() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+        
+        // Set initial icon based on current theme
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        themeIcon.className = currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        
+        themeToggle?.addEventListener('click', function() {
+          html.classList.toggle('dark-theme');
+          
+          const isDark = html.classList.contains('dark-theme');
+          themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          
+          // Animation
+          themeIcon.style.transform = 'scale(0.8)';
+          setTimeout(() => {
+            themeIcon.style.transform = 'scale(1)';
+          }, 150);
+        });
+      }
+
+      // Initialize when DOM is ready
+      document.addEventListener('DOMContentLoaded', initThemeToggle);
+    </script>
+  </body>
+</html>
