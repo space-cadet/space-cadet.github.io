@@ -138,6 +138,24 @@ ul {
     background-color: var(--secondary-color);
 }
 
+.hero-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
 .btn {
     display: inline-block;
     padding: 12px 24px;
@@ -1186,6 +1204,100 @@ body.dark-theme .contact-link:hover {
     }
 }
 
+/* ====== COURSE DISTRIBUTION VISUALIZATION ====== */
+.category-visualization {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.category-chart {
+    display: flex;
+    height: 300px;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.chart-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.chart-bar {
+    width: 100%;
+    background: linear-gradient(to top, var(--secondary-color), var(--accent-color));
+    border-radius: 6px 6px 0 0;
+    transition: height 1s ease, transform 0.3s ease;
+    transform-origin: bottom;
+}
+
+.chart-item:hover .chart-bar {
+    transform: scaleY(1.05);
+}
+
+.undergraduate .chart-bar {
+    background: linear-gradient(to top, #3b82f6, #6366f1);
+}
+
+.foundation .chart-bar {
+    background: linear-gradient(to top, #10b981, #14b8a6);
+}
+
+.advanced .chart-bar {
+    background: linear-gradient(to top, #f59e0b, #f97316);
+}
+
+.specialized .chart-bar {
+    background: linear-gradient(to top, #8b5cf6, #a855f7);
+}
+
+.chart-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.category-description {
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.category-highlights {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.category-highlights li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-highlights li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .category-visualization {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .category-chart {
+        height: 200px;
+    }
+}
+
 /* ====== PAGE NAVIGATION ====== */
 .page-navigation {
     background: var(--card-bg);
@@ -1607,7 +1719,7 @@ body.dark-theme .course-table-container {
         transform: translateY(0);
     }
 }
-=======
+
 /* ====== PAGE NAVIGATION ====== */
 .page-navigation {
     background: var(--card-bg);
@@ -1686,6 +1798,121 @@ body.dark-theme .page-navigation {
 @media screen and (max-width: 480px) {
     .nav-list {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ====== TEACHING INNOVATIONS ====== */
+.innovation-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.innovation-category {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.innovation-category h3 {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.innovation-category h3 i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.timeline {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 1.5rem 0;
+    border-left: 2px solid var(--secondary-color);
+    margin-left: 1rem;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -3.5rem;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content {
+    margin-left: 1.5rem;
+    padding: 0.5rem;
+}
+
+.timeline-content h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.innovation-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0 0;
+}
+
+.innovation-highlights li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.innovation-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .innovation-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-year {
+        font-size: 0.8rem;
+        left: -3rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .timeline-content {
+        margin-left: 1rem;
+    }
+
+    .innovation-category {
+        padding: 1rem;
     }
 }
 

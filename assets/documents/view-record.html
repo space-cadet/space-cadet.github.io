@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Record</title>
+    <link rel="stylesheet" href="../../src/styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.1/dist/markdown-it.min.js"></script>
+</head>
+<body>
+    <div class="container markdown-container">
+        <!-- Markdown will be rendered here -->
+    </div>
+    <script>
+        const md = window.markdownit();
+        fetch('comprehensive-teaching-record.md')
+            .then(response => response.text())
+            .then(text => {
+                document.querySelector('.markdown-container').innerHTML = md.render(text);
+            });
+    </script>
+</body>
+</html>

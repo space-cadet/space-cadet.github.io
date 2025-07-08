@@ -1,5 +1,51 @@
 # Changelog: Deepak Vaid's Portfolio Website
 
+## July 8, 2025 - Advanced Teaching Portfolio Layout
+
+### Added
+- Interactive course distribution visualization with animated chart bars showing percentage breakdown
+- Categorized teaching innovations timeline with three sections: Curriculum Development, Digital Education Excellence, Laboratory Excellence
+- HTML wrapper system (`assets/documents/view-record.html`) for rendering markdown documents with markdown-it library
+- Hero title decorative styling with CSS underline elements
+- Comprehensive innovation categories with hover effects and responsive design
+
+### Enhanced
+- Reorganized page navigation placement above hero section for improved user experience flow
+- Expanded teaching innovations from simple timeline to comprehensive categorized showcase
+- Replaced static course category cards with interactive percentage-based visualization
+- Enhanced timeline styling with year badges, content sections, and visual improvements
+- Updated documentation link to use HTML wrapper instead of direct markdown access
+
+### Technical
+- Added markdown-it CDN integration for client-side markdown rendering
+- Implemented CSS animations for chart bars with transform effects and gradients
+- Created responsive grid system for innovation categories with mobile optimization
+- Added comprehensive CSS styling for timeline elements, chart visualizations, and category sections
+
+## June 14, 2025 - Teaching and Supervision Pages Creation
+
+### Added
+- Complete teaching portfolio page (`teaching/index.html`) with course highlights and innovation timeline
+- Comprehensive supervision showcase page (`supervision/index.html`) with research mentoring documentation
+- Sticky page navigation with section anchors for improved user experience
+- Enhanced hero statistics dashboard with glassmorphism effects
+- Filterable course table with search functionality and level-based filtering
+- Dark/light theme toggle system with localStorage persistence
+- Modern arxivite-inspired color scheme with comprehensive CSS variables
+
+### Enhanced
+- Updated navigation across all pages to include teaching and supervision links
+- Organized project reports in `assets/documents/reports/` for accessible showcase
+- Implemented glassmorphism effects throughout the site for modern visual appeal
+- Enhanced logo styling with backdrop blur and hover effects
+- Replaced text logos with favicon.svg images across all pages
+
+### Technical
+- Added JavaScript course filtering functionality with backup initialization
+- Implemented theme toggle with comprehensive CSS variable system
+- Created responsive design elements for all new pages
+- Organized document structure for better content accessibility
+
 ## June 5, 2025 - Portfolio Enhancement Phase
 
 ### Added

@@ -36,10 +36,24 @@
     </header>
 
     <main class="main-content">
+        <!-- Main Content Navigation -->
+        <div class="container">
+            <nav class="page-navigation">
+                <h3>Quick Navigation</h3>
+                <div class="nav-list">
+                    <a href="#course-portfolio">Course Portfolio</a>
+                    <a href="#innovations">Teaching Innovations</a>
+                    <a href="#course-categories">Course Distribution</a>
+                    <a href="#teaching-approach">Teaching Approach</a>
+                    <a href="#documentation">Documentation</a>
+                </div>
+            </nav>
+        </div>
+
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1>Teaching Portfolio</h1>
+                <h1 class="hero-title">Teaching Portfolio</h1>
                 <p class="hero-subtitle">Physics education at NITK Karnataka (2013-2023)</p>
                 <div class="hero-stats-dashboard">
                     <div class="hero-stat-card">
@@ -76,24 +90,10 @@
             </div>
         </section>
 
-        <!-- Page Navigation -->
-        <nav class="page-navigation">
-            <div class="container">
-                <h3>Quick Navigation</h3>
-                <div class="nav-list">
-                    <a href="#course-portfolio">Course Portfolio</a>
-                    <a href="#innovations">Teaching Innovations</a>
-                    <a href="#course-categories">Course Distribution</a>
-                    <a href="#teaching-approach">Teaching Approach</a>
-                    <a href="#documentation">Documentation</a>
-                </div>
-            </div>
-        </nav>
-
         <!-- Course Portfolio -->
         <section class="section" id="course-portfolio">
             <div class="container">
-                <h2>Course Portfolio</h2>
+                <h2 class="section-title">Course Portfolio</h2>
                 <div class="course-table-container">
                     <div class="table-controls">
                         <div class="search-box">
@@ -188,37 +188,98 @@
         <!-- Innovation Timeline -->
         <section class="section" id="innovations">
             <div class="container">
-                <h2>Teaching Innovations</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2014-15</div>
-                        <div class="timeline-content">
-                            <h3>MCQ Assessment Implementation</h3>
-                            <p>Introduced multiple choice question format for Modern Physics, improving assessment efficiency and consistency.</p>
+                <h2 class="section-title">Teaching Innovations</h2>
+                <div class="innovation-categories">
+                    <div class="innovation-category">
+                        <h3><i class="fas fa-graduation-cap"></i> Curriculum Development</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2014-15</div>
+                                <div class="timeline-content">
+                                    <h4>MCQ Assessment Pioneer</h4>
+                                    <p>Developed and implemented comprehensive MCQ system for Modern Physics (PH110), setting new standards for assessment efficiency.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Standardized evaluation methodology</li>
+                                        <li>Enhanced grading consistency</li>
+                                        <li>Improved student performance tracking</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-year">2017-18</div>
+                                <div class="timeline-content">
+                                    <h4>Advanced Course Development</h4>
+                                    <p>Enhanced General Theory of Relativity (PH876) with Moodle integration and structured homework series.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Interactive problem sets</li>
+                                        <li>Digital resource integration</li>
+                                        <li>Progressive learning pathway</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-year">2018</div>
-                        <div class="timeline-content">
-                            <h3>Curriculum Revision Project</h3>
-                            <p>Led comprehensive analysis of Modern Physics curriculum across IITs and NITs, resulting in modernized syllabus.</p>
+                    <div class="innovation-category">
+                        <h3><i class="fas fa-laptop"></i> Digital Education Excellence</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2020-21</div>
+                                <div class="timeline-content">
+                                    <h4>Pandemic Response Leadership</h4>
+                                    <p>Led department's transition to online education during COVID-19 crisis.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Zoom-based instruction with interactive polling</li>
+                                        <li>Comprehensive Moodle implementation</li>
+                                        <li>YouTube lecture series development</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-year">2021-22</div>
+                                <div class="timeline-content">
+                                    <h4>Digital Course Innovation</h4>
+                                    <p>Pioneered Quantum Computation (PH870) course with modern digital tools.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Enhanced project evaluation system</li>
+                                        <li>Quiz-based continuous assessment</li>
+                                        <li>Complete Moodle integration</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020-21</div>
-                        <div class="timeline-content">
-                            <h3>Digital Education Leadership</h3>
-                            <p>Rapidly transitioned to online teaching during COVID-19, utilizing Zoom and Moodle platforms effectively.</p>
-                        </div>
-                    </div>
+                    <div class="innovation-category">
+                        <h3><i class="fas fa-flask"></i> Laboratory Excellence</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2018-19</div>
+                                <div class="timeline-content">
+                                    <h4>Lab Modernization</h4>
+                                    <p>Restructured Physics Laboratory (PH111) with comprehensive protocols.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Standardized experimental procedures</li>
+                                        <li>Digital data collection methods</li>
+                                        <li>Enhanced safety protocols</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-year">2021-22</div>
-                        <div class="timeline-content">
-                            <h3>Quantum Computation Course</h3>
-                            <p>Developed original M.Sc. level course in quantum computation, addressing emerging field requirements.</p>
+                            <div class="timeline-item">
+                                <div class="timeline-year">2022-23</div>
+                                <div class="timeline-content">
+                                    <h4>Advanced Lab Coordination</h4>
+                                    <p>Implemented refined laboratory assessment system.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Structured examination scheduling</li>
+                                        <li>Comprehensive evaluation criteria</li>
+                                        <li>Student feedback integration</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -228,42 +289,33 @@
         <!-- Course Categories -->
         <section class="section" id="course-categories">
             <div class="container">
-                <h2>Course Distribution</h2>
-                <div class="course-categories">
-                    <div class="category-card">
-                        <h3>Undergraduate (B.Tech)</h3>
-                        <ul>
-                            <li>Modern Physics (PH100/110)</li>
-                            <li>Physics Laboratory (PH111)</li>
-                            <li>Quantum Mechanics I (PH703)</li>
-                        </ul>
+                <h2 class="section-title">Course Distribution</h2>
+                <div class="category-visualization">
+                    <div class="category-chart">
+                        <div class="chart-item undergraduate">
+                            <div class="chart-bar" style="height: 65%"></div>
+                            <span class="chart-label">Undergraduate (65%)</span>
+                        </div>
+                        <div class="chart-item foundation">
+                            <div class="chart-bar" style="height: 20%"></div>
+                            <span class="chart-label">Foundation (20%)</span>
+                        </div>
+                        <div class="chart-item advanced">
+                            <div class="chart-bar" style="height: 10%"></div>
+                            <span class="chart-label">Advanced (10%)</span>
+                        </div>
+                        <div class="chart-item specialized">
+                            <div class="chart-bar" style="height: 5%"></div>
+                            <span class="chart-label">Specialized (5%)</span>
+                        </div>
                     </div>
-
-                    <div class="category-card">
-                        <h3>Foundation Courses (M.Sc.)</h3>
-                        <ul>
-                            <li>Mathematical Physics I & II (PH751)</li>
-                            <li>Quantum Mechanics I (PH703)</li>
-                            <li>Statistical Physics (PH753)</li>
-                        </ul>
-                    </div>
-
-                    <div class="category-card">
-                        <h3>Advanced Courses (M.Sc.)</h3>
-                        <ul>
-                            <li>Quantum Mechanics II (PH752)</li>
-                            <li>General Relativity (PH863/876)</li>
-                            <li>Relativistic Physics (PH852)</li>
-                            <li>Nuclear Physics (PH862)</li>
-                        </ul>
-                    </div>
-
-                    <div class="category-card">
-                        <h3>Specialized Courses</h3>
-                        <ul>
-                            <li>Quantum Computation (PH870)</li>
-                            <li>Particle Physics & Detectors (PH879)</li>
-                            <li>Condensed Matter Physics (PH801)</li>
+                    <div class="category-description">
+                        <p>My teaching portfolio spans across multiple academic levels, with a focus on undergraduate education.</p>
+                        <ul class="category-highlights">
+                            <li><strong>65%</strong> undergraduate courses</li>
+                            <li><strong>20%</strong> foundation courses</li>
+                            <li><strong>10%</strong> advanced courses</li>
+                            <li><strong>5%</strong> specialized courses</li>
                         </ul>
                     </div>
                 </div>
@@ -273,7 +325,7 @@
         <!-- Teaching Philosophy -->
         <section class="section" id="teaching-approach">
             <div class="container">
-                <h2>Teaching Approach</h2>
+                <h2 class="section-title">Teaching Approach</h2>
                 <div class="philosophy-grid">
                     <div class="philosophy-card">
                         <i class="fas fa-lightbulb"></i>
@@ -305,13 +357,13 @@
         <!-- Resources -->
         <section class="section" id="documentation">
             <div class="container">
-                <h2>Documentation</h2>
+                <h2 class="section-title">Documentation</h2>
                 <div class="resources-grid">
                     <div class="resource-card">
                         <i class="fas fa-file-pdf"></i>
                         <h3>Complete Teaching Record</h3>
                         <p>Comprehensive documentation of all courses taught from 2013-2023.</p>
-                        <a href="../assets/documents/comprehensive-teaching-record.md" class="btn-secondary">View Record</a>
+                        <a href="../assets/documents/view-record.html" target="_blank" class="btn-secondary">View Record</a>
                     </div>
 
                     <div class="resource-card">
@@ -344,6 +396,7 @@
     </footer>
 
     <script src="../src/utils/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         // Backup course table functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -409,6 +462,19 @@
                     }
                 });
             }
+        }
+    </script>
+    <script>
+        // Render markdown files when opened directly
+        if(window.location.pathname.endsWith('.md')) {
+            fetch(window.location.pathname)
+                .then(response => response.text())
+                .then(text => {
+                    document.body.innerHTML = 
+                        `<div class="markdown-content container" style="padding: 40px">
+                            ${marked.parse(text)}
+                        </div>`;
+                });
         }
     </script>
 </body>
