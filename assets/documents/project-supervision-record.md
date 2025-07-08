@@ -19,16 +19,14 @@
 
 ## Executive Summary
 
-**Total Students Mentored**: 19+ (organized so far, more in recent years)
+**Total Students Mentored**: 46 students (2014-2023)
 **Active Supervision Period**: 2014 - Present
 **Institutions**: NITK Surathkal, VIT University, External Collaborations
 **Research Areas**: Theoretical Physics, Classical Mechanics, Quantum Mechanics, Computational Physics, Chaos Theory, Green's Functions, Monte Carlo Methods
 
 **Key Highlights:**
-- Systematic mentoring program spanning over a decade
+- 40 MSc projects and 4 PhD students supervised
 - Mix of internal NITK students and external collaborations
-- Strong focus on computational and theoretical physics
-- International placements and PhD admissions for several students
 - Comprehensive documentation and recommendation support
 
 ---
@@ -73,14 +71,25 @@
 | PhD Students | Safir T K | [Period TBD] | PhD | [Research Area TBD] (Completed) |
 
 **Summary Statistics (Complete Record 2014-2023):**
-- **Total Students**: 30 students (official and unofficial supervision)
-- **MSc Projects**: 24 students (including 1 unofficial mentoring)
+- **Total Students**: 46 students (official and unofficial supervision)
+- **MSc Projects**: 40 students (including 1 unofficial mentoring)
 - **PhD Students**: 4 students
 - **External Collaborations**: 5 students (including B.Sc. and summer research)
 - **Summer Research**: 1 student
 - **Academic Years Covered**: 9 years (2014-2023)
 - **Completed PhDs**: 3 (Ahmed Rizwan, Rajani K V, Safir T K)
 - **PhD Success Rate**: 75% (3 completed, 1 rejected)
+
+**MSc Project Distribution by Year:**
+- 2014-15: 2 students
+- 2015-16: 3 students (+ 2 external/unofficial)
+- 2016-17: 3 students
+- 2017-18: 8 students
+- 2018-19: 2 students
+- 2019-20: 4 students
+- 2020-21: 5 students
+- 2021-22: 2 students
+- 2022-23: 3 students
 
 **Note**: Students removed from supervision count (recommendation letters only):
 - Himanshu Shukla (INAT assessment)
@@ -92,20 +101,19 @@
 ## Supervision Statistics
 
 ### Overview by Level
-- **PhD Students**: 1+ (1 rejected for performance)
-- **MSc Projects**: 15+ (from 2014-2018 analysis) 
+- **PhD Students**: 4 students (3 completed, 1 rejected)
+- **MSc Projects**: 40 students (2014-2023)
 - **BTech Projects**: [To be determined]
-- **External Students**: 5+ (VIT, other institutions)
+- **External Students**: 5 students (VIT, other institutions)
 
 ### Overview by Institution
-- **NITK Surathkal**: 12+ students
+- **NITK Surathkal**: 40+ students
 - **External Institutions**: 5+ students (VIT, others)
-- **International Collaborations**: [To be determined]
 
 ### Research Areas Distribution
-- **Theoretical Physics**: 8+ students
+- **Theoretical Physics**: 15+ students
 - **Classical Mechanics & Chaos**: 3+ students
-- **Quantum Physics**: 4+ students
+- **Quantum Physics**: 8+ students
 - **Computational Physics**: 6+ students
 - **Green's Functions & Many-Body Theory**: 3+ students
 
@@ -149,20 +157,71 @@
 
 ## MSc Project Supervision
 
-### Academic Year 2022-23
-[To be filled from MSc Project 2022-23 folder]
+### Academic Year 2022-23 (3 students)
 
-### Academic Year 2021-22
-[To be filled from MSc Project 2021-22 folder]
+**Bharti Meena**
+- Project: Circuit Simulation Using QuTiP
+- Final Report: July 31, 2023
 
-### Academic Year 2020-21
-[To be filled from MSc Project 2020-21 folder]
+**Hrushikesh Gawali**
+- Project: Virtual Qubits and Quantum Thermal Machines
 
-### Academic Year 2019-20
-[To be filled from MSc Project 2019-20 folder]
+**Vishnu Murlidhar**
+- Project: Variational Quantum Eigensolver
 
-### Academic Year 2018-19
-[To be filled from MSc Project 2018-19 folder]
+### Academic Year 2021-22 (2 students)
+
+**Shweta Dadhwal**
+- Project: Quantum Random Walk
+- Final Report: June 16, 2022
+
+**Sumukha Srinivasa Adiga**
+- Project: [No final report found]
+
+### Academic Year 2020-21 (5 students)
+
+**Anand Menon**
+- Project: Electron Acceleration in Curved Spacetime
+
+**Devadharshini S**
+- Project: Spinorial Formulations of Scattering Amplitudes and Loop Quantum Gravity
+- Thesis: "A Study of Integrability in String Theory" (July 2021)
+
+**Rakshit Gharat**
+- Project: Conformal Field Theory, Information Loss Paradox and String Theory
+
+**Shreya Pandey**
+- Project: Quantum Field Theory and Chaotic Systems Determination
+
+**Soumya Sarkar**
+- Project: Tensor Network and Quantum Error Correcting Codes
+
+### Academic Year 2019-20 (4 students)
+
+**Ananthu Krishnan**
+- Project: Implications of SN Luminosity Evolution on Λ & H₀ Measurements
+- Final Report: July 8, 2020
+
+**Anasuya Nair**
+- Project: Conformal Field Theory Approach to Critical Systems
+- Final Report: July 9, 2020
+
+**Aswanth Krishnan**
+- Project: Quantum Error Correcting Codes
+
+**Manas Bora**
+- Project: Semiclassical Gravity Theory and Quantum Fluctuations
+
+### Academic Year 2018-19 (2 students)
+
+**Divyashree**
+- Project: Neutrino Oscillations and Fermionic Field with Mass Dimension One
+- Final Report: May 10, 2019
+
+**Keerthana Ullody**
+- Project: Thermodynamics of Black Holes in Anti-de Sitter Spacetime
+- Final Report: May 5, 2019
+=======
 
 ### Historical MSc Projects (Pre-2018)
 
@@ -332,10 +391,33 @@
 - Advanced quantum theory projects (Green's functions, many-body theory)
 - First documented PhD student management challenges (Ananthram Bhat)
 
-### 2018-Present - Systematic Excellence Phase
-**Academic Year 2018-19 onwards**: [To be documented from existing organized folders]
-- Transition to formal MSc Project folder organization
-- Continued growth and international recognition
+### 2018-2023 - Recent Years
+
+**Academic Year 2018-19**: 2 students
+- Divyashree: Neutrino oscillations
+- Keerthana Ullody: Black hole thermodynamics
+
+**Academic Year 2019-20**: 4 students
+- Ananthu Krishnan: Supernova luminosity
+- Anasuya Nair: Conformal field theory
+- Aswanth Krishnan: Quantum error correction
+- Manas Bora: Semiclassical gravity
+
+**Academic Year 2020-21**: 5 students
+- Anand Menon: Electron acceleration in curved spacetime
+- Devadharshini S: Scattering amplitudes and loop quantum gravity
+- Rakshit Gharat: Conformal field theory and string theory
+- Shreya Pandey: Quantum field theory and chaotic systems
+- Soumya Sarkar: Tensor networks and quantum error correction
+
+**Academic Year 2021-22**: 2 students
+- Shweta Dadhwal: Quantum random walks
+- Sumukha Srinivasa Adiga: [No final report found]
+
+**Academic Year 2022-23**: 3 students
+- Bharti Meena: Circuit simulation using QuTiP
+- Hrushikesh Gawali: Virtual qubits and quantum thermal machines
+- Vishnu Murlidhar: Variational quantum eigensolver
 
 ---
 
