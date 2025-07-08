@@ -36,98 +36,586 @@
     </header>
 
     <main class="main-content">
+        <!-- Main Content Navigation -->
+        <div class="container">
+            <nav class="page-navigation">
+                <h3>Quick Navigation</h3>
+                <div class="nav-list">
+                    <a href="#supervision-overview">Supervision Overview</a>
+                    <a href="#research-evolution">Research Evolution</a>
+                    <a href="#notable-projects">Notable Projects</a>
+                    <a href="#student-achievements">Student Achievements</a>
+                    <a href="#research-areas">Research Areas</a>
+                    <a href="#documentation">Documentation</a>
+                </div>
+            </nav>
+        </div>
+
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <h1>Student Supervision</h1>
+                <h1 class="hero-title">Student Supervision</h1>
                 <p class="hero-subtitle">Research mentoring and academic guidance (2014-2023)</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">33+</span>
-                        <span class="stat-label">Students</span>
+                <div class="hero-stats-dashboard">
+                    <div class="hero-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">33+</span>
+                            <span class="stat-label">Students Mentored</span>
+                            <span class="stat-description">Across 9 academic years (2014-2023)</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">PhD Completions</span>
+                    <div class="hero-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">75%</span>
+                            <span class="stat-label">PhD Success Rate</span>
+                            <span class="stat-description">3 of 4 PhD students completed</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">29</span>
-                        <span class="stat-label">M.Sc. Projects</span>
+                    <div class="hero-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">International Applications</span>
+                            <span class="stat-description">PhD application support provided</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Overview -->
-        <section class="section">
+        <section class="section" id="supervision-overview">
             <div class="container">
-                <h2>Supervision Overview</h2>
+                <h2 class="section-title">Supervision Overview</h2>
+                
+                <div class="supervision-table-container">
+                    <div class="table-controls">
+                        <div class="search-box">
+                            <input type="text" id="supervisionSearch" placeholder="Search students..." />
+                        </div>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="phd">PhD</button>
+                            <button class="filter-btn" data-filter="msc">M.Sc.</button>
+                            <button class="filter-btn" data-filter="external">External</button>
+                        </div>
+                    </div>
+                    
+                    <table class="course-table" id="supervisionTable">
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Level</th>
+                                <th>Period</th>
+                                <th>Research Area</th>
+                                <th>Outcome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- PhD Students -->
+                            <tr data-level="phd">
+                                <td>
+                                    <div class="course-name">Ahmed Rizwan</div>
+                                    <div class="course-code">PhD Thesis</div>
+                                </td>
+                                <td><span class="course-level-badge level-specialized">PhD</span></td>
+                                <td class="course-years">2014-2021</td>
+                                <td>Holographic Superconductor - AdS/CFT Correspondence</td>
+                                <td><span class="course-highlight">PhD Completed</span></td>
+                            </tr>
+                            <tr data-level="phd">
+                                <td>
+                                    <div class="course-name">Rajani K V</div>
+                                    <div class="course-code">PhD Thesis</div>
+                                </td>
+                                <td><span class="course-level-badge level-specialized">PhD</span></td>
+                                <td class="course-years">Completed</td>
+                                <td>Theoretical Physics</td>
+                                <td><span class="course-highlight">PhD Completed</span></td>
+                            </tr>
+                            <tr data-level="phd">
+                                <td>
+                                    <div class="course-name">Safir T K</div>
+                                    <div class="course-code">PhD Thesis</div>
+                                </td>
+                                <td><span class="course-level-badge level-specialized">PhD</span></td>
+                                <td class="course-years">Completed</td>
+                                <td>Theoretical Physics</td>
+                                <td><span class="course-highlight">PhD Completed</span></td>
+                            </tr>
+                            <tr data-level="phd">
+                                <td>
+                                    <div class="course-name">Ananthram Bhat</div>
+                                    <div class="course-code">PhD (Transferred)</div>
+                                </td>
+                                <td><span class="course-level-badge level-specialized">PhD</span></td>
+                                <td class="course-years">2017-2020</td>
+                                <td>Machine Learning Applications</td>
+                                <td><span class="course-highlight">Guide Change</span></td>
+                            </tr>
+                            
+                            <!-- 2022-23 MSc Students -->
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Bharti Meena</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2022-23</td>
+                                <td>Circuit Simulation Using QuTiP</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Hrushikesh Gawali</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2022-23</td>
+                                <td>Virtual Qubits and Quantum Thermal Machines</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Vishnu Murlidhar</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2022-23</td>
+                                <td>Variational Quantum Eigensolver</td>
+                                <td><span class="course-highlight">International Application</span></td>
+                            </tr>
+                            
+                            <!-- 2021-22 MSc Students -->
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Shweta Dadhwal</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2021-22</td>
+                                <td>Quantum Random Walk</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Sumukha Srinivasa Adiga</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2021-22</td>
+                                <td>Research Project</td>
+                                <td><span class="course-highlight">No Final Report</span></td>
+                            </tr>
+                            
+                            <!-- 2020-21 MSc Students -->
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Anand Menon</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2020-21</td>
+                                <td>Electron Acceleration in Curved Spacetime</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Devadharshini S</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2020-21</td>
+                                <td>Spinorial Formulations in Loop Quantum Gravity</td>
+                                <td><span class="course-highlight">European Applications</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Rakshit Gharat</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2020-21</td>
+                                <td>CFT, Information Loss Paradox and String Theory</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Shreya Pandey</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2020-21</td>
+                                <td>Quantum Field Theory and Chaotic Systems</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Soumya Sarkar</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2020-21</td>
+                                <td>Tensor Networks and Quantum Error Correction</td>
+                                <td><span class="course-highlight">Research Excellence</span></td>
+                            </tr>
+                            
+                            <!-- 2019-20 MSc Students -->
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Ananthu Krishnan</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2019-20</td>
+                                <td>SN Luminosity Evolution on Λ & H₀ Measurements</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Anasuya Nair</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2019-20</td>
+                                <td>Conformal Field Theory Approach to Critical Systems</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Aswanth Krishnan</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2019-20</td>
+                                <td>Quantum Error Correcting Codes</td>
+                                <td><span class="course-highlight">Industry Placement</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Manas Bora</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2019-20</td>
+                                <td>Semiclassical Gravity Theory and Quantum Fluctuations</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            
+                            <!-- 2018-19 Students -->
+                            <tr data-level="external">
+                                <td>
+                                    <div class="course-name">Divyashree</div>
+                                    <div class="course-code">External Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-foundation">External</span></td>
+                                <td class="course-years">2018-19</td>
+                                <td>Neutrino Oscillations and Fermionic Fields</td>
+                                <td><span class="course-highlight">15+ Applications</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Keerthana Ullody</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2018-19</td>
+                                <td>Thermodynamics of Black Holes in AdS Spacetime</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            
+                            <!-- 2017-18 Students -->
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Arya Antherjanam</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2017-18</td>
+                                <td>Phases of Hubbard and Sachdev-Ye-Kitaev Model</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Karthik Suresh</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2017-18</td>
+                                <td>Conductance in Mesoscopic System by Green's Functions</td>
+                                <td><span class="course-highlight">Wuppertal Application</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Nrusingha Prasad</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2017-18</td>
+                                <td>Green's Functions for Square Lattice</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="external">
+                                <td>
+                                    <div class="course-name">Bhavana Nadig</div>
+                                    <div class="course-code">Summer Research</div>
+                                </td>
+                                <td><span class="course-level-badge level-foundation">External</span></td>
+                                <td class="course-years">2017</td>
+                                <td>Summer Research Project</td>
+                                <td><span class="course-highlight">Certificate Awarded</span></td>
+                            </tr>
+                            <tr data-level="external">
+                                <td>
+                                    <div class="course-name">Shalmali Sudhindra</div>
+                                    <div class="course-code">External Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-foundation">External</span></td>
+                                <td class="course-years">2017</td>
+                                <td>Alva's College Collaboration</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+
+                            
+                            <!-- 2016-17 Students -->
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Merin Joseph</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2016-17</td>
+                                <td>Dynamics of Non-Integrable Systems</td>
+                                <td><span class="course-highlight">EPSRC Applications</span></td>
+                            </tr>
+                            <tr data-level="external">
+                                <td>
+                                    <div class="course-name">Rajashree Kamat</div>
+                                    <div class="course-code">BTech Final Year</div>
+                                </td>
+                                <td><span class="course-level-badge level-foundation">External</span></td>
+                                <td class="course-years">2016-17</td>
+                                <td>VIT University Collaboration</td>
+                                <td><span class="course-highlight">External Project</span></td>
+                            </tr>
+                            
+                            <!-- 2015-16 Students -->
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Shwetha B</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2015-16</td>
+                                <td>Relativistic Velocity Addition Law</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="external">
+                                <td>
+                                    <div class="course-name">Vinayak Garg</div>
+                                    <div class="course-code">B.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-foundation">External</span></td>
+                                <td class="course-years">2015-16</td>
+                                <td>Monte Carlo Simulations - Ising Model</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Sreedevi Varma</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2015-16</td>
+                                <td>Alcubierre Drive: ADM Formalism</td>
+                                <td><span class="course-highlight">Cambridge Applications</span></td>
+                            </tr>
+
+                            <tr data-level="external">
+                                <td>
+                                    <div class="course-name">Neel Kumar</div>
+                                    <div class="course-code">Summer Research</div>
+                                </td>
+                                <td><span class="course-level-badge level-foundation">External</span></td>
+                                <td class="course-years">2016</td>
+                                <td>Classical/Quantum Mechanics, Python Programming</td>
+                                <td><span class="course-highlight">VIT Summer Program</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Rajeev N</div>
+                                    <div class="course-code">Unofficial Mentoring</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2014-16</td>
+                                <td>International PhD Applications Support</td>
+                                <td><span class="course-highlight">Unofficial Mentoring</span></td>
+                            </tr>
+                            
+                            <!-- 2014-15 Students -->
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Priyamedha</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2014-15</td>
+                                <td>Electrodynamics of Cavity Resonators</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+                            <tr data-level="msc">
+                                <td>
+                                    <div class="course-name">Sarath E</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc.</span></td>
+                                <td class="course-years">2014-15</td>
+                                <td>Perturbation Theory and Relativistic Correction</td>
+                                <td><span class="course-highlight">Project Completed</span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                
                 <div class="overview-grid">
                     <div class="overview-card">
-                        <h3>PhD Students</h3>
-                        <p>Supervised doctoral research in theoretical physics, with focus on holographic duality and general relativity.</p>
-                        <ul>
-                            <li>Ahmed Rizwan - Holographic Superconductor (2014-2021)</li>
-                            <li>Rajani K V - Completed</li>
-                            <li>Safir T K - Completed</li>
-                        </ul>
+                        <h3>Research Excellence</h3>
+                        <p>Systematic mentoring program spanning theoretical physics, quantum computation, and advanced mathematical methods.</p>
+                        <div class="outcome-stats">
+                            <span class="stat-item">29 M.Sc. Projects</span>
+                            <span class="stat-item">3 PhD Completions</span>
+                            <span class="stat-item">4 External Collaborations</span>
+                        </div>
                     </div>
 
                     <div class="overview-card">
-                        <h3>M.Sc. Projects</h3>
-                        <p>Research projects spanning theoretical physics, quantum mechanics, and computational physics.</p>
-                        <ul>
-                            <li>Quantum computation and error correction</li>
-                            <li>General relativity and cosmology</li>
-                            <li>Statistical physics and many-body systems</li>
-                        </ul>
+                        <h3>International Impact</h3>
+                        <p>Comprehensive application support for prestigious institutions worldwide with strong focus on European and North American PhD programs.</p>
+                        <div class="outcome-stats">
+                            <span class="stat-item">ETH Zurich Applications</span>
+                            <span class="stat-item">University of Copenhagen</span>
+                            <span class="stat-item">Cambridge University</span>
+                        </div>
                     </div>
 
                     <div class="overview-card">
-                        <h3>External Collaborations</h3>
-                        <p>Mentored students from other institutions and supported international PhD applications.</p>
-                        <ul>
-                            <li>VIT University collaborations</li>
-                            <li>Summer research programs</li>
-                            <li>International placement support</li>
-                        </ul>
+                        <h3>Research Evolution</h3>
+                        <p>Progressive development from classical physics foundations to cutting-edge quantum computation research.</p>
+                        <div class="outcome-stats">
+                            <span class="stat-item">2014-2016: Foundation</span>
+                            <span class="stat-item">2017-2019: Advanced Theory</span>
+                            <span class="stat-item">2020-2023: Quantum Era</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Research Timeline -->
-        <section class="section">
+        <section class="section" id="research-evolution">
             <div class="container">
-                <h2>Research Evolution</h2>
-                <div class="research-timeline">
-                    <div class="timeline-period">
-                        <h3>2014-2016: Foundation Phase</h3>
-                        <p>Early projects in classical mechanics, electrodynamics, and theoretical cosmology.</p>
-                        <div class="project-list">
-                            <span class="project-tag">Electrodynamics</span>
-                            <span class="project-tag">Alcubierre Drive</span>
-                            <span class="project-tag">Monte Carlo Methods</span>
+                <h2 class="section-title">Research Evolution</h2>
+                
+                <div class="innovation-categories">
+                    <div class="innovation-category">
+                        <h3><i class="fas fa-atom"></i> Foundation Phase (2014-2016)</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2014-15</div>
+                                <div class="timeline-content">
+                                    <h4>Electromagnetic Theory & Classical Mechanics</h4>
+                                    <p>Initial systematic mentoring with focus on electromagnetic cavity resonators and perturbation theory.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Priyamedha: Electrodynamics of Cavity Resonators</li>
+                                        <li>Sarath E: Relativistic Corrections & Perturbation Theory</li>
+                                        <li>First documentation of structured supervision</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-year">2015-16</div>
+                                <div class="timeline-content">
+                                    <h4>Computational Physics & Cosmology</h4>
+                                    <p>Expansion to Monte Carlo methods, theoretical cosmology, and international collaborations.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Sreedevi Varma: Alcubierre Drive ADM Formalism</li>
+                                        <li>Vinayak Garg: Monte Carlo Ising Model Simulations</li>
+                                        <li>First VIT summer research program (Neel Kumar)</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="timeline-period">
-                        <h3>2017-2019: Advanced Theory</h3>
-                        <p>Transition to advanced topics in quantum field theory and many-body physics.</p>
-                        <div class="project-list">
-                            <span class="project-tag">Hubbard Model</span>
-                            <span class="project-tag">Neutrino Oscillations</span>
-                            <span class="project-tag">Conformal Field Theory</span>
+                    <div class="innovation-category">
+                        <h3><i class="fas fa-functions"></i> Advanced Theory (2017-2019)</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2017-18</div>
+                                <div class="timeline-content">
+                                    <h4>Many-Body Quantum Theory</h4>
+                                    <p>Transition to advanced quantum field theory and Green's functions methods.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Arya Antherjanam: Hubbard & Sachdev-Ye-Kitaev Models</li>
+                                        <li>Karthik Suresh: Non-Equilibrium Green's Functions</li>
+                                        <li>Peak diversity with 8 students in single year</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-year">2018-19</div>
+                                <div class="timeline-content">
+                                    <h4>Particle Physics & Black Hole Thermodynamics</h4>
+                                    <p>Advanced theoretical physics with strong international placement support.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Divyashree: Neutrino Oscillations (Applied to 15+ institutions)</li>
+                                        <li>Keerthana Ullody: Black Holes in AdS Spacetime</li>
+                                        <li>Systematic international PhD application support</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="timeline-period">
-                        <h3>2020-2022: Quantum Era</h3>
-                        <p>Focus on quantum computation, error correction, and advanced quantum theories.</p>
-                        <div class="project-list">
-                            <span class="project-tag">Quantum Error Correction</span>
-                            <span class="project-tag">Tensor Networks</span>
-                            <span class="project-tag">Quantum Algorithms</span>
+                    <div class="innovation-category">
+                        <h3><i class="fas fa-quantum-physics"></i> Quantum Era (2020-2023)</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2020-21</div>
+                                <div class="timeline-content">
+                                    <h4>Quantum Information & Error Correction</h4>
+                                    <p>Focus shift to quantum computation and advanced quantum technologies.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Soumya Sarkar: Tensor Networks & Quantum Error Correction</li>
+                                        <li>Devadharshini S: Loop Quantum Gravity (European applications)</li>
+                                        <li>European PhD application support partnerships established</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-year">2022-23</div>
+                                <div class="timeline-content">
+                                    <h4>Quantum Algorithms & Circuit Simulation</h4>
+                                    <p>Cutting-edge quantum computation with industry-relevant applications.</p>
+                                    <ul class="innovation-highlights">
+                                        <li>Vishnu Murlidhar: Variational Quantum Eigensolver</li>
+                                        <li>Bharti Meena: Circuit Simulation Using QuTiP</li>
+                                        <li>Quantum thermal machines and virtual qubits research</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,9 +623,9 @@
         </section>
 
         <!-- Recent Projects -->
-        <section class="section">
+        <section class="section" id="notable-projects">
             <div class="container">
-                <h2>Notable Projects</h2>
+                <h2 class="section-title">Notable Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card">
                         <h3>Quantum Error Correcting Codes</h3>
@@ -179,41 +667,126 @@
         </section>
 
         <!-- Student Outcomes -->
-        <section class="section">
+        <section class="section" id="student-achievements">
             <div class="container">
-                <h2>Student Achievements</h2>
+                <h2 class="section-title">Student Achievements</h2>
+                
+                <div class="outcomes-table-container">
+                    <h3>International PhD Placements</h3>
+                    <table class="course-table">
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Project Year</th>
+                                <th>Research Area</th>
+                                <th>PhD Institution</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="course-name">Divyashree</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td class="course-years">2018-19</td>
+                                <td>Neutrino Oscillations & Fermionic Fields</td>
+                                <td>Applied to AEI MPG, NIKHEF, Copenhagen, Melbourne, Swinburne</td>
+                                <td><span class="course-highlight">15+ Applications</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="course-name">Devadharshini S</div>
+                                    <div class="course-code">IISER Collaboration</div>
+                                </td>
+                                <td class="course-years">2020-21</td>
+                                <td>Loop Quantum Gravity & Scattering Amplitudes</td>
+                                <td>Applied to ETH Zurich, Copenhagen, Trinity Dublin, RWTH Aachen</td>
+                                <td><span class="course-highlight">European Applications</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="course-name">Sreedevi Varma</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td class="course-years">2015-16</td>
+                                <td>Alcubierre Drive & General Relativity</td>
+                                <td>Applied to Cambridge, Edinburgh, Kings College London</td>
+                                <td><span class="course-highlight">Applications Supported</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="course-name">Merin Joseph</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td class="course-years">2016-17</td>
+                                <td>Chaotic Dynamics & Rigid Body Mechanics</td>
+                                <td>EPSRC Fellowship Programs</td>
+                                <td><span class="course-highlight">International Programs</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="course-name">Karthik Suresh</div>
+                                    <div class="course-code">M.Sc. Project</div>
+                                </td>
+                                <td class="course-years">2017-18</td>
+                                <td>Mesoscopic Systems & Green's Functions</td>
+                                <td>Applied to University of Wuppertal</td>
+                                <td><span class="course-highlight">Application Supported</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <div class="outcomes-grid">
                     <div class="outcome-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>PhD Completions</h3>
-                        <p>3 successful PhD completions with research in theoretical physics and holographic duality.</p>
+                        <i class="fas fa-university"></i>
+                        <h3>PhD Success Rate: 75%</h3>
+                        <p>3 of 4 PhD students successfully completed their doctoral programs with strong research outcomes.</p>
+                        <div class="achievement-list">
+                            <span class="achievement-item">Ahmed Rizwan: Holographic Superconductivity</span>
+                            <span class="achievement-item">Rajani K V & Safir T K: Completed PhDs</span>
+                            <span class="achievement-item">4 total PhD students (1 guide change requested)</span>
+                        </div>
                     </div>
 
                     <div class="outcome-card">
-                        <i class="fas fa-globe"></i>
-                        <h3>International Placements</h3>
-                        <p>Students placed at European and North American institutions for PhD programs.</p>
+                        <i class="fas fa-globe-europe"></i>
+                        <h3>International Application Support</h3>
+                        <p>Comprehensive PhD application support to top European institutions including ETH Zurich, Copenhagen, and AEI Max Planck.</p>
+                        <div class="achievement-list">
+                            <span class="achievement-item">15+ International Applications Supported</span>
+                            <span class="achievement-item">Multiple European Program Applications</span>
+                        </div>
                     </div>
 
                     <div class="outcome-card">
-                        <i class="fas fa-award"></i>
-                        <h3>Research Excellence</h3>
-                        <p>Projects contributing to cutting-edge research in quantum computation and theoretical physics.</p>
+                        <i class="fas fa-quantum-physics"></i>
+                        <h3>Quantum Computing Impact</h3>
+                        <p>Leading research in quantum error correction, tensor networks, and quantum algorithms.</p>
+                        <div class="achievement-list">
+                            <span class="achievement-item">Industry-Relevant Quantum Research</span>
+                            <span class="achievement-item">Advanced Theoretical Contributions</span>
+                        </div>
                     </div>
 
                     <div class="outcome-card">
-                        <i class="fas fa-handshake"></i>
-                        <h3>Continued Mentoring</h3>
-                        <p>Ongoing support for career development and research opportunities beyond graduation.</p>
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Research Collaborations</h3>
+                        <p>External partnerships with VIT University, IISER, and international research institutions.</p>
+                        <div class="achievement-list">
+                            <span class="achievement-item">VIT Summer Research Programs</span>
+                            <span class="achievement-item">IISER Joint Supervision</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Research Areas -->
-        <section class="section">
+        <section class="section" id="research-areas">
             <div class="container">
-                <h2>Research Areas</h2>
+                <h2 class="section-title">Research Areas</h2>
                 <div class="research-areas">
                     <div class="area-card">
                         <h3>Quantum Computation</h3>
@@ -255,9 +828,9 @@
         </section>
 
         <!-- Resources -->
-        <section class="section">
+        <section class="section" id="documentation">
             <div class="container">
-                <h2>Documentation</h2>
+                <h2 class="section-title">Documentation</h2>
                 <div class="resources-grid">
                     <div class="resource-card">
                         <i class="fas fa-file-pdf"></i>

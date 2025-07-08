@@ -1298,86 +1298,7 @@ body.dark-theme .contact-link:hover {
     }
 }
 
-/* ====== PAGE NAVIGATION ====== */
-.page-navigation {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 25px;
-    margin: 40px 0;
-    position: sticky;
-    top: 20px;
-    z-index: 100;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-}
 
-body.dark-theme .page-navigation {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
-
-.page-navigation h3 {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    font-weight: 600;
-    text-align: center;
-}
-
-.nav-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 8px;
-}
-
-.nav-list a {
-    display: block;
-    padding: 10px 15px;
-    color: var(--text-color);
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    text-align: center;
-    position: relative;
-}
-
-.nav-list a:hover {
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-.nav-list a.active {
-    background: var(--secondary-color);
-    color: white;
-}
-
-@media screen and (max-width: 768px) {
-    .page-navigation {
-        position: relative;
-        top: 0;
-        margin: 20px 0;
-        padding: 20px;
-    }
-    
-    .nav-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
-    }
-    
-    .nav-list a {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .nav-list {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* ====== HERO STATISTICS DASHBOARD ====== */
 .hero-stats-dashboard {
@@ -1728,11 +1649,13 @@ body.dark-theme .course-table-container {
     border-radius: 12px;
     padding: 25px;
     margin: 40px 0;
+    position: -webkit-sticky;
     position: sticky;
     top: 20px;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
+    will-change: transform;
 }
 
 body.dark-theme .page-navigation {

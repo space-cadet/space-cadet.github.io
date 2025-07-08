@@ -73,14 +73,19 @@
 | PhD Students | Safir T K | [Period TBD] | PhD | [Research Area TBD] (Completed) |
 
 **Summary Statistics (Complete Record 2014-2023):**
-- **Total Students**: 33 students
-- **MSc Projects**: 29 students  
+- **Total Students**: 30 students (official and unofficial supervision)
+- **MSc Projects**: 24 students (including 1 unofficial mentoring)
 - **PhD Students**: 4 students
-- **External Collaborations**: 4 students
+- **External Collaborations**: 5 students (including B.Sc. and summer research)
 - **Summer Research**: 1 student
 - **Academic Years Covered**: 9 years (2014-2023)
 - **Completed PhDs**: 3 (Ahmed Rizwan, Rajani K V, Safir T K)
 - **PhD Success Rate**: 75% (3 completed, 1 rejected)
+
+**Note**: Students removed from supervision count (recommendation letters only):
+- Himanshu Shukla (INAT assessment)
+- Manas Shetty (recommendation letters)
+- Umasree T (recommendation letter)
 
 ---
 
@@ -161,11 +166,7 @@
 
 ### Historical MSc Projects (Pre-2018)
 
-#### Academic Year 2014-15 (3 students)
-**himanshu shukla**
-- INAT 2014 assessment
-- Status: External assessment
-
+#### Academic Year 2014-15 (2 students)
 **priyamedha** 
 - Project: Maxwell's equations and electromagnetic theory
 - Duration: December 2014
@@ -177,15 +178,19 @@
 - Duration: August - December 2014
 - Multiple progress reports documenting theoretical analysis
 
-#### Academic Year 2015-16 (5 students)
+**Removed (not project students):**
+- himanshu shukla (INAT assessment only)
+
+#### Academic Year 2015-16 (3 students)
 **shwetha_b**
 - Duration: September 2015 - May 2016
 - Final report: May 16, 2016
 - Extended project with multiple interim reports
 
-**vinayak_garg**
+**vinayak_garg** (External B.Sc. Student)
 - Project: Monte Carlo Simulations
 - Duration: December 2015
+- Level: B.Sc. Project (External)
 - Computational focus with Python implementations
 - Files: Jupyter notebooks, Monte Carlo methods
 
@@ -195,17 +200,18 @@
 - Advanced theoretical physics project
 - International PhD applications supported (Cambridge, Edinburgh, Kings College)
 
-**Rajeev N** (Unofficial mentoring)
-- Duration: 2014-2016 period
-- Extensive recommendation letter support for international programs
-- Multiple CV versions, research proposals
-- Ongoing mentoring relationship through 2023
-
 **neel_kumar** (Summer Research Student, VIT)
 - Duration: May 29 - July 10, 2016
 - Project: Classical and Quantum Mechanics, Python programming
 - Solar system orbital simulations
 - Certificate dated August 11, 2016
+
+**Rajeev N** (Unofficial Mentoring)
+- Duration: 2014-2016 period
+- Extensive recommendation letter support for international programs
+- Multiple CV versions, research proposals
+- Ongoing mentoring relationship through 2023
+- Status: Unofficial project mentoring (not official supervision)
 
 #### Academic Year 2016-17 (3 students)
 **merin_joseph** (Two folders - same student)
@@ -232,20 +238,14 @@
 - Thesis on mesoscopic effects in topological superconductivity
 - International applications supported (University of Wuppertal, 2018)
 
-**manas_shetty**
-- Recommendation letters: February 2018 - February 2019
-- NCRA write-up, multiple application support
-- VSRP and INAT assessments
-
 **nrusingha prasad**
 - Duration: December 2017 - May 2018
 - Green's functions for square lattice
 - Project presentations and final report
 
-**umasree t**
-- Project Report 1 available
-- Recommendation letter: November 20, 2018
-- Research interests documented
+**Removed (not project students):**
+- manas_shetty (recommendation letters only)
+- umasree t (recommendation letter only)
 
 **Ananthram Bhat** (PhD Student - Later Rejected)
 - Start: 2017, Proposal work: 2019
@@ -308,14 +308,16 @@
 
 ### 2014-2016 - Foundation Phase
 **Academic Year 2014-15**: First documented systematic mentoring
-- 3 students: himanshu shukla, priyamedha, sarath e
+- 2 students: priyamedha, sarath e
 - Focus on electromagnetic theory and anharmonic systems
 - Establishment of project documentation standards
 
 **Academic Year 2015-16**: Expansion and Diversification  
-- 5 students including international and external collaborations
+- 5 students including external B.Sc., summer research, and unofficial mentoring
 - Advanced topics: Monte Carlo methods, theoretical cosmology (Alcubierre drive)
+- First external B.Sc. project (vinayak_garg)
 - First summer research program (neel_kumar, VIT)
+- Unofficial mentoring relationship established (Rajeev N)
 - International PhD placement support initiated
 
 ### 2016-2018 - Growth and Specialization
