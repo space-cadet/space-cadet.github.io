@@ -3,6 +3,9 @@
 
 ### 2025-07-08
 
+#### 17:55 - T4: GitHub Pages Build Fix
+- Created `_config.yml` - Added Jekyll configuration to exclude astro-example and other directories from build
+
 #### 17:53 - T4: Teaching Page Layout Improvements
 - Updated `teaching/index.html` - Added sticky page navigation with section anchors
 - Updated `src/styles/main.css` - Added page navigation CSS with responsive design
