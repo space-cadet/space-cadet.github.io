@@ -1,6 +1,17 @@
 # Edit History
 *Created: 2025-06-05*
 
+### 2025-07-08
+
+#### 17:53 - T4: Teaching Page Layout Improvements
+- Updated `teaching/index.html` - Added sticky page navigation with section anchors
+- Updated `src/styles/main.css` - Added page navigation CSS with responsive design
+- Updated `teaching/index.html` - Redesigned hero statistics dashboard with enhanced visual cards
+- Updated `src/styles/main.css` - Added hero statistics dashboard styling with glassmorphism effects
+- Updated `teaching/index.html` - Converted course grid to filterable table with search functionality
+- Updated `src/styles/main.css` - Added course table styling with color-coded level badges
+- Updated `src/utils/main.js` - Added course filtering and search functionality with backup initialization
+
 ### 2025-06-15
 
 #### 13:25 - T6: Task Creation - Apply arXivite Styling

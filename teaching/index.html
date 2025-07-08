@@ -41,93 +41,152 @@
             <div class="container">
                 <h1>Teaching Portfolio</h1>
                 <p class="hero-subtitle">Physics education at NITK Karnataka (2013-2023)</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">21+</span>
-                        <span class="stat-label">Courses</span>
+                <div class="hero-stats-dashboard">
+                    <div class="hero-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">21+</span>
+                            <span class="stat-label">Courses Taught</span>
+                            <span class="stat-description">Across undergraduate and graduate levels</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">10</span>
-                        <span class="stat-label">Years</span>
+                    <div class="hero-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Years Experience</span>
+                            <span class="stat-description">Physics education at NITK Karnataka</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Students</span>
+                    <div class="hero-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Students Impacted</span>
+                            <span class="stat-description">Through innovative teaching methods</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Page Navigation -->
+        <nav class="page-navigation">
+            <div class="container">
+                <h3>Quick Navigation</h3>
+                <div class="nav-list">
+                    <a href="#course-portfolio">Course Portfolio</a>
+                    <a href="#innovations">Teaching Innovations</a>
+                    <a href="#course-categories">Course Distribution</a>
+                    <a href="#teaching-approach">Teaching Approach</a>
+                    <a href="#documentation">Documentation</a>
+                </div>
+            </div>
+        </nav>
+
         <!-- Course Portfolio -->
-        <section class="section">
+        <section class="section" id="course-portfolio">
             <div class="container">
                 <h2>Course Portfolio</h2>
-                <div class="course-grid">
-                    <div class="course-card">
-                        <h3>Modern Physics (PH110)</h3>
-                        <p class="course-level">Undergraduate Core</p>
-                        <p>Foundation course in quantum mechanics and special relativity. Led comprehensive curriculum revision in 2018.</p>
-                        <div class="course-details">
-                            <span>2013-2023</span>
-                            <span>MCQ Assessment Pioneer</span>
+                <div class="course-table-container">
+                    <div class="table-controls">
+                        <div class="search-box">
+                            <input type="text" id="courseSearch" placeholder="Search courses..." />
+                        </div>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="undergraduate">Undergraduate</button>
+                            <button class="filter-btn" data-filter="foundation">Foundation</button>
+                            <button class="filter-btn" data-filter="advanced">Advanced</button>
+                            <button class="filter-btn" data-filter="specialized">Specialized</button>
                         </div>
                     </div>
-
-                    <div class="course-card">
-                        <h3>Quantum Computation (PH870)</h3>
-                        <p class="course-level">M.Sc. Elective</p>
-                        <p>Original course development covering quantum algorithms and quantum information theory.</p>
-                        <div class="course-details">
-                            <span>2021-2022</span>
-                            <span>New Course Development</span>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <h3>General Relativity (PH863/876)</h3>
-                        <p class="course-level">M.Sc. Advanced</p>
-                        <p>Complete course development in Einstein's field equations and applications.</p>
-                        <div class="course-details">
-                            <span>2014-2019</span>
-                            <span>Original Curriculum</span>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <h3>Mathematical Physics (PH751)</h3>
-                        <p class="course-level">M.Sc. Foundation</p>
-                        <p>Advanced mathematical methods for theoretical physics including vector calculus and complex analysis.</p>
-                        <div class="course-details">
-                            <span>2013-2023</span>
-                            <span>Multiple Offerings</span>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <h3>Quantum Mechanics II (PH752)</h3>
-                        <p class="course-level">M.Sc. Advanced</p>
-                        <p>Advanced quantum theory including perturbation theory and scattering theory.</p>
-                        <div class="course-details">
-                            <span>2021-2022</span>
-                            <span>Graduate Level</span>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <h3>Relativistic Physics (PH852)</h3>
-                        <p class="course-level">M.Sc. Specialized</p>
-                        <p>Advanced applications of special and general relativity. Pioneered online delivery during COVID-19.</p>
-                        <div class="course-details">
-                            <span>2020-2021</span>
-                            <span>Online Innovation</span>
-                        </div>
-                    </div>
+                    
+                    <table class="course-table" id="courseTable">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Level</th>
+                                <th>Years Taught</th>
+                                <th>Description</th>
+                                <th>Highlights</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-level="undergraduate">
+                                <td>
+                                    <div class="course-name">Modern Physics</div>
+                                    <div class="course-code">PH110</div>
+                                </td>
+                                <td><span class="course-level-badge level-undergraduate">Undergraduate Core</span></td>
+                                <td class="course-years">2013-2023</td>
+                                <td>Foundation course in quantum mechanics and special relativity. Led comprehensive curriculum revision in 2018.</td>
+                                <td><span class="course-highlight">MCQ Assessment Pioneer</span></td>
+                            </tr>
+                            <tr data-level="specialized">
+                                <td>
+                                    <div class="course-name">Quantum Computation</div>
+                                    <div class="course-code">PH870</div>
+                                </td>
+                                <td><span class="course-level-badge level-specialized">M.Sc. Elective</span></td>
+                                <td class="course-years">2021-2022</td>
+                                <td>Original course development covering quantum algorithms and quantum information theory.</td>
+                                <td><span class="course-highlight">New Course Development</span></td>
+                            </tr>
+                            <tr data-level="advanced">
+                                <td>
+                                    <div class="course-name">General Relativity</div>
+                                    <div class="course-code">PH863/876</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc. Advanced</span></td>
+                                <td class="course-years">2014-2019</td>
+                                <td>Complete course development in Einstein's field equations and applications.</td>
+                                <td><span class="course-highlight">Original Curriculum</span></td>
+                            </tr>
+                            <tr data-level="foundation">
+                                <td>
+                                    <div class="course-name">Mathematical Physics</div>
+                                    <div class="course-code">PH751</div>
+                                </td>
+                                <td><span class="course-level-badge level-foundation">M.Sc. Foundation</span></td>
+                                <td class="course-years">2013-2023</td>
+                                <td>Advanced mathematical methods for theoretical physics including vector calculus and complex analysis.</td>
+                                <td><span class="course-highlight">Multiple Offerings</span></td>
+                            </tr>
+                            <tr data-level="advanced">
+                                <td>
+                                    <div class="course-name">Quantum Mechanics II</div>
+                                    <div class="course-code">PH752</div>
+                                </td>
+                                <td><span class="course-level-badge level-advanced">M.Sc. Advanced</span></td>
+                                <td class="course-years">2021-2022</td>
+                                <td>Advanced quantum theory including perturbation theory and scattering theory.</td>
+                                <td><span class="course-highlight">Graduate Level</span></td>
+                            </tr>
+                            <tr data-level="specialized">
+                                <td>
+                                    <div class="course-name">Relativistic Physics</div>
+                                    <div class="course-code">PH852</div>
+                                </td>
+                                <td><span class="course-level-badge level-specialized">M.Sc. Specialized</span></td>
+                                <td class="course-years">2020-2021</td>
+                                <td>Advanced applications of special and general relativity. Pioneered online delivery during COVID-19.</td>
+                                <td><span class="course-highlight">Online Innovation</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
 
         <!-- Innovation Timeline -->
-        <section class="section">
+        <section class="section" id="innovations">
             <div class="container">
                 <h2>Teaching Innovations</h2>
                 <div class="timeline">
@@ -167,7 +226,7 @@
         </section>
 
         <!-- Course Categories -->
-        <section class="section">
+        <section class="section" id="course-categories">
             <div class="container">
                 <h2>Course Distribution</h2>
                 <div class="course-categories">
@@ -212,7 +271,7 @@
         </section>
 
         <!-- Teaching Philosophy -->
-        <section class="section">
+        <section class="section" id="teaching-approach">
             <div class="container">
                 <h2>Teaching Approach</h2>
                 <div class="philosophy-grid">
@@ -244,7 +303,7 @@
         </section>
 
         <!-- Resources -->
-        <section class="section">
+        <section class="section" id="documentation">
             <div class="container">
                 <h2>Documentation</h2>
                 <div class="resources-grid">
@@ -285,5 +344,72 @@
     </footer>
 
     <script src="../src/utils/main.js"></script>
+    <script>
+        // Backup course table functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit for main.js to load
+            setTimeout(function() {
+                if (!window.courseTableInitialized) {
+                    console.log('Initializing course table backup');
+                    initCourseTableBackup();
+                }
+            }, 100);
+        });
+        
+        function initCourseTableBackup() {
+            window.courseTableInitialized = true;
+            
+            const searchInput = document.getElementById('courseSearch');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const tableRows = document.querySelectorAll('#courseTable tbody tr');
+            
+            let currentFilter = 'all';
+            
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    currentFilter = this.dataset.filter;
+                    const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+                    filterAndSearch(searchTerm, currentFilter);
+                });
+            });
+            
+            // Search functionality
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    filterAndSearch(searchTerm, currentFilter);
+                });
+            }
+            
+            function filterAndSearch(searchTerm, filter) {
+                tableRows.forEach(row => {
+                    const courseName = row.querySelector('.course-name')?.textContent.toLowerCase() || '';
+                    const courseCode = row.querySelector('.course-code')?.textContent.toLowerCase() || '';
+                    const description = row.cells[3]?.textContent.toLowerCase() || '';
+                    const level = row.getAttribute('data-level');
+                    
+                    const matchesSearch = !searchTerm || 
+                                        courseName.includes(searchTerm) || 
+                                        courseCode.includes(searchTerm) || 
+                                        description.includes(searchTerm);
+                    
+                    const matchesFilter = filter === 'all' || level === filter;
+                    
+                    if (matchesSearch && matchesFilter) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+        }
+    </script>
 </body>
 </html>

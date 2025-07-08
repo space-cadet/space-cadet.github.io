@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add animated particles for the quantum effect in the hero section
     animateParticles();
+    
+    // Initialize course table functionality if on teaching page
+    if (document.getElementById('courseTable') && !window.courseTableInitialized) {
+        window.courseTableInitialized = true;
+        initCourseTable();
+    }
 });
 
 // Theme toggle functionality
@@ -85,6 +91,77 @@ function animateParticles() {
         
         physicsAnimation.appendChild(particle);
 }
+}
+
+// Course table functionality for teaching page
+function initCourseTable() {
+    const searchInput = document.getElementById('courseSearch');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const tableRows = document.querySelectorAll('#courseTable tbody tr');
+    
+    let currentFilter = 'all';
+    
+    console.log('Course table initialized:', {
+        searchInput: !!searchInput,
+        filterButtons: filterButtons.length,
+        tableRows: tableRows.length
+    });
+    
+    // Search functionality
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            console.log('Search term:', searchTerm);
+            filterAndSearch(searchTerm, currentFilter);
+        });
+    }
+    
+    // Filter functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Filter clicked:', this.dataset.filter);
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            currentFilter = this.dataset.filter;
+            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+            filterAndSearch(searchTerm, currentFilter);
+        });
+    });
+    
+    function filterAndSearch(searchTerm, filter) {
+        console.log('Filtering with:', { searchTerm, filter });
+        
+        let visibleCount = 0;
+        
+        tableRows.forEach(row => {
+            const courseName = row.querySelector('.course-name')?.textContent.toLowerCase() || '';
+            const courseCode = row.querySelector('.course-code')?.textContent.toLowerCase() || '';
+            const description = row.cells[3]?.textContent.toLowerCase() || '';
+            const level = row.getAttribute('data-level');
+            
+            console.log('Row data:', { courseName, courseCode, level });
+            
+            const matchesSearch = !searchTerm || 
+                                courseName.includes(searchTerm) || 
+                                courseCode.includes(searchTerm) || 
+                                description.includes(searchTerm);
+            
+            const matchesFilter = filter === 'all' || level === filter;
+            
+            if (matchesSearch && matchesFilter) {
+                row.style.display = '';
+                visibleCount++;
+            } else {
+                row.style.display = 'none';
+            }
+        });
+        
+        console.log('Visible rows:', visibleCount);
+    }
 }
 
 // Smooth scrolling for anchor links

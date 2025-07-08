@@ -1,10 +1,11 @@
 # Task Registry
-*Last Updated: 2025-06-15 13:25:42 IST*
+*Last Updated: 2025-07-08 17:54:17 IST*
 
 ## Active Tasks
 | ID | Title | Status | Priority | Started | Dependencies |
 |----|-------|--------|----------|---------|--------------|
 | META-1 | Memory Bank System Maintenance | 🔄 | HIGH | 2025-06-05 | - |
+| T4 | Teaching Portfolio Layout Improvements | 🔄 | HIGH | 2025-06-14 | T3 |
 | T6 | Apply arXivite Styling to Academic Website | 🔄 | HIGH | 2025-06-15 | - |
 
 ## Task Details
@@ -15,6 +16,13 @@
 **Criteria**: Maintain v6.4.2 standards, keep documentation current, ensure proper structure
 **Files**: `tasks.md`, `session_cache.md`, `edit_history.md`, all memory bank files
 **Notes**: Foundational meta-task for memory bank functionality and maintenance
+
+### T4: Teaching Portfolio Layout Improvements
+**Description**: Enhanced layout, navigation, and user experience improvements for teaching page
+**Status**: 🔄 **Last**: 2025-07-08 17:53:03 IST
+**Criteria**: Page navigation, enhanced hero statistics dashboard, filterable course table, mobile optimization
+**Files**: `teaching/index.html`, `src/styles/main.css`, `src/utils/main.js`
+**Notes**: Implementing sticky navigation, visual statistics cards, searchable course table with filtering
 
 ### T6: Apply arXivite Styling to Academic Website
 **Description**: Comprehensive migration from custom CSS to arXivite's TailwindCSS-based styling system
@@ -27,7 +35,7 @@
 | ID | Title | Completed |
 |----|-------|-----------|
 | T5 | Student Supervision Showcase Page | 2025-06-14 |
-| T4 | Teaching Portfolio Showcase Page | 2025-06-14 |
+
 | T3 | Visual Theme System and Modern UI Enhancements | 2025-06-14 |
 | T2 | GitHub Pages Integration and Project Documentation | 2025-06-14 |
 | T1 | Portfolio Enhancement - Projects Page and Visual Improvements | 2025-06-05 |
@@ -39,12 +47,7 @@
 **Files**: `supervision/index.html`, navigation updates across site, organized project reports
 **Notes**: Professional showcase of 33+ students mentored, 3 PhD completions, research evolution timeline
 
-### T4: Teaching Portfolio Showcase Page
-**Description**: Created dedicated teaching page highlighting course portfolio, innovations, and 10-year teaching experience
-**Status**: ✅ **Completed**: 2025-06-14 14:40:37 IST
-**Criteria**: Course portfolio presentation, innovation timeline, teaching philosophy, consistent site design
-**Files**: `teaching/index.html`, navigation updates, documentation links
-**Notes**: Professional showcase of 21+ courses, curriculum innovations, digital education leadership
+
 
 ### T3: Visual Theme System and Modern UI Enhancements
 **Description**: Implemented comprehensive dark/light theme toggle system, modern color scheme with glassmorphism effects, and enhanced logo styling
