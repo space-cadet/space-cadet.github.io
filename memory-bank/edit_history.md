@@ -1,7 +1,11 @@
 # Edit History
 *Created: 2025-06-05*
+*Last Updated: 2025-07-10 16:02:21 IST*
 
 ### 2025-07-10
+
+#### 16:01 - T7: YouTube Video Index Updates
+- Updated `assets/documents/youtube-video-index.md` - Added Mathematical Methods course PH751 with 12 lectures from Feb-Mar 2022; added channel ID UCQteBQlueK65bRR08h0YYGA to header; added Quantum Mechanics I second round course with 25 lectures from Oct 2020-Jan 2021; updated course titles to include course IDs and date ranges; added two newly public research talks on wormhole geometries in LQG
 
 #### 13:58 - T7: Comprehensive YouTube Video Record task creation
 - Created `memory-bank/tasks/T7.md` - Complete task documentation with educational impact focus
