@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QHE-BHE Numerics — Deepak Vaid</title>
+    <link rel="stylesheet" href="../../../src/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .numerics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .numeric-card { background: var(--card-bg); border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .numeric-card img { width: 100%; border-radius: 8px; margin: 1rem 0; }
+        .numeric-card h3 { margin-top: 0; color: var(--primary-color); }
+        .tag { display: inline-block; background: var(--tag-bg); color: var(--tag-color); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem; }
+        .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; margin: 0.5rem 0.5rem 0 0; }
+        .btn-primary { background: var(--primary-color); color: white; }
+        .btn-secondary { background: var(--secondary-bg); color: var(--text-color); border: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="../../../"><img src="../../../favicon.svg" alt="Deepak Vaid" /></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../../../#about">About</a></li>
+                    <li><a href="../../../#research">Research</a></li>
+                    <li><a href="../../../teaching/">Teaching</a></li>
+                    <li><a href="../../../supervision/">Supervision</a></li>
+                    <li><a href="../../../#publications">Publications</a></li>
+                    <li><a href="../../" class="active">Projects</a></li>
+                    <li><a href="../../../#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title">QHE-BHE Numerics</h1>
+            <p class="lead">Numerical investigations across six phases of the QHE-BHE correspondence.</p>
+
+            <div class="numerics-grid">
+                <div class="numeric-card">
+                    <h3><i class="fas fa-cube"></i> Phase 1: Platonic Solids</h3>
+                    <p>Exact enumeration of dimer coverings on Platonic solids (octahedron, icosahedron, dodecahedron). Berry phase and Chern number computation.</p>
+                    <img src="t17_resonance_octahedron_(n_p=6).png" alt="Octahedron resonance graph">
+                    <div class="tags">
+                        <span class="tag">Exact</span>
+                        <span class="tag">Platonic</span>
+                        <span class="tag">Chern</span>
+                    </div>
+                    <a href="t17_results.md" class="btn btn-secondary">Results</a>
+                    <a href="t17_results.json" class="btn btn-secondary">JSON</a>
+                </div>
+
+                <div class="numeric-card">
+                    <h3><i class="fas fa-shapes"></i> Phase 2: Geodesic Spheres</h3>
+                    <p>Subdivided icosahedra (N_p = 42, 72, 132). Finite-size scaling and convergence to continuum limit.</p>
+                    <img src="t17_resonance_icosahedron_(n_p=12).png" alt="Icosahedron resonance">
+                    <div class="tags">
+                        <span class="tag">Geodesic</span>
+                        <span class="tag">Scaling</span>
+                        <span class="tag">1/N</span>
+                    </div>
+                    <a href="t17_complete_results.md" class="btn btn-secondary">Results</a>
+                    <a href="t17_complete_results.json" class="btn btn-secondary">JSON</a>
+                </div>
+
+                <div class="numeric-card">
+                    <h3><i class="fas fa-temperature-half"></i> Phase 3: Thermal & Filling</h3>
+                    <p>Temperature-dependent filling fractions and entropy curves. RVB state thermal behavior.</p>
+                    <img src="t14_filling_fractions.png" alt="Filling fractions">
+                    <div class="tags">
+                        <span class="tag">Thermal</span>
+                        <span class="tag">Entropy</span>
+                        <span class="tag">RVB</span>
+                    </div>
+                    <a href="t14_results.md" class="btn btn-secondary">Results</a>
+                    <a href="t14_results.json" class="btn btn-secondary">JSON</a>
+                </div>
+
+                <div class="numeric-card">
+                    <h3><i class="fas fa-fire"></i> Phase 4: Orbifold Symmetry</h3>
+                    <p>Symmetric orbifold points with exact Chern numbers. Finite-size scaling analysis.</p>
+                    <img src="t17_complete_summary.png" alt="Orbifold summary">
+                    <div class="tags">
+                        <span class="tag">Orbifold</span>
+                        <span class="tag">Symmetry</span>
+                        <span class="tag">Exact</span>
+                    </div>
+                    <a href="t17_heuristic_predictions.md" class="btn btn-secondary">Predictions</a>
+                    <a href="t17_heuristic_results.md" class="btn btn-secondary">Results</a>
+                </div>
+
+                <div class="numeric-card">
+                    <h3><i class="fas fa-infinity"></i> Phase 5: Cusp Limit</h3>
+                    <p>Resonance graph behavior as the sphere pinches into two components. Kosterlitz-Thouless-like transition.</p>
+                    <img src="t19_cusp_transition.png" alt="Cusp transition">
+                    <div class="tags">
+                        <span class="tag">Cusp</span>
+                        <span class="tag">Transition</span>
+                        <span class="tag">KT</span>
+                    </div>
+                    <a href="t19_cusp_results.md" class="btn btn-secondary">Results</a>
+                    <a href="t19_cusp_results.json" class="btn btn-secondary">JSON</a>
+                </div>
+
+                <div class="numeric-card">
+                    <h3><i class="fas fa-dice"></i> Phase 6: Monte Carlo</h3>
+                    <p>Random triangulation scaling. Plaquette-flip MCMC for N_p = 12, 24, 36, 48. Geometric robustness test.</p>
+                    <img src="t19_mc_scaling_results.png" alt="MC scaling">
+                    <div class="tags">
+                        <span class="tag">Monte Carlo</span>
+                        <span class="tag">Random</span>
+                        <span class="tag">Robustness</span>
+                    </div>
+                    <a href="t19_mc_scaling_results.md" class="btn btn-secondary">Results</a>
+                    <a href="t19_mc_scaling_results.json" class="btn btn-secondary">JSON</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p> 2026 Deepak Vaid. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

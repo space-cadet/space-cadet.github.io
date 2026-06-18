@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QHE-BHE Correspondence — Deepak Vaid</title>
+    <link rel="stylesheet" href="../../src/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="../../"><img src="../../favicon.svg" alt="Deepak Vaid" /></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../../#about">About</a></li>
+                    <li><a href="../../#research">Research</a></li>
+                    <li><a href="../../teaching/">Teaching</a></li>
+                    <li><a href="../../supervision/">Supervision</a></li>
+                    <li><a href="../../#publications">Publications</a></li>
+                    <li><a href="../" class="active">Projects</a></li>
+                    <li><a href="../../#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title">Quantum Hall Effect — Berry Holonomy Effect Correspondence</h1>
+            
+            <div class="project-overview">
+                <p class="lead">
+                    A numerical investigation of the correspondence between the Quantum Hall Effect (QHE) 
+                    on triangulated spheres and the Berry Holonomy Effect (BHE) in Loop Quantum Gravity.
+                </p>
+                
+                <div class="research-areas">
+                    <div class="research-card">
+                        <div class="research-icon"><i class="fas fa-atom"></i></div>
+                        <h3>Quantum Geometry</h3>
+                        <p>Exploring how quantum geometry on triangulated spheres relates to topological quantum states.</p>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-icon"><i class="fas fa-wave-square"></i></div>
+                        <h3>Topological Phases</h3>
+                        <p>Investigating Chern numbers and Berry phases on discretized geometries.</p>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Spin Networks</h3>
+                        <p>Connecting dimer models on triangulations to spin network states in LQG.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-links">
+                <a href="numerics/" class="btn btn-primary">
+                    <i class="fas fa-chart-line"></i> View Numerics
+                </a>
+                <a href="https://github.com/space-cadet/qhe_bhe" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> Repository
+                </a>
+            </div>
+
+            <div class="project-description">
+                <h2>Research Direction</h2>
+                <p>
+                    In Loop Quantum Gravity, spacetime is described by spin networks — graphs whose edges 
+                    carry quantum geometric information. When we consider a triangulated sphere as a 
+                    discretization of space, the dimer coverings of its dual graph correspond to quantum 
+                    states of geometry.
+                </p>
+                <p>
+                    This project investigates whether these quantum geometric states exhibit the same 
+                    topological quantization as the Quantum Hall Effect. Specifically, we ask: does the 
+                    Berry phase acquired under flux threading on a triangulated sphere equal the Chern number 
+                    of the corresponding QHE state?
+                </p>
+                <p>
+                    Our numerics show that the correspondence is <strong>geometric</strong>, not merely 
+                    topological. It requires uniform curvature (regular polyhedra) — arbitrary random 
+                    triangulations destroy the quantization. This aligns with the LQG expectation that 
+                    triangulation vertices and edges carry geometric information, and that spherical 
+                    symmetry (vacuum) must be preserved.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p> 2026 Deepak Vaid. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

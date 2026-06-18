@@ -1,0 +1,46 @@
+{
+  "phase": 4,
+  "description": "Orbifold symmetry and exact Chern numbers",
+  "results": {
+    "octahedron": {
+      "polyhedron": "O (octahedral rotations)",
+      "n_vertices": 6,
+      "group_order": 0,
+      "expected_order": 24,
+      "full_group_order": 48,
+      "orbifold_point": true,
+      "symmetry_factor": 8.0,
+      "expected_chern": 1.0,
+      "finite_size_correction": 0.16666666666666666,
+      "t18_chern": 1.64,
+      "deviation_from_exact": 0.6399999999999999
+    },
+    "icosahedron": {
+      "polyhedron": "I (icosahedral rotations)",
+      "n_vertices": 12,
+      "group_order": 60,
+      "expected_order": 60,
+      "full_group_order": 120,
+      "orbifold_point": true,
+      "symmetry_factor": 10.0,
+      "expected_chern": 1.0,
+      "finite_size_correction": 0.08333333333333333,
+      "t18_chern": 1.14,
+      "deviation_from_exact": 0.1399999999999999
+    },
+    "dodecahedron": {
+      "polyhedron": "I (icosahedral rotations)",
+      "n_vertices": 20,
+      "group_order": 60,
+      "expected_order": 60,
+      "full_group_order": 120,
+      "orbifold_point": true,
+      "symmetry_factor": 6.0,
+      "expected_chern": 1.0,
+      "finite_size_correction": 0.05,
+      "t18_chern": 1.0,
+      "deviation_from_exact": 0.0
+    }
+  },
+  "key_finding": "At orbifold points, symmetry forces uniform Berry curvature, giving integer C"
+}

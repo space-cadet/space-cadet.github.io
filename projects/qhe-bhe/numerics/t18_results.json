@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Octahedron",
+    "n_punctures": 6,
+    "n_matchings": 8,
+    "non_chiral": {
+      "berry_phase": 0.0,
+      "chern_number": 0.0,
+      "loop_closure": 0.9999999999999998
+    },
+    "chiral": {
+      "berry_phase": 10.300450218737613,
+      "chern_number": 1.6393675683840856,
+      "loop_closure": 0.34932355404571025,
+      "phase_range": [
+        -2.3561944901923453,
+        2.3561944901923453
+      ]
+    },
+    "laughlin_overlap": {
+      "non_chiral": 1.0,
+      "chiral": 8.326672684688674e-17
+    }
+  },
+  {
+    "name": "Icosahedron",
+    "n_punctures": 12,
+    "n_matchings": 10395,
+    "non_chiral": {
+      "berry_phase": 0.0,
+      "chern_number": 0.0,
+      "loop_closure": 0.9999999999999826
+    },
+    "chiral": {
+      "berry_phase": 7.163247418443305,
+      "chern_number": 1.1400662352355104,
+      "loop_closure": 0.04301021825734131,
+      "phase_range": [
+        -3.141592653589793,
+        3.141592653589793
+      ]
+    },
+    "laughlin_overlap": {
+      "non_chiral": 1.0,
+      "chiral": 0.01265319371714377
+    }
+  },
+  {
+    "name": "Dodecahedron",
+    "n_punctures": 20,
+    "n_matchings": 36,
+    "non_chiral": {
+      "berry_phase": 0.0,
+      "chern_number": 0.0,
+      "loop_closure": 0.9999999999999997
+    },
+    "chiral": {
+      "berry_phase": 13.156935167259261,
+      "chern_number": 2.0939912678089043,
+      "loop_closure": 0.37322144105319666,
+      "phase_range": [
+        -3.141592653589793,
+        3.141592653589793
+      ]
+    },
+    "laughlin_overlap": {
+      "non_chiral": 1.0,
+      "chiral": 0.2500000000000001
+    }
+  }
+]

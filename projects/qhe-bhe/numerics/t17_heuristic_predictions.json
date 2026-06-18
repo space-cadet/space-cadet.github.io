@@ -1,0 +1,136 @@
+{
+  "exact_data": {
+    "6": {
+      "n_matchings": 8,
+      "n_components": 4,
+      "spectral_gap": 2.0,
+      "avg_degree": 1.0,
+      "component_sizes": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "12": {
+      "n_matchings": 125,
+      "n_components": 28,
+      "spectral_gap": 0.113,
+      "avg_degree": 1.92,
+      "component_sizes": [
+        1,
+        11,
+        20,
+        11,
+        4,
+        2,
+        11,
+        11,
+        2,
+        11,
+        2,
+        4,
+        1,
+        4,
+        1,
+        1,
+        11,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2
+      ]
+    }
+  },
+  "predictions": [
+    {
+      "n_vertices": 18,
+      "n_matchings": 1691,
+      "n_components": 236,
+      "spectral_gap": 0.021171323151726224,
+      "avg_degree": 2.8120421358873293,
+      "matchings_exact": false
+    },
+    {
+      "n_vertices": 24,
+      "n_matchings": 21579,
+      "n_components": 2165,
+      "spectral_gap": 0.0064343048224029175,
+      "avg_degree": 3.6864,
+      "matchings_exact": false
+    },
+    {
+      "n_vertices": 30,
+      "n_matchings": 266560,
+      "n_components": 20656,
+      "spectral_gap": 0.0025544310097011715,
+      "avg_degree": 4.547839006286909,
+      "matchings_exact": false
+    },
+    {
+      "n_vertices": 36,
+      "n_matchings": 3226196,
+      "n_components": 202407,
+      "spectral_gap": 0.0012008363314750775,
+      "avg_degree": 5.3991209009036725,
+      "matchings_exact": false
+    },
+    {
+      "n_vertices": 42,
+      "n_matchings": 38500748,
+      "n_components": 2020471,
+      "spectral_gap": 0.000634342938993418,
+      "avg_degree": 6.242047926023283,
+      "matchings_exact": false
+    },
+    {
+      "n_vertices": 48,
+      "n_matchings": 454747350,
+      "n_components": 20444393,
+      "spectral_gap": 0.00043402777777777775,
+      "avg_degree": 7.077888,
+      "matchings_exact": false
+    },
+    {
+      "n_vertices": 54,
+      "n_matchings": 5329070518,
+      "n_components": 209025335,
+      "spectral_gap": 0.0003429355281207133,
+      "avg_degree": 7.907580974005773,
+      "matchings_exact": false
+    },
+    {
+      "n_vertices": 60,
+      "n_matchings": 62063353831,
+      "n_components": 2154645776,
+      "spectral_gap": 0.0002777777777777778,
+      "avg_degree": 8.731850892070867,
+      "matchings_exact": false
+    },
+    {
+      "n_vertices": 66,
+      "n_matchings": 719178360604,
+      "n_components": 22357680790,
+      "spectral_gap": 0.0002295684113865932,
+      "avg_degree": 9.551272333136346,
+      "matchings_exact": false
+    },
+    {
+      "n_vertices": 72,
+      "n_matchings": 8299194064395,
+      "n_components": 233265591338,
+      "spectral_gap": 0.00019290123456790122,
+      "avg_degree": 10.366312129735052,
+      "matchings_exact": false
+    }
+  ],
+  "method": "heuristic_scaling_fit",
+  "note": "These are heuristic estimates, not exact results. Exact enumeration is infeasible for N_p >= 18."
+}
