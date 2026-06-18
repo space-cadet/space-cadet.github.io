@@ -1,5 +1,5 @@
 # Task Registry
-*Last Updated: 2025-07-10 16:01:17 IST*
+*Last Updated: 2026-06-18 11:25:00 IST*
 
 ## Active Tasks
 | ID | Title | Status | Priority | Started | Dependencies |
@@ -36,6 +36,7 @@
 ## Completed Tasks
 | ID | Title | Completed |
 |----|-------|-----------|
+| T8 | QHE-BHE Numerics Deployment | 2026-06-18 |
 | T4 | Teaching Portfolio Layout Improvements | 2025-07-08 |
 | T5 | Student Supervision Showcase Page | 2025-06-14 |
 | T3 | Visual Theme System and Modern UI Enhancements | 2025-06-14 |
@@ -78,3 +79,10 @@
 **Criteria**: Multi-page structure, enhanced visuals, technical improvements, brand identity
 **Files**: `projects/index.html`, `index.html`, `main.css`, `main.js`, SVG assets, config files
 **Notes**: Transformed portfolio to professional multi-page structure with quantum physics branding
+
+### T8: QHE-BHE Numerics Deployment
+**Description**: Deploy QHE-BHE numerics pages to portfolio website as temporary hosting
+**Status**: ✅ **Completed**: 2026-06-18 11:25:00 IST
+**Criteria**: Quarto-rendered HTML, all figures visible, mobile responsive tables and figures, automated deployment workflow
+**Files**: `projects/qhe-bhe/`, `.github/workflows/quarto-deploy-website.yml`
+**Notes**: Original hosting on qhe_bhe repo GitHub Pages unavailable due to billing. Deployed to space-cadet.github.io as temporary solution. All 20+ PNG figures included. Mobile scroll wrappers added for tables and figures.
