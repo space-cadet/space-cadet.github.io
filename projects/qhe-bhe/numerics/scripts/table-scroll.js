@@ -29,11 +29,37 @@
     });
   }
 
+  function wrapFigures() {
+    // Find all figures that aren't already inside a scroll wrapper
+    const figures = document.querySelectorAll('figure:not(.figure-scroll-wrapper figure)');
+    
+    figures.forEach(function(fig) {
+      // Skip figures already inside a scrollable container
+      const parent = fig.parentElement;
+      if (parent && parent.classList.contains('figure-scroll-wrapper')) {
+        return;
+      }
+
+      // Create wrapper div
+      const wrapper = document.createElement('div');
+      wrapper.className = 'figure-scroll-wrapper';
+      
+      // Insert wrapper before figure and move figure into it
+      fig.parentNode.insertBefore(wrapper, fig);
+      wrapper.appendChild(fig);
+    });
+  }
+
+  function init() {
+    wrapTables();
+    wrapFigures();
+  }
+
   // Run on DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', wrapTables);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    wrapTables();
+    init();
   }
 
   // Also re-run after MathJax renders (math can cause layout shifts)
@@ -42,7 +68,7 @@
     const oldReady = window.MathJax.startup.ready;
     window.MathJax.startup.ready = function() {
       if (oldReady) oldReady.call(this);
-      setTimeout(wrapTables, 100);
+      setTimeout(init, 100);
     };
   }
 })();

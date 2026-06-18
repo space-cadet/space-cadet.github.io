@@ -272,7 +272,7 @@ table caption {
   color: #2d3748;
 }
 
-/* ===== FIGURE STYLING — prevent overflow ===== */
+/* ===== FIGURE STYLING — prevent overflow, enable mobile scroll ===== */
 figure {
   margin: 2rem 0;
   padding: 1rem;
@@ -302,15 +302,19 @@ figure img {
   object-fit: contain;
 }
 
-/* Mobile: reduce figure padding */
+/* Mobile: enable horizontal scroll for figures */
 @media (max-width: 768px) {
   figure {
     padding: 0.5rem;
     margin: 1rem 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
-  
+
   figure img {
-    max-width: 100%;
+    max-width: none; /* Allow image to extend beyond screen */
+    width: auto;
+    min-width: 100%;
   }
 }
 
@@ -770,6 +774,63 @@ li > ul, li > ol {
 }
 
 .table-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* ===== FIGURE SCROLL WRAPPER — mobile horizontal scroll ===== */
+.figure-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  max-width: 100%;
+}
+
+.figure-scroll-wrapper figure {
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  min-width: 500px;
+}
+
+/* Mobile: force horizontal scroll on figures */
+@media (max-width: 768px) {
+  .figure-scroll-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .figure-scroll-wrapper figure {
+    min-width: 500px;
+  }
+
+  .figure-scroll-wrapper figure img {
+    max-width: none;
+    width: auto;
+    min-width: 100%;
+  }
+}
+
+/* Scrollbar styling for figure wrappers */
+.figure-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.figure-scroll-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.figure-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.figure-scroll-wrapper::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
 
