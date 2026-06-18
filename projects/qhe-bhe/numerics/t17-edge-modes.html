@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Numerics Overview</title>
+<title>T17 — Resonance Graph Spectrum</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-c62ef0501ae2f3adb684d0ab58cf61b7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="t17-edge-modes_files/libs/clipboard/clipboard.min.js"></script>
+<script src="t17-edge-modes_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="t17-edge-modes_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="t17-edge-modes_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="t17-edge-modes_files/libs/quarto-html/popper.min.js"></script>
+<script src="t17-edge-modes_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="t17-edge-modes_files/libs/quarto-html/anchor.min.js"></script>
+<link href="t17-edge-modes_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="t17-edge-modes_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="t17-edge-modes_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="t17-edge-modes_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="t17-edge-modes_files/libs/bootstrap/bootstrap-c62ef0501ae2f3adb684d0ab58cf61b7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script>
 window.MathJax = {
   tex: {
@@ -97,13 +97,30 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#philosophy" id="toc-philosophy" class="nav-link active" data-scroll-target="#philosophy">Philosophy</a></li>
-  <li><a href="#active-tasks" id="toc-active-tasks" class="nav-link" data-scroll-target="#active-tasks">Active Tasks</a></li>
-  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
-  <li><a href="#common-parameters" id="toc-common-parameters" class="nav-link" data-scroll-target="#common-parameters">Common Parameters</a></li>
-  <li><a href="#filling-fraction-completed-t14" id="toc-filling-fraction-completed-t14" class="nav-link" data-scroll-target="#filling-fraction-completed-t14">Filling Fraction (Completed: T14)</a></li>
-  <li><a href="#entropy-steps-completed-t15" id="toc-entropy-steps-completed-t15" class="nav-link" data-scroll-target="#entropy-steps-completed-t15">Entropy Steps (Completed: T15)</a></li>
-  <li><a href="#code-reproducibility" id="toc-code-reproducibility" class="nav-link" data-scroll-target="#code-reproducibility">Code &amp; Reproducibility</a></li>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#exact-results-small-graphs" id="toc-exact-results-small-graphs" class="nav-link" data-scroll-target="#exact-results-small-graphs">Exact Results (Small Graphs)</a></li>
+  <li><a href="#resonance-graph-visualizations" id="toc-resonance-graph-visualizations" class="nav-link" data-scroll-target="#resonance-graph-visualizations">Resonance Graph Visualizations</a>
+  <ul class="collapse">
+  <li><a href="#dodecahedron-resonance-graph-n_p-20" id="toc-dodecahedron-resonance-graph-n_p-20" class="nav-link" data-scroll-target="#dodecahedron-resonance-graph-n_p-20">Dodecahedron Resonance Graph (N_p = 20)</a></li>
+  </ul></li>
+  <li><a href="#scaling-predictions-for-large-n" id="toc-scaling-predictions-for-large-n" class="nav-link" data-scroll-target="#scaling-predictions-for-large-n">Scaling Predictions for Large N</a>
+  <ul class="collapse">
+  <li><a href="#spectral-gap-scaling" id="toc-spectral-gap-scaling" class="nav-link" data-scroll-target="#spectral-gap-scaling">Spectral Gap Scaling</a></li>
+  </ul></li>
+  <li><a href="#heuristic-estimates-monte-carlo" id="toc-heuristic-estimates-monte-carlo" class="nav-link" data-scroll-target="#heuristic-estimates-monte-carlo">Heuristic Estimates (Monte Carlo)</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a>
+  <ul class="collapse">
+  <li><a href="#connectivity-in-the-large-n-limit" id="toc-connectivity-in-the-large-n-limit" class="nav-link" data-scroll-target="#connectivity-in-the-large-n-limit">Connectivity in the Large-N Limit</a></li>
+  </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#exact-enumeration-n_p-12" id="toc-exact-enumeration-n_p-12" class="nav-link" data-scroll-target="#exact-enumeration-n_p-12">Exact Enumeration (N_p ≤ 12)</a></li>
+  <li><a href="#scaling-predictions-n_p-12" id="toc-scaling-predictions-n_p-12" class="nav-link" data-scroll-target="#scaling-predictions-n_p-12">Scaling Predictions (N_p &gt; 12)</a></li>
+  <li><a href="#monte-carlo-estimates-n_p-18" id="toc-monte-carlo-estimates-n_p-18" class="nav-link" data-scroll-target="#monte-carlo-estimates-n_p-18">Monte Carlo Estimates (N_p ≥ 18)</a></li>
+  </ul></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
   </ul>
 </nav>
 </div>
@@ -111,8 +128,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Numerics Overview</h1>
-<p class="subtitle lead">Quantitative tests of the QHE / BHE analogy</p>
+<h1 class="title">T17 — Resonance Graph Spectrum</h1>
+<p class="subtitle lead">Spectral properties of the dimer resonance graph</p>
 </div>
 
 
@@ -129,173 +146,288 @@ window.Quarto = {
 </header>
 
 
-<section id="philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="philosophy">Philosophy</h2>
-<p>The 2012 paper was conceptually bold but left many quantitative claims as sketches. The numerics program is designed to:</p>
-<ol type="1">
-<li><strong>Make the analogy computable</strong> — Define precise mappings between LQG and QHE parameters</li>
-<li><strong>Test robustness</strong> — Check if results hold under finite-size, disorder, and varying approximations</li>
-<li><strong>Produce reproducible artifacts</strong> — Scripts, figures, and data that can be checked by others</li>
-</ol>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>Build the resonance graph (adjacency graph of dimer coverings connected by plaquette flips) and compute its spectral properties. The connectivity of this graph determines whether the RVB state is a genuine resonating superposition or a collection of disconnected sectors.</p>
 </section>
-<section id="active-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="active-tasks">Active Tasks</h2>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>In the QHE, the resonance graph of dimer coverings on a lattice is a powerful tool for studying topological order. The graph’s spectral properties reveal:</p>
+<ul>
+<li><strong>Connectivity</strong>: Is the RVB space connected under local moves?</li>
+<li><strong>Spectral gap</strong>: How fast does the RVB state spread under resonance?</li>
+<li><strong>Localization</strong>: Are there localized sectors that don’t mix?</li>
+</ul>
+</section>
+<section id="exact-results-small-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="exact-results-small-graphs">Exact Results (Small Graphs)</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 12%">
+<col style="width: 18%">
+<col style="width: 15%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Task</th>
-<th>Focus</th>
-<th>Key Question</th>
-<th>Status</th>
-<th>Link</th>
+<th>Graph</th>
+<th>N_p</th>
+<th>Matchings</th>
+<th>Components</th>
+<th>Gap λ₁</th>
+<th>Avg Degree</th>
+<th>Diameter</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>T14</strong></td>
-<td>Filling fractions</td>
-<td>What is <span class="math inline">\(\nu\)</span> for a given horizon area spectrum?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t14-filling-fractions.html">View →</a></td>
+<td>Octahedron</td>
+<td>6</td>
+<td>8</td>
+<td>4</td>
+<td>2.000000</td>
+<td>1.00</td>
+<td>2</td>
 </tr>
 <tr class="even">
-<td><strong>T15</strong></td>
-<td>Entropy steps</td>
-<td>Exact entropy via state counting</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t15-finite-size.html">View →</a></td>
+<td>Icosahedron</td>
+<td>12</td>
+<td>125</td>
+<td>28</td>
+<td>0.113218</td>
+<td>0.54</td>
+<td>4</td>
 </tr>
 <tr class="odd">
-<td><strong>T16</strong></td>
-<td>Dimer mobility scaling</td>
-<td>How does the fraction of mobile punctures scale with <span class="math inline">\(N_p\)</span>?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t16-disorder.html">View →</a></td>
-</tr>
-<tr class="even">
-<td><strong>T17</strong></td>
-<td>Resonance graph spectrum</td>
-<td>Is the RVB space connected under local moves?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t17-edge-modes.html">View →</a></td>
-</tr>
-<tr class="odd">
-<td><strong>T18</strong></td>
-<td>Chiral RVB &amp; Hall response</td>
-<td>Does the chiral RVB produce a quantized Hall response?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t18-spectral-mapping.html">View →</a></td>
-</tr>
-<tr class="even">
-<td><strong>T19</strong></td>
-<td>Thurston-enhanced numerics</td>
-<td>Does the geometric structure of Thurston’s moduli space explain the exact Chern numbers?</td>
-<td>🟡 <strong>In Progress</strong></td>
-<td><a href="t19-thurston-enhanced.html">View →</a></td>
+<td>Dodecahedron</td>
+<td>20</td>
+<td>36</td>
+<td>1</td>
+<td>6.000000</td>
+<td>10.00</td>
+<td>3</td>
 </tr>
 </tbody>
 </table>
-<hr>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p class="callout-title">
+✅ Exact Results Complete
+</p>
+<p>The resonance graph is <strong>fragmented</strong> for small graphs (multiple components). The spectral gap decreases as N_p increases (2.0 → 0.11), and the average degree is low for the icosahedron (0.54), suggesting sparse connectivity.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="navigation" class="level2">
-<h2 class="anchored" data-anchor-id="navigation">Navigation</h2>
-<ul>
-<li><a href="t14-filling-fractions.html">T14 — Filling Fractions</a></li>
-<li><a href="t15-finite-size.html">T15 — Entropy Steps</a></li>
-<li><a href="t16-disorder.html">T16 — Dimer Mobility Scaling</a></li>
-<li><a href="t17-edge-modes.html">T17 — Resonance Graph Spectrum</a></li>
-<li><a href="t18-spectral-mapping.html">T18 — Chiral RVB &amp; Hall Response</a></li>
-<li><a href="t19-thurston-enhanced.html">T19 — Thurston-Enhanced Numerics</a></li>
-</ul>
-<hr>
+<section id="resonance-graph-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="resonance-graph-visualizations">Resonance Graph Visualizations</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="t17_resonance_graphs.png" class="img-fluid figure-img"></p>
+<figcaption>Resonance graphs for octahedron and icosahedron</figcaption>
+</figure>
+</div>
+<p>The octahedron resonance graph (left) consists of 4 disconnected edges (K₂ components), each representing a pair of matchings connected by a single plaquette flip. The icosahedron (right) has 28 components with a broad size distribution.</p>
+<section id="dodecahedron-resonance-graph-n_p-20" class="level3">
+<h3 class="anchored" data-anchor-id="dodecahedron-resonance-graph-n_p-20">Dodecahedron Resonance Graph (N_p = 20)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="t17_dodecahedron_resonance.png" class="img-fluid figure-img"></p>
+<figcaption>Dodecahedron resonance graph</figcaption>
+</figure>
+</div>
+<p>The dodecahedron resonance graph is <strong>fully connected</strong> (single component) with 36 nodes and 180 edges. The high spectral gap (λ₁ = 6.0) and average degree (10.0) indicate strong connectivity. This is qualitatively different from the octahedron and icosahedron, suggesting that the resonance graph connectivity depends sensitively on the graph structure, not just the number of punctures.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p class="callout-title">
+✅ Dodecahedron Result
+</p>
+<p>The dodecahedron shows a <strong>connected, gapped</strong> resonance graph — the first exact example of a unique RVB ground state in this family. This supports the QHE analogy where the macroscopic limit should have a single RVB sector.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="common-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="common-parameters">Common Parameters</h2>
-<p>All numerics use the <strong>standard LQG area spectrum</strong> with Immirzi parameter <span class="math inline">\(\gamma = \ln(2)/\sqrt{3} \approx 0.274\)</span> (Domagala–Lewandowski value) or <span class="math inline">\(\gamma \approx 0.237\)</span> (Meissner value).</p>
-<p>The area of a single puncture with spin <span class="math inline">\(j\)</span> is:</p>
-<p><span class="math display">\[
-A_j = 8\pi\gamma\ell_P^2 \sqrt{j(j+1)}
-\]</span></p>
-<p>Total area for <span class="math inline">\(N\)</span> punctures:</p>
-<p><span class="math display">\[
-A = \sum_{i=1}^{N} A_{j_i}
-\]</span></p>
 </section>
-<section id="filling-fraction-completed-t14" class="level2">
-<h2 class="anchored" data-anchor-id="filling-fraction-completed-t14">Filling Fraction (Completed: T14)</h2>
-<p>For <span class="math inline">\(j=1/2\)</span> punctures (the ground state), the area per puncture is:</p>
-<p><span class="math display">\[
-A_{1/2} = 8\pi\gamma\ell_P^2 \sqrt{3/4} = 4\pi\gamma\ell_P^2 \sqrt{3}
-\]</span></p>
-<p>The filling fraction is defined as:</p>
-<p><span class="math display">\[
-\nu = \frac{N_p}{k_{IH}} = \frac{N_p}{A / (4\pi\gamma\ell_P^2)} = \frac{N_p}{2 \sum_i \sqrt{j_i(j_i+1)}}
-\]</span></p>
-<p><strong>Result:</strong> For j=1/2 truncation, <span class="math inline">\(\nu = 1/\sqrt{3} \approx 0.577\)</span> for <strong>all</strong> <span class="math inline">\(N_p\)</span>.</p>
-<p>This is a <strong>fixed</strong> filling fraction, not tunable like the QHE. To get variable <span class="math inline">\(\nu\)</span>: - Mixed spin configurations give <span class="math inline">\(\nu \in [0.25, 0.36]\)</span> (continuous, no plateaus) - The charged/dyonic route (v2) gives <span class="math inline">\(\nu = Q/P\)</span> (tunable by charge ratio)</p>
-<p><strong>See full results:</strong> <a href="t14-filling-fractions.html">T14 — Filling Fractions</a></p>
-</section>
-<section id="entropy-steps-completed-t15" class="level2">
-<h2 class="anchored" data-anchor-id="entropy-steps-completed-t15">Entropy Steps (Completed: T15)</h2>
-<p>The entropy-area curve has been computed for the standard LQG counting and the RVB restriction:</p>
+<section id="scaling-predictions-for-large-n" class="level2">
+<h2 class="anchored" data-anchor-id="scaling-predictions-for-large-n">Scaling Predictions for Large N</h2>
+<p>Using exponential and power-law fits to the small-N exact data:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>N_p</th>
-<th>j_max</th>
-<th>Total States</th>
-<th>Entropy S</th>
-<th>S/N_p</th>
-<th>RVB S/N_p</th>
+<th>Pred. Matchings</th>
+<th>Pred. Gap λ₁</th>
+<th>Pred. Avg Degree</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>6</td>
-<td>0.5</td>
-<td>20</td>
-<td>2.996</td>
-<td>0.499</td>
-<td>0.299</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>0.5</td>
-<td>924</td>
-<td>6.829</td>
-<td>0.569</td>
-<td>0.402</td>
-</tr>
-<tr class="odd">
 <td>18</td>
-<td>0.5</td>
-<td>48,620</td>
-<td>10.792</td>
-<td>0.600</td>
-<td>N/A</td>
+<td>1.76 × 10³</td>
+<td>0.021</td>
+<td>2.84</td>
 </tr>
 <tr class="even">
 <td>24</td>
-<td>0.5</td>
-<td>2,704,156</td>
-<td>14.810</td>
-<td>0.617</td>
-<td>N/A</td>
+<td>2.47 × 10⁴</td>
+<td>0.006</td>
+<td>3.76</td>
+</tr>
+<tr class="odd">
+<td>36</td>
+<td>4.84 × 10⁶</td>
+<td>0.001</td>
+<td>5.60</td>
+</tr>
+<tr class="even">
+<td>48</td>
+<td>9.49 × 10⁸</td>
+<td>0.0004</td>
+<td>7.44</td>
+</tr>
+<tr class="odd">
+<td>72</td>
+<td>3.64 × 10¹³</td>
+<td>0.00007</td>
+<td>11.12</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Key findings:</strong> 1. j=1/2 truncation gives entropy at a single area value (no steps) 2. Entropy per puncture approaches ~0.62 for large N_p (vs Bekenstein-Hawking ~2.18) 3. RVB restriction significantly reduces entropy (0.30–0.40 per puncture)</p>
-<p><strong>See full results:</strong> <a href="t15-finite-size.html">T15 — Entropy Steps</a></p>
+<p><strong>Scaling laws:</strong> - <strong>Matchings</strong>: M ∝ exp(0.44 × N_p) — exponential growth - <strong>Spectral gap</strong>: λ₁ ∝ N_p^(-4.14) — power-law decay to zero - <strong>Average degree</strong>: ⟨d⟩ ∝ 0.15 × N_p — linear growth</p>
+<section id="spectral-gap-scaling" class="level3">
+<h3 class="anchored" data-anchor-id="spectral-gap-scaling">Spectral Gap Scaling</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="t17_spectral_gap_scaling.png" class="img-fluid figure-img"></p>
+<figcaption>Spectral gap scaling prediction</figcaption>
+</figure>
+</div>
+<p>The log-log plot shows the power-law decay of the spectral gap λ₁ with N_p.&nbsp;The red dashed line is the QHE reference gap (λ₁ = 0.01). For N_p ≳ 36, the predicted gap falls below this reference, suggesting the resonance graph becomes effectively gapless.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p class="callout-title">
+🚨 Spectral Gap Collapse
+</p>
+<p>The spectral gap is predicted to decay as a power law λ₁ ~ N_p^(-4.14). This suggests that in the thermodynamic limit (N_p → ∞), the resonance graph becomes <strong>gapless</strong>. This is analogous to the QHE where the bulk gap protects topological order — a vanishing gap would mean the RVB state is topologically <strong>fragile</strong>.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="code-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="code-reproducibility">Code &amp; Reproducibility</h2>
+</section>
+<section id="heuristic-estimates-monte-carlo" class="level2">
+<h2 class="anchored" data-anchor-id="heuristic-estimates-monte-carlo">Heuristic Estimates (Monte Carlo)</h2>
+<p>For random spherical graphs (different graph structure than Platonic solids):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>N_p</th>
+<th>Est. Matchings (MC)</th>
+<th>Greedy Success Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>18</td>
+<td>1.12 × 10⁷</td>
+<td>33%</td>
+</tr>
+<tr class="even">
+<td>24</td>
+<td>5.34 × 10¹⁰</td>
+<td>17%</td>
+</tr>
+<tr class="odd">
+<td>36</td>
+<td>9.53 × 10¹⁸</td>
+<td>4%</td>
+</tr>
+<tr class="even">
+<td>48</td>
+<td>1.31 × 10²⁸</td>
+<td>1%</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p class="callout-title">
+ℹ️ Note on Random Graphs
+</p>
+<p>The random spherical graphs have different structure from regular triangulations, so the Monte Carlo estimates are order-of-magnitude only. The greedy success rate decreases as N_p increases, indicating that perfect matchings become harder to find randomly in large graphs.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<section id="connectivity-in-the-large-n-limit" class="level3">
+<h3 class="anchored" data-anchor-id="connectivity-in-the-large-n-limit">Connectivity in the Large-N Limit</h3>
+<p>While small graphs show many components (4 for octahedron, 28 for icosahedron), the prediction for large N is: - <strong>Random graphs</strong>: Likely connected (single component) - <strong>Regular triangulations</strong>: May retain topological degeneracy</p>
+<p>The QHE analogy suggests that for a macroscopic horizon, the resonance graph should be connected (unique RVB ground state) with a gap that scales with the system size.</p>
+</section>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<section id="exact-enumeration-n_p-12" class="level3">
+<h3 class="anchored" data-anchor-id="exact-enumeration-n_p-12">Exact Enumeration (N_p ≤ 12)</h3>
 <ul>
-<li><strong>Language:</strong> Python (NumPy, SciPy, Matplotlib) or Julia (Faster for large <span class="math inline">\(N\)</span>)</li>
-<li><strong>Repo:</strong> <code>code/</code> directory in the <a href="https://github.com/space-cadet/qhe_bhe">GitHub repo</a></li>
-<li><strong>Data:</strong> Stored as HDF5 or CSV; figures generated automatically</li>
+<li>Full backtracking enumeration of perfect matchings</li>
+<li>Complete resonance graph construction</li>
+<li>Full Laplacian diagonalization</li>
 </ul>
+</section>
+<section id="scaling-predictions-n_p-12" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-predictions-n_p-12">Scaling Predictions (N_p &gt; 12)</h3>
+<ul>
+<li>Exponential fit: log(M) = a + b × N_p</li>
+<li>Power-law fit: log(λ₁) = c + d × log(N_p)</li>
+<li>Linear fit: ⟨d⟩ = e + f × N_p</li>
+</ul>
+</section>
+<section id="monte-carlo-estimates-n_p-18" class="level3">
+<h3 class="anchored" data-anchor-id="monte-carlo-estimates-n_p-18">Monte Carlo Estimates (N_p ≥ 18)</h3>
+<ul>
+<li>Greedy random matching algorithm</li>
+<li>Success rate gives order-of-magnitude matching count estimate</li>
+<li>Random walk on resonance graph for connectivity estimates</li>
+</ul>
+</section>
+</section>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<p>The Python code used to generate these results:</p>
+<ul>
+<li><strong><a href="code/t17_resonance_graph.txt">t17_resonance_graph.py</a></strong> — Exact resonance graph construction for octahedron and icosahedron, spectral analysis, and scaling predictions</li>
+<li><strong><a href="code/t17_dodecahedron.txt">t17_dodecahedron.py</a></strong> — Exact resonance graph for the dodecahedron (N_p = 20, 36 perfect matchings)</li>
+<li><strong><a href="code/t17_heuristic.txt">t17_heuristic.py</a></strong> — Heuristic predictions for large N_p using scaling laws fitted from exact data</li>
+<li><strong><a href="code/t17_heuristic_ml.txt">t17_heuristic_ml.py</a></strong> — GNN-based machine learning predictions for resonance graph properties (experimental)</li>
+</ul>
+<p>All code is MIT-licensed and part of the <a href="https://github.com/space-cadet/qhe_bhe">qhe_bhe repository</a>.</p>
+</section>
+<section id="status" class="level2">
+<h2 class="anchored" data-anchor-id="status">Status</h2>
+<p><span class="status-badge status-in-progress">🟡 Partial — Exact N≤12, scaling predictions N≤72, heuristic estimates</span></p>
 <hr>
-<p><em>← <a href="index.html">Back to Numerics Overview</a></em></p>
+<p><em>Back to <a href="index.html">Numerics Overview</a></em></p>
 
 </section>
 

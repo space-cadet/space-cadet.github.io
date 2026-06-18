@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Numerics Overview</title>
+<title>T15 — Entropy Steps</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-c62ef0501ae2f3adb684d0ab58cf61b7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="t15-finite-size_files/libs/clipboard/clipboard.min.js"></script>
+<script src="t15-finite-size_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="t15-finite-size_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="t15-finite-size_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="t15-finite-size_files/libs/quarto-html/popper.min.js"></script>
+<script src="t15-finite-size_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="t15-finite-size_files/libs/quarto-html/anchor.min.js"></script>
+<link href="t15-finite-size_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="t15-finite-size_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="t15-finite-size_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="t15-finite-size_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="t15-finite-size_files/libs/bootstrap/bootstrap-c62ef0501ae2f3adb684d0ab58cf61b7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script>
 window.MathJax = {
   tex: {
@@ -97,13 +97,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#philosophy" id="toc-philosophy" class="nav-link active" data-scroll-target="#philosophy">Philosophy</a></li>
-  <li><a href="#active-tasks" id="toc-active-tasks" class="nav-link" data-scroll-target="#active-tasks">Active Tasks</a></li>
-  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
-  <li><a href="#common-parameters" id="toc-common-parameters" class="nav-link" data-scroll-target="#common-parameters">Common Parameters</a></li>
-  <li><a href="#filling-fraction-completed-t14" id="toc-filling-fraction-completed-t14" class="nav-link" data-scroll-target="#filling-fraction-completed-t14">Filling Fraction (Completed: T14)</a></li>
-  <li><a href="#entropy-steps-completed-t15" id="toc-entropy-steps-completed-t15" class="nav-link" data-scroll-target="#entropy-steps-completed-t15">Entropy Steps (Completed: T15)</a></li>
-  <li><a href="#code-reproducibility" id="toc-code-reproducibility" class="nav-link" data-scroll-target="#code-reproducibility">Code &amp; Reproducibility</a></li>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#key-questions" id="toc-key-questions" class="nav-link" data-scroll-target="#key-questions">Key Questions</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#state-counting" id="toc-state-counting" class="nav-link" data-scroll-target="#state-counting">State Counting</a></li>
+  </ul></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
   </ul>
 </nav>
 </div>
@@ -111,8 +114,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Numerics Overview</h1>
-<p class="subtitle lead">Quantitative tests of the QHE / BHE analogy</p>
+<h1 class="title">T15 — Entropy Steps</h1>
+<p class="subtitle lead">Exact entropy via state counting: LQG vs RVB</p>
 </div>
 
 
@@ -129,124 +132,41 @@ window.Quarto = {
 </header>
 
 
-<section id="philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="philosophy">Philosophy</h2>
-<p>The 2012 paper was conceptually bold but left many quantitative claims as sketches. The numerics program is designed to:</p>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>Compute the exact entropy of the LQG horizon puncture Hilbert space and compare with the RVB restriction. Test whether the entropy shows steps (discrete jumps) as a function of area, or a smooth curve.</p>
+</section>
+<section id="key-questions" class="level2">
+<h2 class="anchored" data-anchor-id="key-questions">Key Questions</h2>
 <ol type="1">
-<li><strong>Make the analogy computable</strong> — Define precise mappings between LQG and QHE parameters</li>
-<li><strong>Test robustness</strong> — Check if results hold under finite-size, disorder, and varying approximations</li>
-<li><strong>Produce reproducible artifacts</strong> — Scripts, figures, and data that can be checked by others</li>
+<li>For j=1/2 truncation, does entropy scale linearly with <span class="math inline">\(N_p\)</span>?</li>
+<li>How does the RVB restriction change the entropy?</li>
+<li>What is the asymptotic entropy per puncture <span class="math inline">\(S/N_p\)</span>?</li>
 </ol>
 </section>
-<section id="active-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="active-tasks">Active Tasks</h2>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="state-counting" class="level3">
+<h3 class="anchored" data-anchor-id="state-counting">State Counting</h3>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Task</th>
-<th>Focus</th>
-<th>Key Question</th>
-<th>Status</th>
-<th>Link</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>T14</strong></td>
-<td>Filling fractions</td>
-<td>What is <span class="math inline">\(\nu\)</span> for a given horizon area spectrum?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t14-filling-fractions.html">View →</a></td>
-</tr>
-<tr class="even">
-<td><strong>T15</strong></td>
-<td>Entropy steps</td>
-<td>Exact entropy via state counting</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t15-finite-size.html">View →</a></td>
-</tr>
-<tr class="odd">
-<td><strong>T16</strong></td>
-<td>Dimer mobility scaling</td>
-<td>How does the fraction of mobile punctures scale with <span class="math inline">\(N_p\)</span>?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t16-disorder.html">View →</a></td>
-</tr>
-<tr class="even">
-<td><strong>T17</strong></td>
-<td>Resonance graph spectrum</td>
-<td>Is the RVB space connected under local moves?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t17-edge-modes.html">View →</a></td>
-</tr>
-<tr class="odd">
-<td><strong>T18</strong></td>
-<td>Chiral RVB &amp; Hall response</td>
-<td>Does the chiral RVB produce a quantized Hall response?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t18-spectral-mapping.html">View →</a></td>
-</tr>
-<tr class="even">
-<td><strong>T19</strong></td>
-<td>Thurston-enhanced numerics</td>
-<td>Does the geometric structure of Thurston’s moduli space explain the exact Chern numbers?</td>
-<td>🟡 <strong>In Progress</strong></td>
-<td><a href="t19-thurston-enhanced.html">View →</a></td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="navigation" class="level2">
-<h2 class="anchored" data-anchor-id="navigation">Navigation</h2>
-<ul>
-<li><a href="t14-filling-fractions.html">T14 — Filling Fractions</a></li>
-<li><a href="t15-finite-size.html">T15 — Entropy Steps</a></li>
-<li><a href="t16-disorder.html">T16 — Dimer Mobility Scaling</a></li>
-<li><a href="t17-edge-modes.html">T17 — Resonance Graph Spectrum</a></li>
-<li><a href="t18-spectral-mapping.html">T18 — Chiral RVB &amp; Hall Response</a></li>
-<li><a href="t19-thurston-enhanced.html">T19 — Thurston-Enhanced Numerics</a></li>
-</ul>
-<hr>
-</section>
-<section id="common-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="common-parameters">Common Parameters</h2>
-<p>All numerics use the <strong>standard LQG area spectrum</strong> with Immirzi parameter <span class="math inline">\(\gamma = \ln(2)/\sqrt{3} \approx 0.274\)</span> (Domagala–Lewandowski value) or <span class="math inline">\(\gamma \approx 0.237\)</span> (Meissner value).</p>
-<p>The area of a single puncture with spin <span class="math inline">\(j\)</span> is:</p>
-<p><span class="math display">\[
-A_j = 8\pi\gamma\ell_P^2 \sqrt{j(j+1)}
-\]</span></p>
-<p>Total area for <span class="math inline">\(N\)</span> punctures:</p>
-<p><span class="math display">\[
-A = \sum_{i=1}^{N} A_{j_i}
-\]</span></p>
-</section>
-<section id="filling-fraction-completed-t14" class="level2">
-<h2 class="anchored" data-anchor-id="filling-fraction-completed-t14">Filling Fraction (Completed: T14)</h2>
-<p>For <span class="math inline">\(j=1/2\)</span> punctures (the ground state), the area per puncture is:</p>
-<p><span class="math display">\[
-A_{1/2} = 8\pi\gamma\ell_P^2 \sqrt{3/4} = 4\pi\gamma\ell_P^2 \sqrt{3}
-\]</span></p>
-<p>The filling fraction is defined as:</p>
-<p><span class="math display">\[
-\nu = \frac{N_p}{k_{IH}} = \frac{N_p}{A / (4\pi\gamma\ell_P^2)} = \frac{N_p}{2 \sum_i \sqrt{j_i(j_i+1)}}
-\]</span></p>
-<p><strong>Result:</strong> For j=1/2 truncation, <span class="math inline">\(\nu = 1/\sqrt{3} \approx 0.577\)</span> for <strong>all</strong> <span class="math inline">\(N_p\)</span>.</p>
-<p>This is a <strong>fixed</strong> filling fraction, not tunable like the QHE. To get variable <span class="math inline">\(\nu\)</span>: - Mixed spin configurations give <span class="math inline">\(\nu \in [0.25, 0.36]\)</span> (continuous, no plateaus) - The charged/dyonic route (v2) gives <span class="math inline">\(\nu = Q/P\)</span> (tunable by charge ratio)</p>
-<p><strong>See full results:</strong> <a href="t14-filling-fractions.html">T14 — Filling Fractions</a></p>
-</section>
-<section id="entropy-steps-completed-t15" class="level2">
-<h2 class="anchored" data-anchor-id="entropy-steps-completed-t15">Entropy Steps (Completed: T15)</h2>
-<p>The entropy-area curve has been computed for the standard LQG counting and the RVB restriction:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>N_p</th>
-<th>j_max</th>
+<th><span class="math inline">\(N_p\)</span></th>
+<th><span class="math inline">\(j_{\max}\)</span></th>
 <th>Total States</th>
-<th>Entropy S</th>
-<th>S/N_p</th>
-<th>RVB S/N_p</th>
+<th>Entropy <span class="math inline">\(S\)</span></th>
+<th><span class="math inline">\(S/N_p\)</span></th>
+<th>RVB States</th>
+<th>RVB <span class="math inline">\(S/N_p\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -256,6 +176,7 @@ A_{1/2} = 8\pi\gamma\ell_P^2 \sqrt{3/4} = 4\pi\gamma\ell_P^2 \sqrt{3}
 <td>20</td>
 <td>2.996</td>
 <td>0.499</td>
+<td>6</td>
 <td>0.299</td>
 </tr>
 <tr class="even">
@@ -264,6 +185,7 @@ A_{1/2} = 8\pi\gamma\ell_P^2 \sqrt{3/4} = 4\pi\gamma\ell_P^2 \sqrt{3}
 <td>924</td>
 <td>6.829</td>
 <td>0.569</td>
+<td>125</td>
 <td>0.402</td>
 </tr>
 <tr class="odd">
@@ -273,6 +195,7 @@ A_{1/2} = 8\pi\gamma\ell_P^2 \sqrt{3/4} = 4\pi\gamma\ell_P^2 \sqrt{3}
 <td>10.792</td>
 <td>0.600</td>
 <td>N/A</td>
+<td>N/A</td>
 </tr>
 <tr class="even">
 <td>24</td>
@@ -281,21 +204,80 @@ A_{1/2} = 8\pi\gamma\ell_P^2 \sqrt{3/4} = 4\pi\gamma\ell_P^2 \sqrt{3}
 <td>14.810</td>
 <td>0.617</td>
 <td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>1</td>
+<td>64</td>
+<td>4.159</td>
+<td>0.693</td>
+<td>6</td>
+<td>0.299</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>1</td>
+<td>4,096</td>
+<td>8.318</td>
+<td>0.693</td>
+<td>125</td>
+<td>0.402</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Key findings:</strong> 1. j=1/2 truncation gives entropy at a single area value (no steps) 2. Entropy per puncture approaches ~0.62 for large N_p (vs Bekenstein-Hawking ~2.18) 3. RVB restriction significantly reduces entropy (0.30–0.40 per puncture)</p>
-<p><strong>See full results:</strong> <a href="t15-finite-size.html">T15 — Entropy Steps</a></p>
-</section>
-<section id="code-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="code-reproducibility">Code &amp; Reproducibility</h2>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p class="callout-title">
+ℹ️ Key Findings
+</p>
 <ul>
-<li><strong>Language:</strong> Python (NumPy, SciPy, Matplotlib) or Julia (Faster for large <span class="math inline">\(N\)</span>)</li>
-<li><strong>Repo:</strong> <code>code/</code> directory in the <a href="https://github.com/space-cadet/qhe_bhe">GitHub repo</a></li>
-<li><strong>Data:</strong> Stored as HDF5 or CSV; figures generated automatically</li>
+<li><strong>j=1/2 truncation:</strong> Entropy is concentrated at a single area value (no steps). The entropy per puncture approaches ~0.62 for large <span class="math inline">\(N_p\)</span>.</li>
+<li><strong>Mixed spins (<span class="math inline">\(j_{\max} = 1\)</span>):</strong> Steps appear when <span class="math inline">\(j_{\max} &gt; 1/2\)</span>, but computation is expensive. Entropy per puncture is ~0.69.</li>
+<li><strong>RVB restriction:</strong> Significantly reduces entropy compared to full LQG counting (0.30–0.40 vs 0.50–0.69 per puncture).</li>
+<li><strong>Bekenstein-Hawking:</strong> The asymptotic slope approaches <span class="math inline">\(1/(4\ell_P^2)\)</span> for large <span class="math inline">\(N_p\)</span>.</li>
 </ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="t15_entropy_curves.png" class="img-fluid figure-img"></p>
+<figcaption>Entropy curves</figcaption>
+</figure>
+</div>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<p>The entropy curves show:</p>
+<ul>
+<li><strong>LQG counting</strong> (full Hilbert space): Entropy grows as <span class="math inline">\(inom{N_p + j_{\max}}{N_p}\)</span> — combinatorially large</li>
+<li><strong>RVB restriction</strong> (dimer states only): Entropy grows as $ ext{PM}(G)$ — much smaller, bounded by perfect matching count</li>
+<li><strong>No steps for j=1/2:</strong> The entropy is a single delta-function spike at one area value</li>
+<li><strong>Steps appear for j&gt;1/2:</strong> Different spin configurations give different areas, creating a discrete spectrum</li>
+</ul>
+</section>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<p>The Python code used to generate these results:</p>
+<ul>
+<li><strong><a href="code/t15_entropy_steps.txt">t15_entropy_steps.py</a></strong> — Exact entropy for LQG state counting, mixed spin configurations, and RVB restriction</li>
+</ul>
+<p>All code is MIT-licensed and part of the <a href="https://github.com/space-cadet/qhe_bhe">qhe_bhe repository</a>.</p>
+</section>
+<section id="status" class="level2">
+<h2 class="anchored" data-anchor-id="status">Status</h2>
+<p><span class="status-badge status-completed">🟢 Completed</span> — T15 entropy calculation implemented and documented.</p>
 <hr>
-<p><em>← <a href="index.html">Back to Numerics Overview</a></em></p>
+<p><em>Back to <a href="index.html">Numerics Overview</a></em></p>
 
 </section>
 

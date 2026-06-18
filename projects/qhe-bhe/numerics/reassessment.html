@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Numerics Overview</title>
+<title>Modern Reassessment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,38 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-c62ef0501ae2f3adb684d0ab58cf61b7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script>
-window.MathJax = {
-  tex: {
-    macros: {
-      "cs": "{\\mathrm{CS}}",
-      "SU": "{\\mathrm{SU}}",
-      "U": "{\\mathrm{U}}",
-      "sl": "{\\mathfrak{sl}}",
-      "su": "{\\mathfrak{su}}",
-      "u": "{\\mathfrak{u}}",
-      "Hh": "{\\mathcal{H}}",
-      "Aa": "{\\mathcal{A}}",
-      "Nn": "{\\mathcal{N}}",
-      "Ll": "{\\mathcal{L}}",
-      "Pp": "{\\mathcal{P}}",
-      "Ss": "{\\mathcal{S}}"
-    }
-  }
-};
-</script>
+<script src="reassessment_files/libs/clipboard/clipboard.min.js"></script>
+<script src="reassessment_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="reassessment_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="reassessment_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="reassessment_files/libs/quarto-html/popper.min.js"></script>
+<script src="reassessment_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="reassessment_files/libs/quarto-html/anchor.min.js"></script>
+<link href="reassessment_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="reassessment_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="reassessment_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="reassessment_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="reassessment_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -86,33 +66,19 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="quarto-light">
+<body class="fullcontent quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#philosophy" id="toc-philosophy" class="nav-link active" data-scroll-target="#philosophy">Philosophy</a></li>
-  <li><a href="#active-tasks" id="toc-active-tasks" class="nav-link" data-scroll-target="#active-tasks">Active Tasks</a></li>
-  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
-  <li><a href="#common-parameters" id="toc-common-parameters" class="nav-link" data-scroll-target="#common-parameters">Common Parameters</a></li>
-  <li><a href="#filling-fraction-completed-t14" id="toc-filling-fraction-completed-t14" class="nav-link" data-scroll-target="#filling-fraction-completed-t14">Filling Fraction (Completed: T14)</a></li>
-  <li><a href="#entropy-steps-completed-t15" id="toc-entropy-steps-completed-t15" class="nav-link" data-scroll-target="#entropy-steps-completed-t15">Entropy Steps (Completed: T15)</a></li>
-  <li><a href="#code-reproducibility" id="toc-code-reproducibility" class="nav-link" data-scroll-target="#code-reproducibility">Code &amp; Reproducibility</a></li>
-  </ul>
-</nav>
-</div>
+
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Numerics Overview</h1>
-<p class="subtitle lead">Quantitative tests of the QHE / BHE analogy</p>
+<h1 class="title">Modern Reassessment</h1>
+<p class="subtitle lead">What still holds, what needs updating, and what the 2012 paper left undone</p>
 </div>
 
 
@@ -129,174 +95,186 @@ window.Quarto = {
 </header>
 
 
-<section id="philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="philosophy">Philosophy</h2>
-<p>The 2012 paper was conceptually bold but left many quantitative claims as sketches. The numerics program is designed to:</p>
+<section id="qhebhe-modern-reassessment-memo" class="level1">
+<h1>QHE/BHE Modern Reassessment Memo</h1>
+<p><em>Drafted by Cloudy (云忆), 2026-05-26</em> <em>Based on: qhe_main.tex (602 lines), memory-bank T2-T8, correspondence records</em></p>
+<hr>
+<section id="historical-starting-point" class="level2">
+<h2 class="anchored" data-anchor-id="historical-starting-point">1. Historical Starting Point</h2>
+<p>Vaid (2012, arXiv:1208.3335) proposed that Loop Quantum Gravity isolated horizons and Quantum Hall Effect systems share a deep structural connection: - Both have Chern-Simons dynamics on 2+1D boundaries - Both have quantized, puncture-like degrees of freedom - Both exhibit step-like/quantized response functions - The area of the horizon maps to the Hall conductivity</p>
+<p>The paper was conceptually bold but technically incomplete. It made an identification (“horizons ARE QHE systems”) that went beyond what the mathematics could strictly prove.</p>
+</section>
+<section id="what-still-holds-the-durable-core" class="level2">
+<h2 class="anchored" data-anchor-id="what-still-holds-the-durable-core">2. What Still Holds (The Durable Core)</h2>
+<p>After 14 years and substantial post-2012 literature, these ingredients remain valid:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 32%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Claim</th>
+<th>Status</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Isolated horizons require CS boundary term for well-defined action</td>
+<td>✅ Solid</td>
+<td>Ashtekar et al.&nbsp;1999-2000; derivation in qhe_main.tex §4</td>
+</tr>
+<tr class="even">
+<td>Horizon punctures carry SU(2) degrees of freedom</td>
+<td>✅ Solid</td>
+<td>Standard LQG; area operator discreteness</td>
+</tr>
+<tr class="odd">
+<td>CS theory is the effective theory of QHE</td>
+<td>✅ Solid</td>
+<td>Tong 2016 review; Laughlin, Zhang et al.</td>
+</tr>
+<tr class="even">
+<td>Area ↔︎ Hall conductivity identification (Eq. 4.10)</td>
+<td>⚠️ Analogy</td>
+<td>Mathematically valid mapping, but physics justification needs tightening</td>
+</tr>
+<tr class="odd">
+<td>Step-like entropy ↔︎ QHE plateaus</td>
+<td>⚠️ Analogy</td>
+<td>Corichi’s numerics show steps, but direct mapping to Landau levels unproven</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(SL(2,\mathbb{Z})\)</span> duality on both sides</td>
+<td>✅ Intriguing</td>
+<td>Penrose-Terrell rotation argument for Lorentz → modular; QHE conductivities related by <span class="math inline">\(SL(2,\mathbb{Z})\)</span> transformations</td>
+</tr>
+<tr class="odd">
+<td>Punctures as anyons</td>
+<td>✅ Strengthened</td>
+<td>Pithis &amp; Ruiz Euler 2015 formalized this with braid groups and mapping class groups</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-needs-updating" class="level2">
+<h2 class="anchored" data-anchor-id="what-needs-updating">3. What Needs Updating</h2>
+<section id="the-strong-claim-must-be-softened" class="level3">
+<h3 class="anchored" data-anchor-id="the-strong-claim-must-be-softened">3.1 The Strong Claim Must Be Softened</h3>
+<p><strong>Old formulation:</strong> “The effective theory which describes the dynamics of punctures on the horizon is that of the Quantum Hall Effect.”</p>
+<p><strong>Modern formulation:</strong> “LQG isolated horizons and QHE systems share topological boundary data: a punctured 2D surface, Chern-Simons dynamics, quantized response, and anyonic/statistical degrees of freedom. The QHE provides a useful analogy and mathematical toolbox for understanding horizon physics, but the horizon is not literally a quantum Hall fluid.”</p>
+</section>
+<section id="gaps-to-fill" class="level3">
+<h3 class="anchored" data-anchor-id="gaps-to-fill">3.2 Gaps to Fill</h3>
 <ol type="1">
-<li><strong>Make the analogy computable</strong> — Define precise mappings between LQG and QHE parameters</li>
-<li><strong>Test robustness</strong> — Check if results hold under finite-size, disorder, and varying approximations</li>
-<li><strong>Produce reproducible artifacts</strong> — Scripts, figures, and data that can be checked by others</li>
+<li><p><strong>Landau level mapping:</strong> The paper asserts punctures correspond to Landau levels, but doesn’t show how the area spectrum maps to the cyclotron energy spectrum. Need: a derivation or argument showing <span class="math inline">\(A_j \sim E_n\)</span>.</p></li>
+<li><p><strong>Filling fraction interpretation:</strong> What is <span class="math inline">\(\nu\)</span> for a black hole? The paper defines it loosely. Need: a precise mapping between horizon parameters and QHE filling fractions.</p></li>
+<li><p><strong>Disorder and plateaus:</strong> The QHE plateaus arise from disorder localizing states. What is the “disorder” on a horizon? The paper mentions impurities but doesn’t specify.</p></li>
+<li><p><strong>Edge modes:</strong> The QHE has chiral edge modes. Do horizons have edge-mode analogs? Post-2012 work (Freidel-Livine-Pranzetti 2019/2020) developed gravitational edge modes, but this came after the paper.</p></li>
+<li><p><strong>Experimental prediction:</strong> The 2012 paper didn’t make a testable prediction. A modern version should either make one or honestly say why it’s not yet possible.</p></li>
 </ol>
 </section>
-<section id="active-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="active-tasks">Active Tasks</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Task</th>
-<th>Focus</th>
-<th>Key Question</th>
-<th>Status</th>
-<th>Link</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>T14</strong></td>
-<td>Filling fractions</td>
-<td>What is <span class="math inline">\(\nu\)</span> for a given horizon area spectrum?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t14-filling-fractions.html">View →</a></td>
-</tr>
-<tr class="even">
-<td><strong>T15</strong></td>
-<td>Entropy steps</td>
-<td>Exact entropy via state counting</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t15-finite-size.html">View →</a></td>
-</tr>
-<tr class="odd">
-<td><strong>T16</strong></td>
-<td>Dimer mobility scaling</td>
-<td>How does the fraction of mobile punctures scale with <span class="math inline">\(N_p\)</span>?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t16-disorder.html">View →</a></td>
-</tr>
-<tr class="even">
-<td><strong>T17</strong></td>
-<td>Resonance graph spectrum</td>
-<td>Is the RVB space connected under local moves?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t17-edge-modes.html">View →</a></td>
-</tr>
-<tr class="odd">
-<td><strong>T18</strong></td>
-<td>Chiral RVB &amp; Hall response</td>
-<td>Does the chiral RVB produce a quantized Hall response?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t18-spectral-mapping.html">View →</a></td>
-</tr>
-<tr class="even">
-<td><strong>T19</strong></td>
-<td>Thurston-enhanced numerics</td>
-<td>Does the geometric structure of Thurston’s moduli space explain the exact Chern numbers?</td>
-<td>🟡 <strong>In Progress</strong></td>
-<td><a href="t19-thurston-enhanced.html">View →</a></td>
-</tr>
-</tbody>
-</table>
+<section id="post-2012-literature-to-integrate" class="level3">
+<h3 class="anchored" data-anchor-id="post-2012-literature-to-integrate">3.3 Post-2012 Literature to Integrate</h3>
+<p><strong>Must cite:</strong> - Pithis &amp; Ruiz Euler 2015 (Phys. Rev.&nbsp;D 91, 064053) — anyonic punctures, braid groups - Pranzetti &amp; Sahlmann 2015 — SU(2) CS horizon Hilbert space - Ghosh, Noui &amp; Perez 2013/2014 — holographic degeneracy, local energy - Ben Achour, Mouchet &amp; Noui 2014 — analytic continuation of entropy - Ben Achour, Noui &amp; Perez 2016 — rotating BH state counting - Barbero &amp; Pranzetti 2022 review — modern entropy status</p>
+<p><strong>Should cite if discussing edge modes:</strong> - Freidel, Livine &amp; Pranzetti 2019 — gravitational edge modes - Freidel, Geiller &amp; Pranzetti 2020 — corner potentials and charges</p>
+<p><strong>Should cite if discussing topological order formally:</strong> - Nayak et al.&nbsp;2008 — non-abelian anyons review - Tong 2016 — QHE review (already in bibliography)</p>
+</section>
+</section>
+<section id="modern-core-claim-proposed" class="level2">
+<h2 class="anchored" data-anchor-id="modern-core-claim-proposed">4. Modern Core Claim (Proposed)</h2>
+<blockquote class="blockquote">
+<p>The useful modern claim is not that black-hole horizons literally reproduce the microscopic Quantum Hall Effect, but that LQG isolated horizons and QHE fluids share organizing topological data: a two-dimensional punctured surface, Chern-Simons dynamics, quantized or topological response, anyonic/statistical structure, and entropy controlled by boundary degrees of freedom.</p>
+</blockquote>
+<p>This claim is: - <strong>Defensible:</strong> All ingredients are now supported by post-2012 literature. - <strong>Modest enough:</strong> Doesn’t assert identity, only structural analogy. - <strong>Useful:</strong> Explains why the QHE toolbox (braid groups, topological order, edge modes) is relevant to horizon physics. - <strong>Falsifiable:</strong> If someone shows horizons don’t have CS dynamics or punctures aren’t anyonic, the claim weakens.</p>
+</section>
+<section id="the-citation-context" class="level2">
+<h2 class="anchored" data-anchor-id="the-citation-context">5. The Citation Context</h2>
+<p>The 2012 paper is not widely cited. This is partly because the field moved to adjacent tracks (analytic continuation, condensates, edge modes) and partly because the paper was technically incomplete. However, the physical intuition — punctures as topological defects, CS on boundaries, braid statistics — was present and publicly available.</p>
+<p>The correspondence records document that: - Etera Livine read the 2010 braid/tetrahedra paper in 2010 and connected it to group field theory braiding. - Livine acknowledged similar intuition in the 2017 Feller-Livine quantum-surface work, promised a citation, but didn’t follow through. - The post-2012 literature on anyonic horizons (Pithis/Ruiz Euler 2015) developed related terrain with greater mathematical rigor but did not cite the earlier braid-puncture thread.</p>
+<p>This is properly framed as a <strong>citation due diligence concern</strong>, not an accusation of misconduct. The earlier work identified conceptual terrain that later papers developed more rigorously. Standard scholarly practice would acknowledge that prior landscape.</p>
+</section>
+<section id="recommendations-for-the-new-paper" class="level2">
+<h2 class="anchored" data-anchor-id="recommendations-for-the-new-paper">6. Recommendations for the New Paper</h2>
+<section id="option-a-standalone-reassessment-note" class="level3">
+<h3 class="anchored" data-anchor-id="option-a-standalone-reassessment-note">Option A: Standalone Reassessment Note</h3>
+<p>A 10-15 page arXiv note that: 1. States the modern softened claim 2. Lists what holds, what doesn’t, and what remains open 3. Integrates post-2012 literature systematically 4. Identifies specific open questions for future work</p>
+</section>
+<section id="option-b-full-rewrite" class="level3">
+<h3 class="anchored" data-anchor-id="option-b-full-rewrite">Option B: Full Rewrite</h3>
+<p>A complete rewrite of qhe_main.tex that: 1. Keeps the strong CS derivation (§4) 2. Replaces “identification” language with “shared structure” language 3. Adds the Pithis/Ruiz Euler anyon formalism as a modern pillar 4. Addresses the 5 gaps listed in §3.2 5. Makes an honest assessment of what remains conjectural</p>
+</section>
+<section id="option-c-companion-paper" class="level3">
+<h3 class="anchored" data-anchor-id="option-c-companion-paper">Option C: Companion Paper</h3>
+<p>A new paper focused on a specific provable sub-claim, e.g.: - “Puncture anyons and the modular group: revisiting the QHE/BHE analogy” - “Chern-Simons on isolated horizons: what the QHE teaches us about boundary degrees of freedom”</p>
+</section>
+</section>
+<section id="open-questions" class="level2">
+<h2 class="anchored" data-anchor-id="open-questions">7. Open Questions</h2>
+<ol type="1">
+<li>Can the area spectrum be mapped to Landau levels quantitatively?</li>
+<li>Is there a disorder mechanism on horizons that produces plateau-like structure?</li>
+<li>Do horizons have edge-mode analogs, and if so, what are their properties?</li>
+<li>Can the <span class="math inline">\(SL(2,\mathbb{Z})\)</span> modular symmetry be made into a sharp theorem rather than an analogy?</li>
+<li>Is there any experimental signature that would distinguish “QHE-like” horizon physics from standard LQG entropy?</li>
+</ol>
 <hr>
 </section>
-<section id="navigation" class="level2">
-<h2 class="anchored" data-anchor-id="navigation">Navigation</h2>
-<ul>
-<li><a href="t14-filling-fractions.html">T14 — Filling Fractions</a></li>
-<li><a href="t15-finite-size.html">T15 — Entropy Steps</a></li>
-<li><a href="t16-disorder.html">T16 — Dimer Mobility Scaling</a></li>
-<li><a href="t17-edge-modes.html">T17 — Resonance Graph Spectrum</a></li>
-<li><a href="t18-spectral-mapping.html">T18 — Chiral RVB &amp; Hall Response</a></li>
-<li><a href="t19-thurston-enhanced.html">T19 — Thurston-Enhanced Numerics</a></li>
-</ul>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<ol type="1">
+<li>Decide: Note, rewrite, or companion paper?</li>
+<li>If rewrite: I can draft the new Introduction and §5 (modernized claims) immediately.</li>
+<li>If note: I can produce a full draft within a few hours.</li>
+<li>Deepak to review and correct any physics errors in my draft.</li>
+</ol>
+<p><strong>My recommendation:</strong> Start with Option A (reassessment note). It’s fast, establishes the modern framing, and sets up Option B or C as follow-ups. The note can explicitly say “this is a retrospective assessment, not a new technical result” which defuses skepticism while still claiming credit for the original intuition.</p>
+<hr>
+<p><em>End of memo. Ready to draft sections upon request.</em></p>
 <hr>
 </section>
-<section id="common-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="common-parameters">Common Parameters</h2>
-<p>All numerics use the <strong>standard LQG area spectrum</strong> with Immirzi parameter <span class="math inline">\(\gamma = \ln(2)/\sqrt{3} \approx 0.274\)</span> (Domagala–Lewandowski value) or <span class="math inline">\(\gamma \approx 0.237\)</span> (Meissner value).</p>
-<p>The area of a single puncture with spin <span class="math inline">\(j\)</span> is:</p>
-<p><span class="math display">\[
-A_j = 8\pi\gamma\ell_P^2 \sqrt{j(j+1)}
-\]</span></p>
-<p>Total area for <span class="math inline">\(N\)</span> punctures:</p>
-<p><span class="math display">\[
-A = \sum_{i=1}^{N} A_{j_i}
-\]</span></p>
+<section id="gpt-5.5-comments-2026-05-27" class="level2">
+<h2 class="anchored" data-anchor-id="gpt-5.5-comments-2026-05-27">GPT 5.5 Comments (2026-05-27)</h2>
+<p>This memo is a strong historical and strategic framing document. Its main value is that it separates the durable core of the 2012 proposal from the stronger claims that need to be softened. The central baseline should remain:</p>
+<blockquote class="blockquote">
+<p>LQG isolated horizons and QHE systems share topological boundary data, but this does not by itself establish that black-hole horizons are literally QHE fluids.</p>
+</blockquote>
+<p>The memo should now be read alongside the newer <code>qhe_bhe_v2.tex</code> direction. The reassessment note answers the retrospective question:</p>
+<blockquote class="blockquote">
+<p>What survives from the 2012 proposal?</p>
+</blockquote>
+<p>The new <code>qhe_bhe_v2</code> project asks a sharper forward-looking question:</p>
+<blockquote class="blockquote">
+<p>What calculation would establish a direct dynamical QHE/BHE correspondence?</p>
+</blockquote>
+<p>That changes the role of this memo. It should probably serve as the historical/contextual preface to the new project rather than as the final destination.</p>
+<section id="points-to-treat-with-extra-caution" class="level3">
+<h3 class="anchored" data-anchor-id="points-to-treat-with-extra-caution">Points to Treat with Extra Caution</h3>
+<p>The entries involving area/Hall-conductivity identification, entropy plateaus, and <span class="math inline">\(SL(2,\mathbb{Z})\)</span> modular structure should remain explicitly marked as analogical until rebuilt in a more precise framework. They are interesting, but they are also the easiest places for a skeptical reader to challenge the argument.</p>
+<p>The statement that the modern core claim is “falsifiable” should also be sharpened. In the isolated-horizon setting, Chern-Simons boundary dynamics is already part of the standard structure. The vulnerable point is narrower: whether the horizon Chern-Simons and puncture data support a QHE-like dynamical response.</p>
 </section>
-<section id="filling-fraction-completed-t14" class="level2">
-<h2 class="anchored" data-anchor-id="filling-fraction-completed-t14">Filling Fraction (Completed: T14)</h2>
-<p>For <span class="math inline">\(j=1/2\)</span> punctures (the ground state), the area per puncture is:</p>
-<p><span class="math display">\[
-A_{1/2} = 8\pi\gamma\ell_P^2 \sqrt{3/4} = 4\pi\gamma\ell_P^2 \sqrt{3}
-\]</span></p>
-<p>The filling fraction is defined as:</p>
-<p><span class="math display">\[
-\nu = \frac{N_p}{k_{IH}} = \frac{N_p}{A / (4\pi\gamma\ell_P^2)} = \frac{N_p}{2 \sum_i \sqrt{j_i(j_i+1)}}
-\]</span></p>
-<p><strong>Result:</strong> For j=1/2 truncation, <span class="math inline">\(\nu = 1/\sqrt{3} \approx 0.577\)</span> for <strong>all</strong> <span class="math inline">\(N_p\)</span>.</p>
-<p>This is a <strong>fixed</strong> filling fraction, not tunable like the QHE. To get variable <span class="math inline">\(\nu\)</span>: - Mixed spin configurations give <span class="math inline">\(\nu \in [0.25, 0.36]\)</span> (continuous, no plateaus) - The charged/dyonic route (v2) gives <span class="math inline">\(\nu = Q/P\)</span> (tunable by charge ratio)</p>
-<p><strong>See full results:</strong> <a href="t14-filling-fractions.html">T14 — Filling Fractions</a></p>
+<section id="revised-strategic-recommendation" class="level3">
+<h3 class="anchored" data-anchor-id="revised-strategic-recommendation">Revised Strategic Recommendation</h3>
+<p>The best path now looks like:</p>
+<ol type="1">
+<li>Keep this memo as the retrospective reassessment of the 2012 paper.</li>
+<li>Use it to motivate why the QHE/BHE idea deserves a second look.</li>
+<li>Let <code>qhe_bhe_v2.tex</code> become the forward technical paper.</li>
+<li>Focus the new paper on the missing dynamical step: charged or dyonic horizons, horizon-fluid response, a well-defined horizon current, and a Hall-type response coefficient.</li>
+</ol>
+<p>In other words, the old question was:</p>
+<blockquote class="blockquote">
+<p>Are black-hole horizons QHE systems?</p>
+</blockquote>
+<p>The better modern question is:</p>
+<blockquote class="blockquote">
+<p>Under what conditions can a charged or dyonic black-hole horizon exhibit QHE-like transport?</p>
+</blockquote>
+<p>That formulation keeps the ambition while making the project concrete.</p>
 </section>
-<section id="entropy-steps-completed-t15" class="level2">
-<h2 class="anchored" data-anchor-id="entropy-steps-completed-t15">Entropy Steps (Completed: T15)</h2>
-<p>The entropy-area curve has been computed for the standard LQG counting and the RVB restriction:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>N_p</th>
-<th>j_max</th>
-<th>Total States</th>
-<th>Entropy S</th>
-<th>S/N_p</th>
-<th>RVB S/N_p</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>6</td>
-<td>0.5</td>
-<td>20</td>
-<td>2.996</td>
-<td>0.499</td>
-<td>0.299</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>0.5</td>
-<td>924</td>
-<td>6.829</td>
-<td>0.569</td>
-<td>0.402</td>
-</tr>
-<tr class="odd">
-<td>18</td>
-<td>0.5</td>
-<td>48,620</td>
-<td>10.792</td>
-<td>0.600</td>
-<td>N/A</td>
-</tr>
-<tr class="even">
-<td>24</td>
-<td>0.5</td>
-<td>2,704,156</td>
-<td>14.810</td>
-<td>0.617</td>
-<td>N/A</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Key findings:</strong> 1. j=1/2 truncation gives entropy at a single area value (no steps) 2. Entropy per puncture approaches ~0.62 for large N_p (vs Bekenstein-Hawking ~2.18) 3. RVB restriction significantly reduces entropy (0.30–0.40 per puncture)</p>
-<p><strong>See full results:</strong> <a href="t15-finite-size.html">T15 — Entropy Steps</a></p>
 </section>
-<section id="code-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="code-reproducibility">Code &amp; Reproducibility</h2>
-<ul>
-<li><strong>Language:</strong> Python (NumPy, SciPy, Matplotlib) or Julia (Faster for large <span class="math inline">\(N\)</span>)</li>
-<li><strong>Repo:</strong> <code>code/</code> directory in the <a href="https://github.com/space-cadet/qhe_bhe">GitHub repo</a></li>
-<li><strong>Data:</strong> Stored as HDF5 or CSV; figures generated automatically</li>
-</ul>
-<hr>
-<p><em>← <a href="index.html">Back to Numerics Overview</a></em></p>
-
 </section>
 
 </main>
@@ -702,7 +680,6 @@ A_{1/2} = 8\pi\gamma\ell_P^2 \sqrt{3/4} = 4\pi\gamma\ell_P^2 \sqrt{3}
   });
   </script>
 </div> <!-- /content -->
-<script src="table-scroll.js"></script>
 
 
 

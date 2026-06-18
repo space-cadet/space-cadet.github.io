@@ -1,0 +1,886 @@
+:root {
+  --primary-color: #2c5282;
+  --secondary-color: #4a6fa5;
+  --accent-color: #e53e3e;
+  --bg-color: #f7fafc;
+  --text-color: #2d3748;
+  --border-color: #e2e8f0;
+  --table-header-bg: #edf2f7;
+  --table-row-alt: #f8fafc;
+  --success-color: #38a169;
+  --warning-color: #d69e2e;
+  --info-color: #3182ce;
+  --danger-color: #e53e3e;
+  --card-bg: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+}
+
+/* Page layout — override Bootstrap's narrow article layout */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-color);
+  background: var(--bg-color);
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Override Quarto/Bootstrap content width constraints */
+#quarto-content {
+  max-width: 100% !important;
+}
+
+#quarto-document-content {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+  width: 100% !important;
+}
+
+/* Remove sidebar space on mobile */
+@media (max-width: 991px) {
+  .sidebar-navigation {
+    display: none !important;
+  }
+  
+  #quarto-document-content {
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+  }
+  
+  .quarto-title-block {
+    padding: 2rem 1rem !important;
+  }
+}
+
+/* Title styling */
+#title-block-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 3rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 100%;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Card sections */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.card-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* ===== TABLE STYLING — RESPONSIVE ===== */
+/* All tables are wrapped in a scrollable container on small screens */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--card-bg);
+  display: table;
+  min-width: 500px; /* Prevents excessive squishing */
+}
+
+/* On mobile: wrap the table's parent in a scrollable container */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+}
+
+/* For tables inside sections/articles, ensure horizontal scroll */
+section table,
+article table,
+.table-responsive table,
+.table-wrapper table {
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+  width: 100%;
+  min-width: 500px;
+  display: table;
+}
+
+@media (max-width: 768px) {
+  section table,
+  article table,
+  .table-responsive table,
+  .table-wrapper table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.table-responsive,
+.table-wrapper {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  -webkit-overflow-scrolling: touch;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+thead {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap; /* Prevent header wrapping */
+}
+
+td {
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.15s ease;
+  white-space: nowrap; /* Prevent cell content wrapping on desktop */
+}
+
+/* Allow cell wrapping on very small screens */
+@media (max-width: 480px) {
+  td {
+    white-space: normal;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  th {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+tr:nth-child(even) {
+  background: var(--table-row-alt);
+}
+
+tr:hover {
+  background: #e2e8f0;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table caption */
+table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Mobile: force horizontal scroll on tables */
+@media (max-width: 768px) {
+  table {
+    min-width: 100%;
+  }
+  
+  .table-responsive table,
+  .table-wrapper table {
+    min-width: 500px;
+  }
+  
+  /* Make tables scrollable on mobile by wrapping in a container */
+  .table-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease;
+  margin: 0.5rem 0;
+}
+
+.status-badge:hover {
+  transform: translateY(-1px);
+}
+
+.status-completed {
+  background: linear-gradient(135deg, #c6f6d5, #9ae6b4);
+  color: #22543d;
+}
+
+.status-in-progress {
+  background: linear-gradient(135deg, #fefcbf, #faf089);
+  color: #744210;
+}
+
+.status-planned {
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e0);
+  color: #2d3748;
+}
+
+/* ===== FIGURE STYLING — prevent overflow ===== */
+figure {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+figure:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* CRITICAL: constrain image to figure container */
+figure img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  border-radius: var(--radius-sm);
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Mobile: reduce figure padding */
+@media (max-width: 768px) {
+  figure {
+    padding: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  figure img {
+    max-width: 100%;
+  }
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #718096;
+  margin-top: 0.75rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* ===== CALLOUT BOXES ===== */
+.callout {
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 5px solid;
+  border-radius: var(--radius-md);
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.callout::before {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  opacity: 0.15;
+  font-weight: 700;
+}
+
+.callout-note {
+  border-left-color: var(--info-color);
+  background: linear-gradient(90deg, #ebf8ff 0%, #ffffff 100%);
+}
+
+.callout-note::before {
+  content: 'ℹ️';
+}
+
+.callout-success {
+  border-left-color: var(--success-color);
+  background: linear-gradient(90deg, #f0fff4 0%, #ffffff 100%);
+}
+
+.callout-success::before {
+  content: '✅';
+}
+
+.callout-warning {
+  border-left-color: var(--warning-color);
+  background: linear-gradient(90deg, #fffff0 0%, #ffffff 100%);
+}
+
+.callout-warning::before {
+  content: '⚠️';
+}
+
+.callout-danger {
+  border-left-color: var(--danger-color);
+  background: linear-gradient(90deg, #fff5f5 0%, #ffffff 100%);
+}
+
+.callout-danger::before {
+  content: '🚨';
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  padding-right: 2rem; /* Make room for icon */
+}
+
+.callout p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.callout p:first-child {
+  margin-top: 0;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout-note .callout-title {
+  color: var(--info-color);
+}
+
+.callout-success .callout-title {
+  color: var(--success-color);
+}
+
+.callout-warning .callout-title {
+  color: var(--warning-color);
+}
+
+.callout-danger .callout-title {
+  color: var(--danger-color);
+}
+
+/* Mobile callouts */
+@media (max-width: 768px) {
+  .callout {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .callout-title {
+    font-size: 1rem;
+  }
+}
+
+/* Section headers */
+h2 {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  margin-top: 3rem;
+  font-weight: 800;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+  word-wrap: break-word;
+}
+
+h3 {
+  color: var(--secondary-color);
+  margin-top: 2rem;
+  font-weight: 700;
+  font-size: 1.35rem;
+  word-wrap: break-word;
+}
+
+h4 {
+  color: var(--text-color);
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  word-wrap: break-word;
+}
+
+/* Mobile headers */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+  
+  h4 {
+    font-size: 1.05rem;
+  }
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+a:hover {
+  border-bottom-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* Math styling */
+.math {
+  font-size: 1.05em;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+/* Prevent math overflow on mobile */
+@media (max-width: 768px) {
+  .math {
+    font-size: 0.95em;
+  }
+  
+  mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    display: inline-block;
+  }
+}
+
+/* Code blocks */
+pre {
+  background: #1a202c;
+  color: #e2e8f0;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  box-shadow: var(--shadow-md);
+  border: 1px solid #2d3748;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+code {
+  background: #edf2f7;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85em;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  word-wrap: break-word;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-weight: 400;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+/* Syntax highlighting colors */
+pre .kw { color: #ff79c6; } /* keyword */
+pre .str { color: #f1fa8c; } /* string */
+pre .num { color: #bd93f9; } /* number */
+pre .com { color: #6272a4; } /* comment */
+pre .fun { color: #50fa7b; } /* function */
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+li > ul, li > ol {
+  margin-top: 0.5rem;
+}
+
+/* Mobile lists */
+@media (max-width: 768px) {
+  ul, ol {
+    padding-left: 1.25rem;
+  }
+  
+  li {
+    margin: 0.4rem 0;
+  }
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  padding: 0.6rem 1.25rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-links a:hover {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-bottom: none;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .title {
+    font-size: 1.85rem;
+  }
+  
+  .subtitle {
+    font-size: 1.05rem;
+  }
+  
+  .card {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+  }
+  
+  .nav-links a {
+    text-align: center;
+  }
+  
+  pre {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  #title-block-header {
+    padding: 2rem 1rem;
+  }
+  
+  .status-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  table {
+    font-size: 0.8rem;
+  }
+  
+  .table-responsive table,
+  .table-wrapper table {
+    min-width: 400px;
+  }
+  
+  th, td {
+    padding: 0.5rem 0.6rem;
+  }
+  
+  figure {
+    padding: 0.5rem;
+  }
+  
+  figcaption {
+    font-size: 0.8rem;
+  }
+  
+  .callout {
+    padding: 0.875rem 1rem;
+  }
+  
+  .callout::before {
+    font-size: 1.2rem;
+    top: 0.5rem;
+    right: 0.75rem;
+  }
+  
+  h2 {
+    font-size: 1.35rem;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* Ensure all tables are scrollable via JS wrapper on mobile */
+.table-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  max-width: 100%;
+}
+
+.table-scroll-wrapper table {
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  min-width: 500px;
+  display: table;
+}
+
+/* Mobile: force horizontal scroll on all tables */
+@media (max-width: 768px) {
+  .table-scroll-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .table-scroll-wrapper table {
+    display: table !important;
+    min-width: 500px !important;
+  }
+  
+  .table-scroll-wrapper table thead,
+  .table-scroll-wrapper table tbody,
+  .table-scroll-wrapper table tr,
+  .table-scroll-wrapper table td,
+  .table-scroll-wrapper table th {
+    white-space: nowrap !important;
+  }
+}
+
+/* Scrollbar styling for table wrappers */
+.table-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+@media print {
+  #title-block-header {
+    background: white;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  .nav-links,
+  .sidebar-navigation {
+    display: none !important;
+  }
+  
+  figure {
+    break-inside: avoid;
+  }
+  
+  table {
+    break-inside: avoid;
+  }
+  
+  .callout {
+    break-inside: avoid;
+    border: 1px solid var(--border-color);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--secondary-color);
+  color: white;
+}
+
+/* Focus styles for accessibility */
+a:focus, button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Ensure paragraphs wrap properly */
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.7;
+  margin: 1rem 0;
+}
+
+/* Prevent horizontal overflow on the whole page */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Override Bootstrap's figure margin which can cause issues */
+.figure {
+  margin: 2rem 0 !important;
+}
+
+.figure-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Quarto-specific overrides */
+.quarto-title-block {
+  margin-bottom: 2rem;
+}
+
+/* Anchor links */
+.anchorjs-link {
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.anchorjs-link:hover {
+  opacity: 1;
+}
+
+/* Mobile: ensure content takes full width */
+@media (max-width: 991px) {
+  .page-layout-article .content {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .page-layout-article main {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .page-columns {
+    display: block !important;
+  }
+  
+  .column-page-left,
+  .column-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}
+
+/* Ensure table containers don't overflow */
+.table-responsive {
+  max-width: 100%;
+}

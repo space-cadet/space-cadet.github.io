@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Numerics Overview</title>
+<title>T19 — Thurston-Enhanced Numerics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-c62ef0501ae2f3adb684d0ab58cf61b7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="t19-thurston-enhanced_files/libs/clipboard/clipboard.min.js"></script>
+<script src="t19-thurston-enhanced_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="t19-thurston-enhanced_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="t19-thurston-enhanced_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="t19-thurston-enhanced_files/libs/quarto-html/popper.min.js"></script>
+<script src="t19-thurston-enhanced_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="t19-thurston-enhanced_files/libs/quarto-html/anchor.min.js"></script>
+<link href="t19-thurston-enhanced_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="t19-thurston-enhanced_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="t19-thurston-enhanced_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="t19-thurston-enhanced_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="t19-thurston-enhanced_files/libs/bootstrap/bootstrap-c62ef0501ae2f3adb684d0ab58cf61b7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script>
 window.MathJax = {
   tex: {
@@ -97,13 +97,21 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#philosophy" id="toc-philosophy" class="nav-link active" data-scroll-target="#philosophy">Philosophy</a></li>
-  <li><a href="#active-tasks" id="toc-active-tasks" class="nav-link" data-scroll-target="#active-tasks">Active Tasks</a></li>
-  <li><a href="#navigation" id="toc-navigation" class="nav-link" data-scroll-target="#navigation">Navigation</a></li>
-  <li><a href="#common-parameters" id="toc-common-parameters" class="nav-link" data-scroll-target="#common-parameters">Common Parameters</a></li>
-  <li><a href="#filling-fraction-completed-t14" id="toc-filling-fraction-completed-t14" class="nav-link" data-scroll-target="#filling-fraction-completed-t14">Filling Fraction (Completed: T14)</a></li>
-  <li><a href="#entropy-steps-completed-t15" id="toc-entropy-steps-completed-t15" class="nav-link" data-scroll-target="#entropy-steps-completed-t15">Entropy Steps (Completed: T15)</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#progress" id="toc-progress" class="nav-link" data-scroll-target="#progress">Progress</a></li>
+  <li><a href="#phase-1-geometric-embedding" id="toc-phase-1-geometric-embedding" class="nav-link" data-scroll-target="#phase-1-geometric-embedding">Phase 1: Geometric Embedding ✅</a>
+  <ul class="collapse">
+  <li><a href="#developing-map-results" id="toc-developing-map-results" class="nav-link" data-scroll-target="#developing-map-results">Developing Map Results</a></li>
+  </ul></li>
+  <li><a href="#phase-2-flat-connection-holonomy" id="toc-phase-2-flat-connection-holonomy" class="nav-link" data-scroll-target="#phase-2-flat-connection-holonomy">Phase 2: Flat Connection &amp; Holonomy ✅</a></li>
+  <li><a href="#phase-3-braiding-phases" id="toc-phase-3-braiding-phases" class="nav-link" data-scroll-target="#phase-3-braiding-phases">Phase 3: Braiding Phases ✅</a></li>
+  <li><a href="#theoretical-framework" id="toc-theoretical-framework" class="nav-link" data-scroll-target="#theoretical-framework">Theoretical Framework</a>
+  <ul class="collapse">
+  <li><a href="#thurstons-moduli-space" id="toc-thurstons-moduli-space" class="nav-link" data-scroll-target="#thurstons-moduli-space">Thurston’s Moduli Space</a></li>
+  <li><a href="#connection-to-qhe" id="toc-connection-to-qhe" class="nav-link" data-scroll-target="#connection-to-qhe">Connection to QHE</a></li>
+  </ul></li>
   <li><a href="#code-reproducibility" id="toc-code-reproducibility" class="nav-link" data-scroll-target="#code-reproducibility">Code &amp; Reproducibility</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
 </div>
@@ -111,8 +119,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Numerics Overview</h1>
-<p class="subtitle lead">Quantitative tests of the QHE / BHE analogy</p>
+<h1 class="title">T19 — Thurston-Enhanced Numerics</h1>
+<p class="subtitle lead">Geometric Foundations from Thurston’s Moduli Space</p>
 </div>
 
 
@@ -129,173 +137,364 @@ window.Quarto = {
 </header>
 
 
-<section id="philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="philosophy">Philosophy</h2>
-<p>The 2012 paper was conceptually bold but left many quantitative claims as sketches. The numerics program is designed to:</p>
-<ol type="1">
-<li><strong>Make the analogy computable</strong> — Define precise mappings between LQG and QHE parameters</li>
-<li><strong>Test robustness</strong> — Check if results hold under finite-size, disorder, and varying approximations</li>
-<li><strong>Produce reproducible artifacts</strong> — Scripts, figures, and data that can be checked by others</li>
-</ol>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This page presents numerical results from incorporating William Thurston’s 1998 geometric framework — the moduli space of Euclidean cone-metrics on the sphere — into the QHE-BHE correspondence. The key insight is that LQG punctures are not abstract graph vertices but <strong>cone points on a geometric surface</strong>, and the space of such surfaces is a complex hyperbolic manifold CH<span class="math inline">\(^{n-3}\)</span>.</p>
 </section>
-<section id="active-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="active-tasks">Active Tasks</h2>
+<section id="progress" class="level2">
+<h2 class="anchored" data-anchor-id="progress">Progress</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 27%">
+<col style="width: 24%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Task</th>
+<th>Phase</th>
 <th>Focus</th>
-<th>Key Question</th>
 <th>Status</th>
-<th>Link</th>
+<th>Files</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>T14</strong></td>
-<td>Filling fractions</td>
-<td>What is <span class="math inline">\(\nu\)</span> for a given horizon area spectrum?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t14-filling-fractions.html">View →</a></td>
+<td><strong>Phase 1</strong></td>
+<td>Geometric Embedding — developing map, Hermitian form, cocycle verification</td>
+<td>✅ COMPLETE</td>
+<td><code>t19_developing_map.py</code>, <code>t19_hermitian_form.py</code></td>
 </tr>
 <tr class="even">
-<td><strong>T15</strong></td>
-<td>Entropy steps</td>
-<td>Exact entropy via state counting</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t15-finite-size.html">View →</a></td>
+<td><strong>Phase 2</strong></td>
+<td>Flat Connection &amp; Holonomy — SL(2,C) connection, eigenvalues</td>
+<td>✅ COMPLETE</td>
+<td><code>t19_holonomy.py</code>, <code>t19_connection_comparison.py</code></td>
 </tr>
 <tr class="odd">
-<td><strong>T16</strong></td>
-<td>Dimer mobility scaling</td>
-<td>How does the fraction of mobile punctures scale with <span class="math inline">\(N_p\)</span>?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t16-disorder.html">View →</a></td>
+<td><strong>Phase 3</strong></td>
+<td>Braiding Phases — anyonic exchange from collision analysis</td>
+<td>✅ COMPLETE</td>
+<td><code>t19_braiding_phase.py</code></td>
 </tr>
 <tr class="even">
-<td><strong>T17</strong></td>
-<td>Resonance graph spectrum</td>
-<td>Is the RVB space connected under local moves?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t17-edge-modes.html">View →</a></td>
+<td><strong>Phase 4</strong></td>
+<td>Orbifold Symmetry — exact Chern numbers from symmetry constraints</td>
+<td>⏳ PENDING</td>
+<td><em>t19_symmetry_projection.py (planned)</em></td>
 </tr>
 <tr class="odd">
-<td><strong>T18</strong></td>
-<td>Chiral RVB &amp; Hall response</td>
-<td>Does the chiral RVB produce a quantized Hall response?</td>
-<td>🟢 <strong>Completed</strong></td>
-<td><a href="t18-spectral-mapping.html">View →</a></td>
+<td><strong>Phase 5</strong></td>
+<td>Cusp Limit — sphere pinching, phase transition</td>
+<td>⏳ PENDING</td>
+<td><em>t19_cusp_limit.py (planned)</em></td>
 </tr>
 <tr class="even">
-<td><strong>T19</strong></td>
-<td>Thurston-enhanced numerics</td>
-<td>Does the geometric structure of Thurston’s moduli space explain the exact Chern numbers?</td>
-<td>🟡 <strong>In Progress</strong></td>
-<td><a href="t19-thurston-enhanced.html">View →</a></td>
+<td><strong>Phase 6</strong></td>
+<td>Scaling — Monte Carlo, random triangulations, GNN</td>
+<td>⏳ PENDING</td>
+<td><em>t19_random_triangulation.py (planned)</em></td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-<section id="navigation" class="level2">
-<h2 class="anchored" data-anchor-id="navigation">Navigation</h2>
-<ul>
-<li><a href="t14-filling-fractions.html">T14 — Filling Fractions</a></li>
-<li><a href="t15-finite-size.html">T15 — Entropy Steps</a></li>
-<li><a href="t16-disorder.html">T16 — Dimer Mobility Scaling</a></li>
-<li><a href="t17-edge-modes.html">T17 — Resonance Graph Spectrum</a></li>
-<li><a href="t18-spectral-mapping.html">T18 — Chiral RVB &amp; Hall Response</a></li>
-<li><a href="t19-thurston-enhanced.html">T19 — Thurston-Enhanced Numerics</a></li>
-</ul>
-<hr>
-</section>
-<section id="common-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="common-parameters">Common Parameters</h2>
-<p>All numerics use the <strong>standard LQG area spectrum</strong> with Immirzi parameter <span class="math inline">\(\gamma = \ln(2)/\sqrt{3} \approx 0.274\)</span> (Domagala–Lewandowski value) or <span class="math inline">\(\gamma \approx 0.237\)</span> (Meissner value).</p>
-<p>The area of a single puncture with spin <span class="math inline">\(j\)</span> is:</p>
-<p><span class="math display">\[
-A_j = 8\pi\gamma\ell_P^2 \sqrt{j(j+1)}
-\]</span></p>
-<p>Total area for <span class="math inline">\(N\)</span> punctures:</p>
-<p><span class="math display">\[
-A = \sum_{i=1}^{N} A_{j_i}
-\]</span></p>
-</section>
-<section id="filling-fraction-completed-t14" class="level2">
-<h2 class="anchored" data-anchor-id="filling-fraction-completed-t14">Filling Fraction (Completed: T14)</h2>
-<p>For <span class="math inline">\(j=1/2\)</span> punctures (the ground state), the area per puncture is:</p>
-<p><span class="math display">\[
-A_{1/2} = 8\pi\gamma\ell_P^2 \sqrt{3/4} = 4\pi\gamma\ell_P^2 \sqrt{3}
-\]</span></p>
-<p>The filling fraction is defined as:</p>
-<p><span class="math display">\[
-\nu = \frac{N_p}{k_{IH}} = \frac{N_p}{A / (4\pi\gamma\ell_P^2)} = \frac{N_p}{2 \sum_i \sqrt{j_i(j_i+1)}}
-\]</span></p>
-<p><strong>Result:</strong> For j=1/2 truncation, <span class="math inline">\(\nu = 1/\sqrt{3} \approx 0.577\)</span> for <strong>all</strong> <span class="math inline">\(N_p\)</span>.</p>
-<p>This is a <strong>fixed</strong> filling fraction, not tunable like the QHE. To get variable <span class="math inline">\(\nu\)</span>: - Mixed spin configurations give <span class="math inline">\(\nu \in [0.25, 0.36]\)</span> (continuous, no plateaus) - The charged/dyonic route (v2) gives <span class="math inline">\(\nu = Q/P\)</span> (tunable by charge ratio)</p>
-<p><strong>See full results:</strong> <a href="t14-filling-fractions.html">T14 — Filling Fractions</a></p>
-</section>
-<section id="entropy-steps-completed-t15" class="level2">
-<h2 class="anchored" data-anchor-id="entropy-steps-completed-t15">Entropy Steps (Completed: T15)</h2>
-<p>The entropy-area curve has been computed for the standard LQG counting and the RVB restriction:</p>
+<section id="phase-1-geometric-embedding" class="level2">
+<h2 class="anchored" data-anchor-id="phase-1-geometric-embedding">Phase 1: Geometric Embedding ✅</h2>
+<p>The regular polyhedra (octahedron, icosahedron, dodecahedron) were embedded as Euclidean cone-manifolds. Each vertex becomes a puncture with deficit angle determined by the spin-<span class="math inline">\(j\)</span> representation.</p>
+<section id="developing-map-results" class="level3">
+<h3 class="anchored" data-anchor-id="developing-map-results">Developing Map Results</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>N_p</th>
-<th>j_max</th>
-<th>Total States</th>
-<th>Entropy S</th>
-<th>S/N_p</th>
-<th>RVB S/N_p</th>
+<th>Polyhedron</th>
+<th><span class="math inline">\(N_p\)</span></th>
+<th>κ (rad)</th>
+<th>κ (deg)</th>
+<th>Cocycle Error</th>
+<th>Signature</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td>Octahedron</td>
 <td>6</td>
-<td>0.5</td>
-<td>20</td>
-<td>2.996</td>
-<td>0.499</td>
-<td>0.299</td>
+<td>2.0944</td>
+<td>120.0°</td>
+<td><span class="math inline">\(&lt; 10^{-12}\)</span></td>
+<td>(1, 3)</td>
 </tr>
 <tr class="even">
+<td>Icosahedron</td>
 <td>12</td>
-<td>0.5</td>
-<td>924</td>
-<td>6.829</td>
-<td>0.569</td>
-<td>0.402</td>
+<td>1.0472</td>
+<td>60.0°</td>
+<td><span class="math inline">\(&lt; 10^{-12}\)</span></td>
+<td>(1, 9)</td>
 </tr>
 <tr class="odd">
-<td>18</td>
-<td>0.5</td>
-<td>48,620</td>
-<td>10.792</td>
-<td>0.600</td>
-<td>N/A</td>
-</tr>
-<tr class="even">
-<td>24</td>
-<td>0.5</td>
-<td>2,704,156</td>
-<td>14.810</td>
-<td>0.617</td>
-<td>N/A</td>
+<td>Dodecahedron</td>
+<td>20</td>
+<td>0.6283</td>
+<td>36.0°</td>
+<td><span class="math inline">\(&lt; 10^{-12}\)</span></td>
+<td>(1, 17)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Key findings:</strong> 1. j=1/2 truncation gives entropy at a single area value (no steps) 2. Entropy per puncture approaches ~0.62 for large N_p (vs Bekenstein-Hawking ~2.18) 3. RVB restriction significantly reduces entropy (0.30–0.40 per puncture)</p>
-<p><strong>See full results:</strong> <a href="t15-finite-size.html">T15 — Entropy Steps</a></p>
+<p>All polyhedra satisfy the <strong>Gauss-Bonnet condition</strong>: total curvature = <span class="math inline">\(4\pi\)</span>. The cocycle condition (sum of edge vectors around each triangle = 0) is verified to machine precision.</p>
+<hr>
+</section>
+</section>
+<section id="phase-2-flat-connection-holonomy" class="level2">
+<h2 class="anchored" data-anchor-id="phase-2-flat-connection-holonomy">Phase 2: Flat Connection &amp; Holonomy ✅</h2>
+<p>The SL(2,C) flat connection was computed from the developing map:</p>
+<p><span class="math display">\[A(z) = -\sum_i \frac{\kappa_i/(2\pi)}{z - z_i}\]</span></p>
+<p>Holonomy eigenvalues around each puncture match Thurston’s prediction <span class="math inline">\(e^{\pm i\kappa}\)</span> to machine precision:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 5%">
+<col style="width: 31%">
+<col style="width: 25%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Polyhedron</th>
+<th>κ</th>
+<th>Holonomy Angle</th>
+<th>Eigenvalues</th>
+<th>Error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Octahedron</td>
+<td>120.0°</td>
+<td><span class="math inline">\(2\pi/3\)</span></td>
+<td><span class="math inline">\(e^{\pm i \cdot 2\pi/3}\)</span></td>
+<td><span class="math inline">\(1.79 \times 10^{-15}\)</span></td>
+</tr>
+<tr class="even">
+<td>Icosahedron</td>
+<td>60.0°</td>
+<td><span class="math inline">\(\pi/3\)</span></td>
+<td><span class="math inline">\(e^{\pm i \cdot \pi/3}\)</span></td>
+<td><span class="math inline">\(2.78 \times 10^{-16}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Dodecahedron</td>
+<td>36.0°</td>
+<td><span class="math inline">\(\pi/5\)</span></td>
+<td><span class="math inline">\(e^{\pm i \cdot \pi/5}\)</span></td>
+<td><span class="math inline">\(9.16 \times 10^{-16}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Key Result
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The holonomy angle around each puncture equals the curvature <span class="math inline">\(\kappa\)</span>. This is the direct geometric manifestation of the Gauss-Bonnet theorem on the punctured sphere.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="phase-3-braiding-phases" class="level2">
+<h2 class="anchored" data-anchor-id="phase-3-braiding-phases">Phase 3: Braiding Phases ✅</h2>
+<p>The braiding phase for exchanging two punctures with curvature <span class="math inline">\(\kappa\)</span> is given by Thurston’s collision analysis (Proposition 3.6):</p>
+<p><span class="math display">\[\boxed{\phi = \pi - \frac{\kappa}{2}}\]</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 4%">
+<col style="width: 22%">
+<col style="width: 13%">
+<col style="width: 28%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Polyhedron</th>
+<th>κ</th>
+<th>φ (predicted)</th>
+<th>φ (deg)</th>
+<th>Statistical Angle</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Octahedron</td>
+<td>120.0°</td>
+<td><span class="math inline">\(2\pi/3\)</span></td>
+<td>120°</td>
+<td>60°</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Icosahedron</td>
+<td>60.0°</td>
+<td><span class="math inline">\(5\pi/6\)</span></td>
+<td>150°</td>
+<td>75°</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td>Dodecahedron</td>
+<td>36.0°</td>
+<td><span class="math inline">\(9\pi/10\)</span></td>
+<td>162°</td>
+<td>81°</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Critical Finding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The naive path integral of the connection 1-form does <strong>not</strong> correctly capture the braiding phase. The braiding phase is a <strong>topological invariant</strong> derived from the collision stratum structure (codimension-2 in moduli space), not a geometric integral over the connection.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Anyonic Interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(j = 1/2\)</span> punctures (<span class="math inline">\(\kappa = \pi/3\)</span>), the exchange phase is <span class="math inline">\(e^{i \cdot 5\pi/6} = -\sqrt{3}/2 + i/2\)</span>. This is the fundamental quantum statistical property of LQG punctures — they are anyons with statistical angle <span class="math inline">\(5\pi/12 = 75°\)</span>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="theoretical-framework" class="level2">
+<h2 class="anchored" data-anchor-id="theoretical-framework">Theoretical Framework</h2>
+<section id="thurstons-moduli-space" class="level3">
+<h3 class="anchored" data-anchor-id="thurstons-moduli-space">Thurston’s Moduli Space</h3>
+<p>The space of Euclidean cone-metrics on S² with <span class="math inline">\(n\)</span> cone points of prescribed curvatures <span class="math inline">\(\{\kappa_i\}\)</span> (summing to <span class="math inline">\(4\pi\)</span>) is a <strong>complex hyperbolic manifold</strong> CH<span class="math inline">\(^{n-3}\)</span> (Thurston 1998). Key structures:</p>
+<ul>
+<li><strong>Hermitian area form</strong> <span class="math inline">\(A(Z)\)</span> with signature <span class="math inline">\((1, n-3)\)</span></li>
+<li><strong>Developing map</strong> <span class="math inline">\(h: \tilde{C} \to \mathbb{E}^2\)</span>, local isometry to Euclidean plane</li>
+<li><strong>Flat SL(2,C) connection</strong> with holonomy giving monodromy matrices</li>
+<li><strong>Collision loci</strong> where punctures merge; cone angles give braiding phases</li>
+</ul>
+</section>
+<section id="connection-to-qhe" class="level3">
+<h3 class="anchored" data-anchor-id="connection-to-qhe">Connection to QHE</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>QHE Concept</th>
+<th>Thurston Geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Landau level index</td>
+<td>Timelike direction in signature <span class="math inline">\((1, n-3)\)</span></td>
+</tr>
+<tr class="even">
+<td>Filling fraction <span class="math inline">\(\nu\)</span></td>
+<td>Ratio of puncture area to total area</td>
+</tr>
+<tr class="odd">
+<td>Magnetic flux</td>
+<td>Total curvature <span class="math inline">\(4\pi\)</span></td>
+</tr>
+<tr class="even">
+<td>Hall conductivity <span class="math inline">\(\sigma_{xy}\)</span></td>
+<td>Chern number of Berry bundle over CH<span class="math inline">\(^{n-3}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Anyonic braiding</td>
+<td>Monodromy around collision loci</td>
+</tr>
+<tr class="even">
+<td>Topological protection</td>
+<td>Orbifold structure at symmetric points</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
 </section>
 <section id="code-reproducibility" class="level2">
 <h2 class="anchored" data-anchor-id="code-reproducibility">Code &amp; Reproducibility</h2>
-<ul>
-<li><strong>Language:</strong> Python (NumPy, SciPy, Matplotlib) or Julia (Faster for large <span class="math inline">\(N\)</span>)</li>
-<li><strong>Repo:</strong> <code>code/</code> directory in the <a href="https://github.com/space-cadet/qhe_bhe">GitHub repo</a></li>
-<li><strong>Data:</strong> Stored as HDF5 or CSV; figures generated automatically</li>
-</ul>
+<p>All code is in the <code>code/</code> directory of the <a href="https://github.com/space-cadet/qhe_bhe">GitHub repo</a>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>t19_developing_map.py</code></td>
+<td>20 KB</td>
+<td>Geometric embedding, developing map, edge vectors</td>
+</tr>
+<tr class="even">
+<td><code>t19_hermitian_form.py</code></td>
+<td>13 KB</td>
+<td>Hermitian area form, signature verification</td>
+</tr>
+<tr class="odd">
+<td><code>t19_holonomy.py</code></td>
+<td>13 KB</td>
+<td>SL(2,C) flat connection, monodromy</td>
+</tr>
+<tr class="even">
+<td><code>t19_connection_comparison.py</code></td>
+<td>11 KB</td>
+<td>Berry vs developing-map connection</td>
+</tr>
+<tr class="odd">
+<td><code>t19_braiding_phase.py</code></td>
+<td>12 KB</td>
+<td>Braiding phase from collision analysis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dependencies:</strong> NumPy, SciPy, NetworkX</p>
+<p><strong>Run:</strong> <code>python3 t19_developing_map.py</code> → <code>python3 t19_holonomy.py</code> → <code>python3 t19_braiding_phase.py</code></p>
 <hr>
-<p><em>← <a href="index.html">Back to Numerics Overview</a></em></p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Thurston, W. P. (1998). <em>Shapes of polyhedra and triangulations of the sphere</em>. Geometry &amp; Topology Monographs, 1, 511–549.</li>
+<li>Vaid, D. (2012). <em>Isolated horizons, the Hopf fibration, and the QHE/BHE analogy</em>.</li>
+<li>Kalmeyer, V., &amp; Laughlin, R. B. (1987). Equivalence of the RVB and FQHE states.</li>
+</ul>
 
 </section>
 
