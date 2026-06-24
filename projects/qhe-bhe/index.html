@@ -3,10 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=./numerics/index.html">
     <title>QHE-BHE Correspondence — Deepak Vaid</title>
+    <link rel="stylesheet" href="../../src/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Redirecting to <a href="./numerics/index.html">QHE-BHE Numerics</a>...</p>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="../../"><img src="../../favicon.svg" alt="Deepak Vaid" /></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../../#about">About</a></li>
+                    <li><a href="../../#research">Research</a></li>
+                    <li><a href="../../#publications">Publications</a></li>
+                    <li><a href="../">Projects</a></li>
+                    <li><a href="../../#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div style="margin-bottom: 1rem;">
+                <a href="../" style="color: var(--secondary-color);">← Back to Projects</a>
+            </div>
+            
+            <h1 class="section-title">QHE-BHE Correspondence</h1>
+            <p class="section-description">
+                Numerical investigation of the Quantum Hall Effect — Berry Holonomy Effect correspondence on triangulated spheres.
+            </p>
+
+            <div class="project-overview" style="background: var(--card-bg); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); margin: 2rem 0;">
+                <h2>Project Overview</h2>
+                <p>
+                    This project explores the correspondence between the Quantum Hall Effect (QHE) and the Berry Holonomy Effect (BHE) 
+                    on triangulated spheres. Through six phases of analysis — from Platonic solids to Monte Carlo scaling — we investigate 
+                    the geometric and topological properties of quantum states on discrete manifolds.
+                </p>
+                
+                <h3 style="margin-top: 1.5rem;">Key Areas</h3>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                    <li>Platonic solid geometries and their quantum properties</li>
+                    <li>Triangulated sphere discretization</li>
+                    <li>Berry phase and holonomy calculations</li>
+                    <li>Monte Carlo scaling analysis</li>
+                    <li>Finite-size scaling and critical phenomena</li>
+                </ul>
+
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="numerics/" class="repo-link" style="background: var(--primary-color); color: white; padding: 0.75rem 1.5rem; border-radius: var(--radius-md); text-decoration: none;">
+                        <i class="fas fa-calculator"></i> View Numerics
+                    </a>
+                    <a href="https://github.com/space-cadet/qhe_bhe" class="repo-link" target="_blank" style="padding: 0.75rem 1.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); text-decoration: none;">
+                        <i class="fab fa-github"></i> GitHub Repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="repo-tags" style="margin-top: 1rem;">
+                <span class="tag">Python</span>
+                <span class="tag">Quantum Physics</span>
+                <span class="tag">LQG</span>
+                <span class="tag">Visualization</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Deepak Vaid. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
