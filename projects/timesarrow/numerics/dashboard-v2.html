@@ -254,24 +254,32 @@ let dataLoaded = false;
 
 const DATA_URL = 'data/dashboard-data.json';
 const FIGS_URL = 'data/dashboard-figures.json';
+const DATA_FALLBACK = 'https://raw.githubusercontent.com/space-cadet/space-cadet.github.io/main/projects/timesarrow/numerics/data/dashboard-data.json';
+const FIGS_FALLBACK = 'https://raw.githubusercontent.com/space-cadet/space-cadet.github.io/main/projects/timesarrow/numerics/data/dashboard-figures.json';
 
 async function init() {
   const statusEl = document.getElementById('dataStatus');
   try {
-    const [dataRes, figRes] = await Promise.all([
-      fetch(DATA_URL).catch(() => null),
-      fetch(FIGS_URL).catch(() => null)
-    ]);
+    let dataRes = await fetch(DATA_URL).catch(() => null);
+    let figRes = await fetch(FIGS_URL).catch(() => null);
+
+    if (!dataRes || !dataRes.ok) {
+      statusEl.textContent = 'Local data not found, trying GitHub raw...';
+      dataRes = await fetch(DATA_FALLBACK).catch(() => null);
+    }
+    if (!figRes || !figRes.ok) {
+      figRes = await fetch(FIGS_FALLBACK).catch(() => null);
+    }
 
     let dataJson = null;
     let figsJson = null;
 
     if (dataRes && dataRes.ok) dataJson = await dataRes.json();
-    if (figRes && figRes.ok) figsJson = await figsJson.json();
+    if (figRes && figRes.ok) figsJson = await figRes.json();
 
     if (dataJson && dataJson.runs) {
       runs = processRuns(dataJson.runs);
-      statusEl.textContent = `Loaded ${runs.length} runs from ${DATA_URL}`;
+      statusEl.textContent = `Loaded ${runs.length} runs`;
       statusEl.className = 'data-status info';
     } else {
       throw new Error('No runs data found');
@@ -291,7 +299,7 @@ async function init() {
     renderPerformanceChart();
   } catch (e) {
     console.error('Failed to load data:', e);
-    statusEl.textContent = `Error loading data: ${e.message}. Make sure ${DATA_URL} and ${FIGS_URL} are available.`;
+    statusEl.textContent = `Error loading data: ${e.message}. Make sure data files are available.`;
     statusEl.className = 'data-status error';
     document.getElementById('runsTableBody').innerHTML = `<tr><td colspan="11" class="error">Failed to load data. <button class="btn" onclick="init()">Retry</button></td></tr>`;
   }
