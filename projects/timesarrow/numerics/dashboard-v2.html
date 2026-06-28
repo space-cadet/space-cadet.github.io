@@ -343,7 +343,7 @@ function processRuns(rawRuns) {
       keyFinding,
       isTest: (run.description || '').includes('[TEST]') || (run.runId || '').includes('test')
     };
-  }).filter(r => r.betaCount > 0 || r.status === 'in-progress');
+  }).filter(r => r.betaCount > 0 || r.status === 'in-progress' || r.keyFinding);
 }
 
 function populateFilters() {
