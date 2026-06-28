@@ -1,1 +1,1268 @@
-{"schemaVersion":"1.0.0","project":"timesarrow","lastUpdated":"2026-06-27T16:50:00+05:30","runs":[{"runId":"t20-p1-L8-20250624","task":"T20","phase":"phase1","status":"complete","timestamp":"2026-06-24T12:00:00+05:30","description":"2D square lattice Z\u2082 LGT, L=8, critical \u03b2 identification","parameters":{"latticeSize":8,"dimension":2,"betaValues":[0.2,0.3,0.4,0.44,0.5,0.6,0.8,1],"thermalizationSweeps":10000,"measurementSweeps":100000,"workers":4},"wallTimeMs":0,"sweepsPerSecond":0,"outputFiles":["output/t20-phase1-worker-L8.json","output/t20-phase1-worker-L16.json"],"dataUrl":"","results":{"keyFinding":"Confirmed \u03b2_c \u2248 0.44 from exact solution by Osterwalder-Seiler","criticalBetaEstimate":0.44}},{"runId":"t27-rust-benchmark-L16-20250624","task":"T27","phase":"phase1","status":"complete","timestamp":"2026-06-24T16:00:00+05:30","description":"Rust implementation benchmark, validated against TypeScript","parameters":{"latticeSize":16,"dimension":2,"betaValues":[0.2,0.3,0.4,0.44,0.5,0.6,0.8,1],"thermalizationSweeps":10000,"measurementSweeps":100000},"wallTimeMs":0,"sweepsPerSecond":0,"outputFiles":["output/t27-rust-benchmark-L16-20250624.json"],"dataUrl":"","results":{"keyFinding":"Rust implementation validated, ready for production runs"}},{"runId":"t20-p2-L8-20250625","task":"T20","phase":"phase2","status":"complete","timestamp":"2026-06-25T15:35:00+05:30","description":"Finite-size scaling, L=8, 200k sweeps, dense \u03b2 grid","parameters":{"latticeSize":8,"dimension":2,"betaValues":[0.3,0.35,0.4,0.42,0.44,0.46,0.48,0.5,0.55,0.6],"thermalizationSweeps":20000,"measurementSweeps":200000,"workers":4},"wallTimeMs":1560,"sweepsPerSecond":1282051.282051282,"outputFiles":["output/t20-p2-L8-20250625.json"],"dataUrl":"output/t20-p2-L8-20250625.json","results":{"keyFinding":"Clean data, monotonic plaquette increase with \u03b2"}},{"runId":"t20-p2-L12-20250625","task":"T20","phase":"phase2","status":"complete","timestamp":"2026-06-25T15:40:00+05:30","description":"Finite-size scaling, L=12, 200k sweeps, dense \u03b2 grid","parameters":{"latticeSize":12,"dimension":2,"betaValues":[0.3,0.35,0.4,0.42,0.44,0.46,0.48,0.5,0.55,0.6],"thermalizationSweeps":20000,"measurementSweeps":200000,"workers":4},"wallTimeMs":3906,"sweepsPerSecond":0,"outputFiles":["output/t20-p2-L12-20250625.json"],"dataUrl":"output/t20-p2-L12-20250625.json","results":{"keyFinding":"Binder cumulant shows stronger finite-size effects than L=8"}},{"runId":"t20-p2-L16-20250625","task":"T20","phase":"phase2","status":"complete","timestamp":"2026-06-25T15:42:00+05:30","description":"Finite-size scaling, L=16, 200k sweeps, dense \u03b2 grid","parameters":{"latticeSize":16,"dimension":2,"betaValues":[0.3,0.35,0.4,0.42,0.44,0.46,0.48,0.5,0.55,0.6],"thermalizationSweeps":20000,"measurementSweeps":200000,"workers":4},"wallTimeMs":7394,"sweepsPerSecond":270489.5861509332,"outputFiles":["output/t20-p2-L16-20250625.json"],"dataUrl":"output/t20-p2-L16-20250625.json","results":{"keyFinding":"Approaching thermodynamic limit behavior"}},{"runId":"t20-p2-L20-20250625","task":"T20","phase":"phase2","status":"complete","timestamp":"2026-06-25T15:43:00+05:30","description":"Finite-size scaling, L=20, 200k sweeps, dense \u03b2 grid","parameters":{"latticeSize":20,"dimension":2,"betaValues":[0.3,0.35,0.4,0.42,0.44,0.46,0.48,0.5,0.55,0.6],"thermalizationSweeps":20000,"measurementSweeps":200000,"workers":4},"wallTimeMs":11575,"sweepsPerSecond":172786.17710583154,"outputFiles":["output/t20-p2-L20-20250625.json"],"dataUrl":"output/t20-p2-L20-20250625.json","results":{"keyFinding":"Specific heat peak around \u03b2 \u2248 0.5, excellent precision (~0.03% error)"}},{"runId":"t20-p2-L24-20250625","task":"T20","phase":"phase2","status":"complete","timestamp":"2026-06-25T15:44:00+05:30","description":"Finite-size scaling, L=24, 200k sweeps, dense \u03b2 grid","parameters":{"latticeSize":24,"dimension":2,"betaValues":[0.3,0.35,0.4,0.42,0.44,0.46,0.48,0.5,0.55,0.6],"thermalizationSweeps":20000,"measurementSweeps":200000,"workers":4},"wallTimeMs":15476,"sweepsPerSecond":129232.35978288963,"outputFiles":["output/t20-p2-L24-20250625.json"],"dataUrl":"output/t20-p2-L24-20250625.json","results":{"keyFinding":"Largest lattice, strongest finite-size effects, clean data"}},{"runId":"t20-p3-L4-3D-20250625","task":"T20","phase":"phase3","status":"complete","timestamp":"2026-06-25T18:30:00+05:30","description":"3D cubic lattice, L=4, 100k sweeps","parameters":{"latticeSize":4,"dimension":3,"betaValues":[0.5,0.6,0.7,0.75,0.76,0.77,0.8,0.85,0.9,1],"thermalizationSweeps":10000,"measurementSweeps":100000,"workers":4},"wallTimeMs":1501,"sweepsPerSecond":666222.5183211192,"outputFiles":["output/t20-p3-L4-3D-20250625.json"],"dataUrl":"output/t20-p3-L4-3D-20250625.json","results":{"keyFinding":"Sharp transition at \u03b2 \u2248 0.70, plaquette jumps from 0.5 to 1.0","criticalBetaEstimate":0.7}},{"runId":"t20-p3-L6-3D-20250625","task":"T20","phase":"phase3","status":"complete","timestamp":"2026-06-25T18:32:00+05:30","description":"3D cubic lattice, L=6, 100k sweeps","parameters":{"latticeSize":6,"dimension":3,"betaValues":[0.5,0.6,0.7,0.75,0.76,0.77,0.8,0.85,0.9,1],"thermalizationSweeps":10000,"measurementSweeps":100000,"workers":4},"wallTimeMs":3985,"sweepsPerSecond":250941.0288582183,"outputFiles":["output/t20-p3-L6-3D-20250625.json"],"dataUrl":"output/t20-p3-L6-3D-20250625.json","results":{"keyFinding":"Susceptibility peaks at \u03b2=0.70, \u03c7=0.664","criticalBetaEstimate":0.7}},{"runId":"t20-p3-L8-3D-20250625","task":"T20","phase":"phase3","status":"complete","timestamp":"2026-06-25T18:35:00+05:30","description":"3D cubic lattice, L=8, 100k sweeps","parameters":{"latticeSize":8,"dimension":3,"betaValues":[0.5,0.6,0.7,0.75,0.76,0.77,0.8,0.85,0.9,1],"thermalizationSweeps":10000,"measurementSweeps":100000,"workers":4},"wallTimeMs":9076,"sweepsPerSecond":110180.69634200088,"outputFiles":["output/t20-p3-L8-3D-20250625.json"],"dataUrl":"output/t20-p3-L8-3D-20250625.json","results":{"keyFinding":"Susceptibility peaks at \u03b2=0.75, \u03c7=0.519, transition sharpens with L","criticalBetaEstimate":0.75}},{"runId":"t20-autocorr-results","task":"T20","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.723Z","description":"Auto-discovered run from t20-autocorr-results.json","parameters":{"latticeSize":0},"wallTimeMs":0,"sweepsPerSecond":0,"outputFiles":["output/t20-autocorr-results.json"],"dataUrl":"","results":{"betaCount":3,"betaMin":0.74,"betaMax":0.76}},{"runId":"t20-p1-L16-wilson-20250626","task":"T20","phase":"phase1","status":"complete","timestamp":"2026-06-26T05:16:53.725Z","description":"wilson, L=16","parameters":{"latticeSize":16,"L":16,"dimension":2,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":8,"loopSizes":[{"r":1,"c":1},{"r":2,"c":2},{"r":4,"c":4},{"r":6,"c":6},{"r":8,"c":8}]},"wallTimeMs":3956,"sweepsPerSecond":278058.6450960566,"outputFiles":["output/t20-p1-L16-wilson-20250626.json"],"dataUrl":"output/t20-p1-L16-wilson-20250626.json","results":{"betaCount":11,"betaMin":0.3,"betaMax":1}},{"runId":"t20-p1-L16-wilson-analysis","task":"T20","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.725Z","description":"Auto-discovered run from t20-p1-L16-wilson-analysis.json","parameters":{"latticeSize":16},"wallTimeMs":0,"sweepsPerSecond":0,"outputFiles":["output/t20-p1-L16-wilson-analysis.json"],"dataUrl":"","results":{"betaCount":11,"betaMin":0.3,"betaMax":1}},{"runId":"t20-p3-L16-3D-wilson-fine-20250626","task":"T20","phase":"phase3","status":"complete","timestamp":"2026-06-26T05:16:53.727Z","description":"3D wilson fine, L=16","parameters":{"latticeSize":16,"L":16,"dimension":3,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":8,"loopSizes":[{"r":1,"c":1},{"r":2,"c":2},{"r":3,"c":3}]},"wallTimeMs":129509,"sweepsPerSecond":16215.08929881321,"outputFiles":["output/t20-p3-L16-3D-wilson-fine-20250626.json"],"dataUrl":"output/t20-p3-L16-3D-wilson-fine-20250626.json","results":{"betaCount":21,"betaMin":0.3,"betaMax":1.2}},{"runId":"t20-p3-L24-3D-wilson-fine-20250626","task":"T20","phase":"phase3","status":"complete","timestamp":"2026-06-26T05:16:53.727Z","description":"3D wilson fine, L=24","parameters":{"latticeSize":24,"L":24,"dimension":3,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":8,"loopSizes":[{"r":1,"c":1},{"r":2,"c":2},{"r":3,"c":3}]},"wallTimeMs":435678,"sweepsPerSecond":4820.07354055059,"outputFiles":["output/t20-p3-L24-3D-wilson-fine-20250626.json"],"dataUrl":"output/t20-p3-L24-3D-wilson-fine-20250626.json","results":{"betaCount":21,"betaMin":0.3,"betaMax":1.2}},{"runId":"t20-p3b-L32-lean-20260627","task":"T20","phase":"phase3b","status":"complete","timestamp":"2026-06-27T15:44:00+05:30","description":"3D cubic lattice Z\u2082 LGT, L=32, high-statistics fine scan near critical region (\u03b2=0.74-0.78)","parameters":{"latticeSize":32,"L":32,"dimension":3,"betaValues":[0.74,0.742,0.744,0.746,0.748,0.75,0.752,0.754,0.756,0.758,0.76,0.762,0.764,0.766,0.768,0.77,0.772,0.774,0.776,0.778,0.78],"thermalSweeps":300000,"measureSweeps":200000,"measureEvery":10,"binSize":10,"workers":3,"loopSizes":[{"r":1,"c":1},{"r":2,"c":2},{"r":3,"c":3}]},"wallTimeMs":0,"sweepsPerSecond":0,"outputFiles":["data/fss/t20-p3b-L32-lean-20260627.json"],"dataUrl":"","results":{"keyFinding":"Susceptibility peak at \u03b2=0.758, Binder cumulant converges to ~0.6666, confirming critical region","peakSusceptibility":{"beta":0.758,"value":1.3704},"peakSpecificHeat":{"beta":0.758,"value":1.0388}}},{"runId":"t20-p3-L4-3D-wilson-fine-20250626","task":"T20","phase":"phase3","status":"complete","timestamp":"2026-06-26T05:16:53.728Z","description":"3D wilson fine, L=4","parameters":{"latticeSize":4,"L":4,"dimension":3,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":8,"loopSizes":[{"r":1,"c":1},{"r":2,"c":2}]},"wallTimeMs":1890,"sweepsPerSecond":1111111.111111111,"outputFiles":["output/t20-p3-L4-3D-wilson-fine-20250626.json"],"dataUrl":"output/t20-p3-L4-3D-wilson-fine-20250626.json","results":{"betaCount":21,"betaMin":0.3,"betaMax":1.2}},{"runId":"t20-p3-L6-3D-wilson-fine-20250626","task":"T20","phase":"phase3","status":"complete","timestamp":"2026-06-26T05:16:53.729Z","description":"3D wilson fine, L=6","parameters":{"latticeSize":6,"L":6,"dimension":3,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":8,"loopSizes":[{"r":1,"c":1},{"r":2,"c":2},{"r":3,"c":3}]},"wallTimeMs":6929,"sweepsPerSecond":303074.03665752633,"outputFiles":["output/t20-p3-L6-3D-wilson-fine-20250626.json"],"dataUrl":"output/t20-p3-L6-3D-wilson-fine-20250626.json","results":{"betaCount":21,"betaMin":0.3,"betaMax":1.2}},{"runId":"t20-p3-L8-3D-wilson-20250626","task":"T20","phase":"phase3","status":"complete","timestamp":"2026-06-26T05:16:53.729Z","description":"3D wilson, L=8","parameters":{"latticeSize":8,"L":8,"dimension":3,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":8,"loopSizes":[{"r":1,"c":1},{"r":2,"c":2},{"r":3,"c":3},{"r":4,"c":4}]},"wallTimeMs":9029,"sweepsPerSecond":110754.23634954037,"outputFiles":["output/t20-p3-L8-3D-wilson-20250626.json"],"dataUrl":"output/t20-p3-L8-3D-wilson-20250626.json","results":{"betaCount":10,"betaMin":0.3,"betaMax":1.2}},{"runId":"t20-p3-L8-3D-wilson-analysis","task":"T20","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.730Z","description":"Auto-discovered run from t20-p3-L8-3D-wilson-analysis.json","parameters":{"latticeSize":8},"wallTimeMs":0,"sweepsPerSecond":0,"outputFiles":["output/t20-p3-L8-3D-wilson-analysis.json"],"dataUrl":"","results":{"betaCount":21,"betaMin":0.3,"betaMax":1.2}},{"runId":"t20-p3-L8-3D-wilson-fine-20250626","task":"T20","phase":"phase3","status":"complete","timestamp":"2026-06-26T05:16:53.730Z","description":"3D wilson fine, L=8","parameters":{"latticeSize":8,"L":8,"dimension":3,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":8,"loopSizes":[{"r":1,"c":1},{"r":2,"c":2},{"r":3,"c":3},{"r":4,"c":4}]},"wallTimeMs":16691,"sweepsPerSecond":125816.30819004253,"outputFiles":["output/t20-p3-L8-3D-wilson-fine-20250626.json"],"dataUrl":"output/t20-p3-L8-3D-wilson-fine-20250626.json","results":{"betaCount":21,"betaMin":0.3,"betaMax":1.2}},{"runId":"t20-phase1-fast","task":"T20","phase":"phase1","status":"complete","timestamp":"2026-06-26T05:16:53.731Z","description":"Auto-discovered run from t20-phase1-fast.json","parameters":{"latticeSize":0,"L":8,"thermalSweeps":1000,"measureSweeps":5000,"measureEvery":5,"binSize":20},"wallTimeMs":0,"sweepsPerSecond":0,"outputFiles":["output/t20-phase1-fast.json"],"dataUrl":"","results":{"betaCount":10,"betaMin":0.1,"betaMax":1.5}},{"runId":"t20-phase1-square-lattice","task":"T20","phase":"phase1","status":"complete","timestamp":"2026-06-26T05:16:53.731Z","description":"Auto-discovered run from t20-phase1-square-lattice.json","parameters":{"latticeSize":0,"L":16,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":100},"wallTimeMs":0,"sweepsPerSecond":0,"outputFiles":["output/t20-phase1-square-lattice.json"],"dataUrl":"","results":{"betaCount":18,"betaMin":0.1,"betaMax":2}},{"runId":"t20-phase1-worker-L16","task":"T20","phase":"phase1","status":"complete","timestamp":"2026-06-26T05:16:53.731Z","description":"Auto-discovered run from t20-phase1-worker-L16.json","parameters":{"latticeSize":16,"L":16,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10},"wallTimeMs":23420824,"sweepsPerSecond":46.966750614752065,"outputFiles":["output/t20-phase1-worker-L16.json"],"dataUrl":"output/t20-phase1-worker-L16.json","results":{"betaCount":11,"betaMin":0.1,"betaMax":2}},{"runId":"t20-phase1-worker-L8","task":"T20","phase":"phase1","status":"complete","timestamp":"2026-06-26T05:16:53.732Z","description":"Auto-discovered run from t20-phase1-worker-L8.json","parameters":{"latticeSize":8,"L":8,"thermalSweeps":10,"measureSweeps":100,"measureEvery":10,"binSize":10},"wallTimeMs":587,"sweepsPerSecond":1873.9352640545144,"outputFiles":["output/t20-phase1-worker-L8.json"],"dataUrl":"output/t20-phase1-worker-L8.json","results":{"betaCount":11,"betaMin":0.1,"betaMax":2}},{"runId":"t25-volume-operator-spectrum","task":"T25","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.732Z","description":"Auto-discovered run from t25-volume-operator-spectrum.json","parameters":{"latticeSize":0},"wallTimeMs":0,"sweepsPerSecond":0,"outputFiles":["output/t25-volume-operator-spectrum.json"],"dataUrl":"","results":{"betaCount":0,"betaMin":null,"betaMax":null}},{"runId":"t27-rust-benchmark-L16-final","task":"T27","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.732Z","description":"Auto-discovered run from t27-rust-benchmark-L16-final.json","parameters":{"latticeSize":16,"L":16,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":3},"wallTimeMs":2958,"sweepsPerSecond":371872.8870858688,"outputFiles":["output/t27-rust-benchmark-L16-final.json"],"dataUrl":"output/t27-rust-benchmark-L16-final.json","results":{"betaCount":11,"betaMin":0.1,"betaMax":2}},{"runId":"t27-rust-benchmark-L16-v2","task":"T27","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.733Z","description":"Auto-discovered run from t27-rust-benchmark-L16-v2.json","parameters":{"latticeSize":16,"L":16,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":3},"wallTimeMs":2557,"sweepsPerSecond":430191.6308173641,"outputFiles":["output/t27-rust-benchmark-L16-v2.json"],"dataUrl":"output/t27-rust-benchmark-L16-v2.json","results":{"betaCount":11,"betaMin":0.1,"betaMax":2}},{"runId":"t27-rust-benchmark-L16-v3","task":"T27","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.733Z","description":"Auto-discovered run from t27-rust-benchmark-L16-v3.json","parameters":{"latticeSize":16,"L":16,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":3},"wallTimeMs":2555,"sweepsPerSecond":430528.3757338552,"outputFiles":["output/t27-rust-benchmark-L16-v3.json"],"dataUrl":"output/t27-rust-benchmark-L16-v3.json","results":{"betaCount":11,"betaMin":0.1,"betaMax":2}},{"runId":"t27-rust-benchmark-L16","task":"T27","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.733Z","description":"Auto-discovered run from t27-rust-benchmark-L16.json","parameters":{"latticeSize":16,"L":16,"thermalSweeps":10000,"measureSweeps":100000,"measureEvery":10,"binSize":10,"workers":3},"wallTimeMs":3455,"sweepsPerSecond":318379.1606367583,"outputFiles":["output/t27-rust-benchmark-L16.json"],"dataUrl":"output/t27-rust-benchmark-L16.json","results":{"betaCount":11,"betaMin":0.1,"betaMax":2}},{"runId":"t20-p3b-L16-3D-fine-20260626","task":"T20","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.734Z","description":"Auto-discovered run from t20-p3b-L16-3D-fine-20260626.json","parameters":{"latticeSize":16,"L":16,"dimension":3,"thermalSweeps":500000,"measureSweeps":1000000,"measureEvery":10,"workers":8,"betaValues":[0.72,0.723,0.726,0.729,0.732,0.735,0.738,0.741,0.744,0.747,0.75,0.753,0.756,0.759,0.762,0.765,0.768,0.771,0.774,0.777,0.78,0.783,0.786,0.789,0.792,0.795,0.798],"loopSizes":"1x1,2x2,3x3","polyakov":true},"wallTimeMs":3068529,"sweepsPerSecond":2281.2233483861487,"outputFiles":["data/fss/t20-p3b-L16-3D-fine-20260626.json"],"dataUrl":"data/fss/t20-p3b-L16-3D-fine-20260626.json","results":{"betaCount":27,"betaMin":0.72,"betaMax":0.798}},{"runId":"t20-p3b-L8-3D-fine-20260626","task":"T20","phase":"unknown","status":"complete","timestamp":"2026-06-26T05:16:53.734Z","description":"Auto-discovered run from t20-p3b-L8-3D-fine-20260626.json","parameters":{"latticeSize":8,"L":8,"dimension":3,"thermalSweeps":500000,"measureSweeps":1000000,"measureEvery":10,"workers":8,"betaValues":[0.7,0.705,0.71,0.715,0.72,0.725,0.73,0.735,0.74,0.745,0.75,0.755,0.76,0.765,0.77,0.775,0.78,0.785,0.79,0.795,0.8,0.805,0.81,0.815,0.82],"loopSizes":"1x1,2x2,3x3","polyakov":true},"wallTimeMs":497001,"sweepsPerSecond":50301.70965450774,"outputFiles":["data/fss/t20-p3b-L8-3D-fine-20260626.json"],"dataUrl":"data/fss/t20-p3b-L8-3D-fine-20260626.json","results":{"betaCount":25,"betaMin":0.7,"betaMax":0.82}},{"runId":"t20-p3b-L8-3D-fine-20260627","task":"T20","phase":"unknown","status":"complete","timestamp":"2026-06-27T06:07:25.659Z","description":"Auto-discovered run from t20-p3b-L8-3D-fine-20260627.json","parameters":{"latticeSize":8,"L":8,"dimension":3,"thermalSweeps":500000,"measureSweeps":1000000,"measureEvery":10,"workers":8,"betaValues":[0.7,0.705,0.71,0.715,0.72,0.725,0.73,0.735,0.74,0.745,0.75,0.755,0.76,0.765,0.77,0.775,0.78,0.785,0.79,0.795,0.8,0.805,0.81,0.815,0.82],"loopSizes":"1x1,2x2,3x3","polyakov":true},"wallTimeMs":5717172,"sweepsPerSecond":4372.791303112797,"outputFiles":["data/fss/t20-p3b-L8-3D-fine-20260627.json"],"dataUrl":"data/fss/t20-p3b-L8-3D-fine-20260627.json","results":{"betaCount":25,"betaMin":0.7,"betaMax":0.82}}]}
+{
+"schemaVersion": "1.0.0",
+"project": "timesarrow",
+"lastUpdated": "2026-06-28T02:06:11.495193+00:00",
+"runs": [
+{
+"runId": "t20-p1-L8-20250624",
+"task": "T20",
+"phase": "phase1",
+"status": "complete",
+"timestamp": "2026-06-24T12:00:00+05:30",
+"description": "2D square lattice Z\u2082 LGT, L=8, critical \u03b2 identification",
+"parameters": {
+"latticeSize": 8,
+"dimension": 2,
+"betaValues": [
+0.2,
+0.3,
+0.4,
+0.44,
+0.5,
+0.6,
+0.8,
+1
+],
+"thermalizationSweeps": 10000,
+"measurementSweeps": 100000,
+"workers": 4
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t20-phase1-worker-L8.json",
+"output/t20-phase1-worker-L16.json"
+],
+"dataUrl": "",
+"results": {
+"keyFinding": "Confirmed \u03b2_c \u2248 0.44 from exact solution by Osterwalder-Seiler",
+"criticalBetaEstimate": 0.44
+}
+},
+{
+"runId": "t27-rust-benchmark-L16-20250624",
+"task": "T27",
+"phase": "phase1",
+"status": "complete",
+"timestamp": "2026-06-24T16:00:00+05:30",
+"description": "Rust implementation benchmark, validated against TypeScript",
+"parameters": {
+"latticeSize": 16,
+"dimension": 2,
+"betaValues": [
+0.2,
+0.3,
+0.4,
+0.44,
+0.5,
+0.6,
+0.8,
+1
+],
+"thermalizationSweeps": 10000,
+"measurementSweeps": 100000
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t27-rust-benchmark-L16-20250624.json"
+],
+"dataUrl": "",
+"results": {
+"keyFinding": "Rust implementation validated, ready for production runs"
+}
+},
+{
+"runId": "t20-p2-L8-20250625",
+"task": "T20",
+"phase": "phase2",
+"status": "complete",
+"timestamp": "2026-06-25T15:35:00+05:30",
+"description": "Finite-size scaling, L=8, 200k sweeps, dense \u03b2 grid",
+"parameters": {
+"latticeSize": 8,
+"dimension": 2,
+"betaValues": [
+0.3,
+0.35,
+0.4,
+0.42,
+0.44,
+0.46,
+0.48,
+0.5,
+0.55,
+0.6
+],
+"thermalizationSweeps": 20000,
+"measurementSweeps": 200000,
+"workers": 4
+},
+"wallTimeMs": 1560,
+"sweepsPerSecond": 1282051.282051282,
+"outputFiles": [
+"output/t20-p2-L8-20250625.json"
+],
+"dataUrl": "output/t20-p2-L8-20250625.json",
+"results": {
+"keyFinding": "Clean data, monotonic plaquette increase with \u03b2"
+}
+},
+{
+"runId": "t20-p2-L12-20250625",
+"task": "T20",
+"phase": "phase2",
+"status": "complete",
+"timestamp": "2026-06-25T15:40:00+05:30",
+"description": "Finite-size scaling, L=12, 200k sweeps, dense \u03b2 grid",
+"parameters": {
+"latticeSize": 12,
+"dimension": 2,
+"betaValues": [
+0.3,
+0.35,
+0.4,
+0.42,
+0.44,
+0.46,
+0.48,
+0.5,
+0.55,
+0.6
+],
+"thermalizationSweeps": 20000,
+"measurementSweeps": 200000,
+"workers": 4
+},
+"wallTimeMs": 3906,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t20-p2-L12-20250625.json"
+],
+"dataUrl": "output/t20-p2-L12-20250625.json",
+"results": {
+"keyFinding": "Binder cumulant shows stronger finite-size effects than L=8"
+}
+},
+{
+"runId": "t20-p2-L16-20250625",
+"task": "T20",
+"phase": "phase2",
+"status": "complete",
+"timestamp": "2026-06-25T15:42:00+05:30",
+"description": "Finite-size scaling, L=16, 200k sweeps, dense \u03b2 grid",
+"parameters": {
+"latticeSize": 16,
+"dimension": 2,
+"betaValues": [
+0.3,
+0.35,
+0.4,
+0.42,
+0.44,
+0.46,
+0.48,
+0.5,
+0.55,
+0.6
+],
+"thermalizationSweeps": 20000,
+"measurementSweeps": 200000,
+"workers": 4
+},
+"wallTimeMs": 7394,
+"sweepsPerSecond": 270489.5861509332,
+"outputFiles": [
+"output/t20-p2-L16-20250625.json"
+],
+"dataUrl": "output/t20-p2-L16-20250625.json",
+"results": {
+"keyFinding": "Approaching thermodynamic limit behavior"
+}
+},
+{
+"runId": "t20-p2-L20-20250625",
+"task": "T20",
+"phase": "phase2",
+"status": "complete",
+"timestamp": "2026-06-25T15:43:00+05:30",
+"description": "Finite-size scaling, L=20, 200k sweeps, dense \u03b2 grid",
+"parameters": {
+"latticeSize": 20,
+"dimension": 2,
+"betaValues": [
+0.3,
+0.35,
+0.4,
+0.42,
+0.44,
+0.46,
+0.48,
+0.5,
+0.55,
+0.6
+],
+"thermalizationSweeps": 20000,
+"measurementSweeps": 200000,
+"workers": 4
+},
+"wallTimeMs": 11575,
+"sweepsPerSecond": 172786.17710583154,
+"outputFiles": [
+"output/t20-p2-L20-20250625.json"
+],
+"dataUrl": "output/t20-p2-L20-20250625.json",
+"results": {
+"keyFinding": "Specific heat peak around \u03b2 \u2248 0.5, excellent precision (~0.03% error)"
+}
+},
+{
+"runId": "t20-p2-L24-20250625",
+"task": "T20",
+"phase": "phase2",
+"status": "complete",
+"timestamp": "2026-06-25T15:44:00+05:30",
+"description": "Finite-size scaling, L=24, 200k sweeps, dense \u03b2 grid",
+"parameters": {
+"latticeSize": 24,
+"dimension": 2,
+"betaValues": [
+0.3,
+0.35,
+0.4,
+0.42,
+0.44,
+0.46,
+0.48,
+0.5,
+0.55,
+0.6
+],
+"thermalizationSweeps": 20000,
+"measurementSweeps": 200000,
+"workers": 4
+},
+"wallTimeMs": 15476,
+"sweepsPerSecond": 129232.35978288963,
+"outputFiles": [
+"output/t20-p2-L24-20250625.json"
+],
+"dataUrl": "output/t20-p2-L24-20250625.json",
+"results": {
+"keyFinding": "Largest lattice, strongest finite-size effects, clean data"
+}
+},
+{
+"runId": "t20-p3-L4-3D-20250625",
+"task": "T20",
+"phase": "phase3",
+"status": "complete",
+"timestamp": "2026-06-25T18:30:00+05:30",
+"description": "3D cubic lattice, L=4, 100k sweeps",
+"parameters": {
+"latticeSize": 4,
+"dimension": 3,
+"betaValues": [
+0.5,
+0.6,
+0.7,
+0.75,
+0.76,
+0.77,
+0.8,
+0.85,
+0.9,
+1
+],
+"thermalizationSweeps": 10000,
+"measurementSweeps": 100000,
+"workers": 4
+},
+"wallTimeMs": 1501,
+"sweepsPerSecond": 666222.5183211192,
+"outputFiles": [
+"output/t20-p3-L4-3D-20250625.json"
+],
+"dataUrl": "output/t20-p3-L4-3D-20250625.json",
+"results": {
+"keyFinding": "Sharp transition at \u03b2 \u2248 0.70, plaquette jumps from 0.5 to 1.0",
+"criticalBetaEstimate": 0.7
+}
+},
+{
+"runId": "t20-p3-L6-3D-20250625",
+"task": "T20",
+"phase": "phase3",
+"status": "complete",
+"timestamp": "2026-06-25T18:32:00+05:30",
+"description": "3D cubic lattice, L=6, 100k sweeps",
+"parameters": {
+"latticeSize": 6,
+"dimension": 3,
+"betaValues": [
+0.5,
+0.6,
+0.7,
+0.75,
+0.76,
+0.77,
+0.8,
+0.85,
+0.9,
+1
+],
+"thermalizationSweeps": 10000,
+"measurementSweeps": 100000,
+"workers": 4
+},
+"wallTimeMs": 3985,
+"sweepsPerSecond": 250941.0288582183,
+"outputFiles": [
+"output/t20-p3-L6-3D-20250625.json"
+],
+"dataUrl": "output/t20-p3-L6-3D-20250625.json",
+"results": {
+"keyFinding": "Susceptibility peaks at \u03b2=0.70, \u03c7=0.664",
+"criticalBetaEstimate": 0.7
+}
+},
+{
+"runId": "t20-p3-L8-3D-20250625",
+"task": "T20",
+"phase": "phase3",
+"status": "complete",
+"timestamp": "2026-06-25T18:35:00+05:30",
+"description": "3D cubic lattice, L=8, 100k sweeps",
+"parameters": {
+"latticeSize": 8,
+"dimension": 3,
+"betaValues": [
+0.5,
+0.6,
+0.7,
+0.75,
+0.76,
+0.77,
+0.8,
+0.85,
+0.9,
+1
+],
+"thermalizationSweeps": 10000,
+"measurementSweeps": 100000,
+"workers": 4
+},
+"wallTimeMs": 9076,
+"sweepsPerSecond": 110180.69634200088,
+"outputFiles": [
+"output/t20-p3-L8-3D-20250625.json"
+],
+"dataUrl": "output/t20-p3-L8-3D-20250625.json",
+"results": {
+"keyFinding": "Susceptibility peaks at \u03b2=0.75, \u03c7=0.519, transition sharpens with L",
+"criticalBetaEstimate": 0.75
+}
+},
+{
+"runId": "t20-autocorr-results",
+"task": "T20",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.723Z",
+"description": "Auto-discovered run from t20-autocorr-results.json",
+"parameters": {
+"latticeSize": 0
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t20-autocorr-results.json"
+],
+"dataUrl": "",
+"results": {
+"betaCount": 3,
+"betaMin": 0.74,
+"betaMax": 0.76
+}
+},
+{
+"runId": "t20-p1-L16-wilson-20250626",
+"task": "T20",
+"phase": "phase1",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.725Z",
+"description": "wilson, L=16",
+"parameters": {
+"latticeSize": 16,
+"L": 16,
+"dimension": 2,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 8,
+"loopSizes": [
+{
+"r": 1,
+"c": 1
+},
+{
+"r": 2,
+"c": 2
+},
+{
+"r": 4,
+"c": 4
+},
+{
+"r": 6,
+"c": 6
+},
+{
+"r": 8,
+"c": 8
+}
+]
+},
+"wallTimeMs": 3956,
+"sweepsPerSecond": 278058.6450960566,
+"outputFiles": [
+"output/t20-p1-L16-wilson-20250626.json"
+],
+"dataUrl": "output/t20-p1-L16-wilson-20250626.json",
+"results": {
+"betaCount": 11,
+"betaMin": 0.3,
+"betaMax": 1
+}
+},
+{
+"runId": "t20-p1-L16-wilson-analysis",
+"task": "T20",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.725Z",
+"description": "Auto-discovered run from t20-p1-L16-wilson-analysis.json",
+"parameters": {
+"latticeSize": 16
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t20-p1-L16-wilson-analysis.json"
+],
+"dataUrl": "",
+"results": {
+"betaCount": 11,
+"betaMin": 0.3,
+"betaMax": 1
+}
+},
+{
+"runId": "t20-p3-L16-3D-wilson-fine-20250626",
+"task": "T20",
+"phase": "phase3",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.727Z",
+"description": "3D wilson fine, L=16",
+"parameters": {
+"latticeSize": 16,
+"L": 16,
+"dimension": 3,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 8,
+"loopSizes": [
+{
+"r": 1,
+"c": 1
+},
+{
+"r": 2,
+"c": 2
+},
+{
+"r": 3,
+"c": 3
+}
+]
+},
+"wallTimeMs": 129509,
+"sweepsPerSecond": 16215.08929881321,
+"outputFiles": [
+"output/t20-p3-L16-3D-wilson-fine-20250626.json"
+],
+"dataUrl": "output/t20-p3-L16-3D-wilson-fine-20250626.json",
+"results": {
+"betaCount": 21,
+"betaMin": 0.3,
+"betaMax": 1.2
+}
+},
+{
+"runId": "t20-p3-L24-3D-wilson-fine-20250626",
+"task": "T20",
+"phase": "phase3",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.727Z",
+"description": "3D wilson fine, L=24",
+"parameters": {
+"latticeSize": 24,
+"L": 24,
+"dimension": 3,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 8,
+"loopSizes": [
+{
+"r": 1,
+"c": 1
+},
+{
+"r": 2,
+"c": 2
+},
+{
+"r": 3,
+"c": 3
+}
+]
+},
+"wallTimeMs": 435678,
+"sweepsPerSecond": 4820.07354055059,
+"outputFiles": [
+"output/t20-p3-L24-3D-wilson-fine-20250626.json"
+],
+"dataUrl": "output/t20-p3-L24-3D-wilson-fine-20250626.json",
+"results": {
+"betaCount": 21,
+"betaMin": 0.3,
+"betaMax": 1.2
+}
+},
+{
+"runId": "t20-p3b-L32-lean-20260627",
+"task": "T20",
+"phase": "phase3b",
+"status": "complete",
+"timestamp": "2026-06-27T15:44:00+05:30",
+"description": "3D cubic lattice Z\u2082 LGT, L=32, high-statistics fine scan near critical region (\u03b2=0.74-0.78)",
+"parameters": {
+"latticeSize": 32,
+"L": 32,
+"dimension": 3,
+"betaValues": [
+0.74,
+0.742,
+0.744,
+0.746,
+0.748,
+0.75,
+0.752,
+0.754,
+0.756,
+0.758,
+0.76,
+0.762,
+0.764,
+0.766,
+0.768,
+0.77,
+0.772,
+0.774,
+0.776,
+0.778,
+0.78
+],
+"thermalSweeps": 300000,
+"measureSweeps": 200000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 3,
+"loopSizes": [
+{
+"r": 1,
+"c": 1
+},
+{
+"r": 2,
+"c": 2
+},
+{
+"r": 3,
+"c": 3
+}
+]
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"data/fss/t20-p3b-L32-lean-20260627.json"
+],
+"dataUrl": "",
+"results": {
+"keyFinding": "Susceptibility peak at \u03b2=0.758, Binder cumulant converges to ~0.6666, confirming critical region",
+"peakSusceptibility": {
+"beta": 0.758,
+"value": 1.3704
+},
+"peakSpecificHeat": {
+"beta": 0.758,
+"value": 1.0388
+}
+}
+},
+{
+"runId": "t20-p3-L4-3D-wilson-fine-20250626",
+"task": "T20",
+"phase": "phase3",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.728Z",
+"description": "3D wilson fine, L=4",
+"parameters": {
+"latticeSize": 4,
+"L": 4,
+"dimension": 3,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 8,
+"loopSizes": [
+{
+"r": 1,
+"c": 1
+},
+{
+"r": 2,
+"c": 2
+}
+]
+},
+"wallTimeMs": 1890,
+"sweepsPerSecond": 1111111.111111111,
+"outputFiles": [
+"output/t20-p3-L4-3D-wilson-fine-20250626.json"
+],
+"dataUrl": "output/t20-p3-L4-3D-wilson-fine-20250626.json",
+"results": {
+"betaCount": 21,
+"betaMin": 0.3,
+"betaMax": 1.2
+}
+},
+{
+"runId": "t20-p3-L6-3D-wilson-fine-20250626",
+"task": "T20",
+"phase": "phase3",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.729Z",
+"description": "3D wilson fine, L=6",
+"parameters": {
+"latticeSize": 6,
+"L": 6,
+"dimension": 3,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 8,
+"loopSizes": [
+{
+"r": 1,
+"c": 1
+},
+{
+"r": 2,
+"c": 2
+},
+{
+"r": 3,
+"c": 3
+}
+]
+},
+"wallTimeMs": 6929,
+"sweepsPerSecond": 303074.03665752633,
+"outputFiles": [
+"output/t20-p3-L6-3D-wilson-fine-20250626.json"
+],
+"dataUrl": "output/t20-p3-L6-3D-wilson-fine-20250626.json",
+"results": {
+"betaCount": 21,
+"betaMin": 0.3,
+"betaMax": 1.2
+}
+},
+{
+"runId": "t20-p3-L8-3D-wilson-20250626",
+"task": "T20",
+"phase": "phase3",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.729Z",
+"description": "3D wilson, L=8",
+"parameters": {
+"latticeSize": 8,
+"L": 8,
+"dimension": 3,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 8,
+"loopSizes": [
+{
+"r": 1,
+"c": 1
+},
+{
+"r": 2,
+"c": 2
+},
+{
+"r": 3,
+"c": 3
+},
+{
+"r": 4,
+"c": 4
+}
+]
+},
+"wallTimeMs": 9029,
+"sweepsPerSecond": 110754.23634954037,
+"outputFiles": [
+"output/t20-p3-L8-3D-wilson-20250626.json"
+],
+"dataUrl": "output/t20-p3-L8-3D-wilson-20250626.json",
+"results": {
+"betaCount": 10,
+"betaMin": 0.3,
+"betaMax": 1.2
+}
+},
+{
+"runId": "t20-p3-L8-3D-wilson-analysis",
+"task": "T20",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.730Z",
+"description": "Auto-discovered run from t20-p3-L8-3D-wilson-analysis.json",
+"parameters": {
+"latticeSize": 8
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t20-p3-L8-3D-wilson-analysis.json"
+],
+"dataUrl": "",
+"results": {
+"betaCount": 21,
+"betaMin": 0.3,
+"betaMax": 1.2
+}
+},
+{
+"runId": "t20-p3-L8-3D-wilson-fine-20250626",
+"task": "T20",
+"phase": "phase3",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.730Z",
+"description": "3D wilson fine, L=8",
+"parameters": {
+"latticeSize": 8,
+"L": 8,
+"dimension": 3,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 8,
+"loopSizes": [
+{
+"r": 1,
+"c": 1
+},
+{
+"r": 2,
+"c": 2
+},
+{
+"r": 3,
+"c": 3
+},
+{
+"r": 4,
+"c": 4
+}
+]
+},
+"wallTimeMs": 16691,
+"sweepsPerSecond": 125816.30819004253,
+"outputFiles": [
+"output/t20-p3-L8-3D-wilson-fine-20250626.json"
+],
+"dataUrl": "output/t20-p3-L8-3D-wilson-fine-20250626.json",
+"results": {
+"betaCount": 21,
+"betaMin": 0.3,
+"betaMax": 1.2
+}
+},
+{
+"runId": "t20-phase1-fast",
+"task": "T20",
+"phase": "phase1",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.731Z",
+"description": "Auto-discovered run from t20-phase1-fast.json",
+"parameters": {
+"latticeSize": 0,
+"L": 8,
+"thermalSweeps": 1000,
+"measureSweeps": 5000,
+"measureEvery": 5,
+"binSize": 20
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t20-phase1-fast.json"
+],
+"dataUrl": "",
+"results": {
+"betaCount": 10,
+"betaMin": 0.1,
+"betaMax": 1.5
+}
+},
+{
+"runId": "t20-phase1-square-lattice",
+"task": "T20",
+"phase": "phase1",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.731Z",
+"description": "Auto-discovered run from t20-phase1-square-lattice.json",
+"parameters": {
+"latticeSize": 0,
+"L": 16,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 100
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t20-phase1-square-lattice.json"
+],
+"dataUrl": "",
+"results": {
+"betaCount": 18,
+"betaMin": 0.1,
+"betaMax": 2
+}
+},
+{
+"runId": "t20-phase1-worker-L16",
+"task": "T20",
+"phase": "phase1",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.731Z",
+"description": "Auto-discovered run from t20-phase1-worker-L16.json",
+"parameters": {
+"latticeSize": 16,
+"L": 16,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10
+},
+"wallTimeMs": 23420824,
+"sweepsPerSecond": 46.966750614752065,
+"outputFiles": [
+"output/t20-phase1-worker-L16.json"
+],
+"dataUrl": "output/t20-phase1-worker-L16.json",
+"results": {
+"betaCount": 11,
+"betaMin": 0.1,
+"betaMax": 2
+}
+},
+{
+"runId": "t20-phase1-worker-L8",
+"task": "T20",
+"phase": "phase1",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.732Z",
+"description": "Auto-discovered run from t20-phase1-worker-L8.json",
+"parameters": {
+"latticeSize": 8,
+"L": 8,
+"thermalSweeps": 10,
+"measureSweeps": 100,
+"measureEvery": 10,
+"binSize": 10
+},
+"wallTimeMs": 587,
+"sweepsPerSecond": 1873.9352640545144,
+"outputFiles": [
+"output/t20-phase1-worker-L8.json"
+],
+"dataUrl": "output/t20-phase1-worker-L8.json",
+"results": {
+"betaCount": 11,
+"betaMin": 0.1,
+"betaMax": 2
+}
+},
+{
+"runId": "t25-volume-operator-spectrum",
+"task": "T25",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.732Z",
+"description": "Auto-discovered run from t25-volume-operator-spectrum.json",
+"parameters": {
+"latticeSize": 0
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t25-volume-operator-spectrum.json"
+],
+"dataUrl": "",
+"results": {
+"betaCount": 0,
+"betaMin": null,
+"betaMax": null
+}
+},
+{
+"runId": "t27-rust-benchmark-L16-final",
+"task": "T27",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.732Z",
+"description": "Auto-discovered run from t27-rust-benchmark-L16-final.json",
+"parameters": {
+"latticeSize": 16,
+"L": 16,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 3
+},
+"wallTimeMs": 2958,
+"sweepsPerSecond": 371872.8870858688,
+"outputFiles": [
+"output/t27-rust-benchmark-L16-final.json"
+],
+"dataUrl": "output/t27-rust-benchmark-L16-final.json",
+"results": {
+"betaCount": 11,
+"betaMin": 0.1,
+"betaMax": 2
+}
+},
+{
+"runId": "t27-rust-benchmark-L16-v2",
+"task": "T27",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.733Z",
+"description": "Auto-discovered run from t27-rust-benchmark-L16-v2.json",
+"parameters": {
+"latticeSize": 16,
+"L": 16,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 3
+},
+"wallTimeMs": 2557,
+"sweepsPerSecond": 430191.6308173641,
+"outputFiles": [
+"output/t27-rust-benchmark-L16-v2.json"
+],
+"dataUrl": "output/t27-rust-benchmark-L16-v2.json",
+"results": {
+"betaCount": 11,
+"betaMin": 0.1,
+"betaMax": 2
+}
+},
+{
+"runId": "t27-rust-benchmark-L16-v3",
+"task": "T27",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.733Z",
+"description": "Auto-discovered run from t27-rust-benchmark-L16-v3.json",
+"parameters": {
+"latticeSize": 16,
+"L": 16,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 3
+},
+"wallTimeMs": 2555,
+"sweepsPerSecond": 430528.3757338552,
+"outputFiles": [
+"output/t27-rust-benchmark-L16-v3.json"
+],
+"dataUrl": "output/t27-rust-benchmark-L16-v3.json",
+"results": {
+"betaCount": 11,
+"betaMin": 0.1,
+"betaMax": 2
+}
+},
+{
+"runId": "t27-rust-benchmark-L16",
+"task": "T27",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.733Z",
+"description": "Auto-discovered run from t27-rust-benchmark-L16.json",
+"parameters": {
+"latticeSize": 16,
+"L": 16,
+"thermalSweeps": 10000,
+"measureSweeps": 100000,
+"measureEvery": 10,
+"binSize": 10,
+"workers": 3
+},
+"wallTimeMs": 3455,
+"sweepsPerSecond": 318379.1606367583,
+"outputFiles": [
+"output/t27-rust-benchmark-L16.json"
+],
+"dataUrl": "output/t27-rust-benchmark-L16.json",
+"results": {
+"betaCount": 11,
+"betaMin": 0.1,
+"betaMax": 2
+}
+},
+{
+"runId": "t20-p3b-L16-3D-fine-20260626",
+"task": "T20",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.734Z",
+"description": "Auto-discovered run from t20-p3b-L16-3D-fine-20260626.json",
+"parameters": {
+"latticeSize": 16,
+"L": 16,
+"dimension": 3,
+"thermalSweeps": 500000,
+"measureSweeps": 1000000,
+"measureEvery": 10,
+"workers": 8,
+"betaValues": [
+0.72,
+0.723,
+0.726,
+0.729,
+0.732,
+0.735,
+0.738,
+0.741,
+0.744,
+0.747,
+0.75,
+0.753,
+0.756,
+0.759,
+0.762,
+0.765,
+0.768,
+0.771,
+0.774,
+0.777,
+0.78,
+0.783,
+0.786,
+0.789,
+0.792,
+0.795,
+0.798
+],
+"loopSizes": "1x1,2x2,3x3",
+"polyakov": true
+},
+"wallTimeMs": 3068529,
+"sweepsPerSecond": 2281.2233483861487,
+"outputFiles": [
+"data/fss/t20-p3b-L16-3D-fine-20260626.json"
+],
+"dataUrl": "data/fss/t20-p3b-L16-3D-fine-20260626.json",
+"results": {
+"betaCount": 27,
+"betaMin": 0.72,
+"betaMax": 0.798
+}
+},
+{
+"runId": "t20-p3b-L8-3D-fine-20260626",
+"task": "T20",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-26T05:16:53.734Z",
+"description": "Auto-discovered run from t20-p3b-L8-3D-fine-20260626.json",
+"parameters": {
+"latticeSize": 8,
+"L": 8,
+"dimension": 3,
+"thermalSweeps": 500000,
+"measureSweeps": 1000000,
+"measureEvery": 10,
+"workers": 8,
+"betaValues": [
+0.7,
+0.705,
+0.71,
+0.715,
+0.72,
+0.725,
+0.73,
+0.735,
+0.74,
+0.745,
+0.75,
+0.755,
+0.76,
+0.765,
+0.77,
+0.775,
+0.78,
+0.785,
+0.79,
+0.795,
+0.8,
+0.805,
+0.81,
+0.815,
+0.82
+],
+"loopSizes": "1x1,2x2,3x3",
+"polyakov": true
+},
+"wallTimeMs": 497001,
+"sweepsPerSecond": 50301.70965450774,
+"outputFiles": [
+"data/fss/t20-p3b-L8-3D-fine-20260626.json"
+],
+"dataUrl": "data/fss/t20-p3b-L8-3D-fine-20260626.json",
+"results": {
+"betaCount": 25,
+"betaMin": 0.7,
+"betaMax": 0.82
+}
+},
+{
+"runId": "t20-p3b-L8-3D-fine-20260627",
+"task": "T20",
+"phase": "unknown",
+"status": "complete",
+"timestamp": "2026-06-27T06:07:25.659Z",
+"description": "Auto-discovered run from t20-p3b-L8-3D-fine-20260627.json",
+"parameters": {
+"latticeSize": 8,
+"L": 8,
+"dimension": 3,
+"thermalSweeps": 500000,
+"measureSweeps": 1000000,
+"measureEvery": 10,
+"workers": 8,
+"betaValues": [
+0.7,
+0.705,
+0.71,
+0.715,
+0.72,
+0.725,
+0.73,
+0.735,
+0.74,
+0.745,
+0.75,
+0.755,
+0.76,
+0.765,
+0.77,
+0.775,
+0.78,
+0.785,
+0.79,
+0.795,
+0.8,
+0.805,
+0.81,
+0.815,
+0.82
+],
+"loopSizes": "1x1,2x2,3x3",
+"polyakov": true
+},
+"wallTimeMs": 5717172,
+"sweepsPerSecond": 4372.791303112797,
+"outputFiles": [
+"data/fss/t20-p3b-L8-3D-fine-20260627.json"
+],
+"dataUrl": "data/fss/t20-p3b-L8-3D-fine-20260627.json",
+"results": {
+"betaCount": 25,
+"betaMin": 0.7,
+"betaMax": 0.82
+}
+},
+{
+"runId": "t22a-fk-vertex-multi-spin-20260628",
+"task": "T22a",
+"phase": "quick-estimate",
+"status": "complete",
+"timestamp": "2026-06-28T07:28:00+05:30",
+"description": "FK vertex amplitude |A_v(j)|\u00b2 for spins j=1/2 to 3, 4-valent vertex, simple intertwiners",
+"parameters": {
+"model": "FK",
+"vertex": "4-valent",
+"intertwiner": "simple",
+"spins": [
+0.5,
+1.0,
+1.5,
+2.0,
+2.5,
+3.0
+],
+"n_samples": 2000000
+},
+"wallTimeMs": 0,
+"sweepsPerSecond": 0,
+"outputFiles": [
+"output/t22a-fk-vertex-multi-spin-20260628.json"
+],
+"dataUrl": "",
+"results": {
+"amplitude_j_half": 0.079674,
+"amplitude_j_1": 0.03541,
+"ratio_j1_jhalf": 0.4444,
+"power_law_exponent": 1.55,
+"keyFinding": "Weak suppression: j=1 amplitude is 44% of j=1/2, power law ~j^-1.55"
+}
+}
+]
+}
