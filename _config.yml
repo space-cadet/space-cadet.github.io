@@ -1,11 +1,11 @@
-# Jekyll configuration for GitHub Pages
-exclude:
-  - astro-example/
-  - node_modules/
-  - memory-bank/
-  - backup/
-  - .git/
-  - .DS_Store
-  - package.json
-  - space-cadet.github.io.code-workspace
-  - gh-pages.sh
+# Disabled: using .nojekyll for static HTML deployment
+# exclude:
+#   - astro-example/
+#   - node_modules/
+#   - memory-bank/
+#   - backup/
+#   - .git/
+#   - .DS_Store
+#   - package.json
+#   - space-cadet.github.io.code-workspace
+#   - gh-pages.sh
