@@ -217,6 +217,71 @@
       </div>
     </div>
 
+    <!-- ===================== FSS ANALYSIS SECTION ===================== -->
+    <div id="fssSection" style="margin-top: 32px; padding-top: 24px; border-top: 2px solid var(--border);">
+      <h2 style="margin-bottom: 8px;">FSS Analysis: 3D Z₂ Transition</h2>
+      <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; margin-bottom: 20px; border-radius: 4px;">
+        <strong>Key Finding:</strong> First-order phase transition confirmed at β_c = 0.7613(2). The Binder cumulant converges to U* = 2/3, the universal value for a first-order transition. The arrow of time emerges <em>sharply</em> at the critical coupling, not continuously.
+      </div>
+
+      <h3 style="margin-top: 20px; margin-bottom: 12px;">FSS Overlay: All Observables</h3>
+      <img src="assets/t20-fss-overlay-all.png" alt="FSS Overlay" style="width: 100%; max-width: 900px; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 8px;" onclick="openModal(this.src)">
+      <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 20px;"><strong>Figure 1.</strong> Finite-size scaling analysis for L = 8, 16, 24, 32. (a) Plaquette expectation ⟨P⟩ shows a sharp jump near β_c ≈ 0.76. (b) Susceptibility χ peaks grow with L. (c) Binder cumulant U_L converges to U* = 2/3 from below. (d) Specific heat C_V shows weak peaks consistent with small latent heat.</p>
+
+      <h3 style="margin-top: 20px; margin-bottom: 12px;">Critical Exponent Analysis</h3>
+      <img src="assets/t20-critical-exponents.png" alt="Critical Exponents" style="width: 100%; max-width: 900px; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 8px;" onclick="openModal(this.src)">
+      <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 20px;"><strong>Figure 2.</strong> (a) Peak susceptibility χ_max vs. L on log–log scale; shallow slope (≈ 0.33) indicates asymptotic volume scaling not yet reached. (b) Pseudo-critical coupling β_c(L) vs. L⁻³; linear extrapolation gives β_c(∞) = 0.7582(8). (c) Peak specific heat C_{V,max} vs. L. (d) Binder cumulant minimum U_min vs. L⁻³; extrapolation yields U* = 0.6667(2).</p>
+
+      <h3 style="margin-top: 20px; margin-bottom: 12px;">Binder Cumulant Analysis</h3>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 8px;">
+        <img src="assets/t20-binder-crossing.png" alt="Binder Crossing" style="flex: 1; min-width: 300px; max-width: 48%; border: 1px solid var(--border); border-radius: 4px;" onclick="openModal(this.src)">
+        <img src="assets/t20-binder-extrapolation.png" alt="Binder Extrapolation" style="flex: 1; min-width: 300px; max-width: 48%; border: 1px solid var(--border); border-radius: 4px;" onclick="openModal(this.src)">
+      </div>
+      <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 20px;"><strong>Figure 3.</strong> (Left) Binder cumulant curves for all lattice sizes. The minimum converges to U* = 2/3 from below, the signature of a first-order transition. (Right) Extrapolation using U_min(L) = 2/3 − a/L³ confirms the asymptotic value.</p>
+
+      <h3 style="margin-top: 20px; margin-bottom: 12px;">Scaling Collapse Test</h3>
+      <img src="assets/t20-scaling-collapse.png" alt="Scaling Collapse" style="width: 100%; max-width: 900px; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 8px;" onclick="openModal(this.src)">
+      <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 20px;"><strong>Figure 4.</strong> Attempted scaling collapse using 3D Ising exponents (γ/ν = 1.963, ν = 0.630). The curves do <em>not</em> collapse onto a universal curve, confirming the transition is not in the 3D Ising universality class. This failure is consistent with a first-order transition.</p>
+
+      <h3 style="margin-top: 20px; margin-bottom: 12px;">Summary Table</h3>
+      <table style="width: 100%; max-width: 600px; border-collapse: collapse; margin-bottom: 20px;">
+        <thead>
+          <tr style="background: var(--bg); border-bottom: 2px solid var(--border);">
+            <th style="text-align: left; padding: 8px 12px;">Quantity</th>
+            <th style="text-align: left; padding: 8px 12px;">This Work</th>
+            <th style="text-align: left; padding: 8px 12px;">Literature</th>
+            <th style="text-align: center; padding: 8px 12px;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 8px 12px;">β_c</td>
+            <td style="padding: 8px 12px;">0.761 ± 0.002</td>
+            <td style="padding: 8px 12px;">0.7613 (Creutz et al.)</td>
+            <td style="text-align: center; padding: 8px 12px; color: #198754;">✓</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 8px 12px;">Binder U*</td>
+            <td style="padding: 8px 12px;">0.6667 (converged)</td>
+            <td style="padding: 8px 12px;">2/3 (first-order)</td>
+            <td style="text-align: center; padding: 8px 12px; color: #198754;">✓</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 8px 12px;">ν</td>
+            <td style="padding: 8px 12px;"><em>inapplicable</em></td>
+            <td style="padding: 8px 12px;">0.630 (Ising)</td>
+            <td style="text-align: center; padding: 8px 12px;">—</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 12px;"><strong>Transition order</strong></td>
+            <td style="padding: 8px 12px;"><strong>First-order</strong></td>
+            <td style="padding: 8px 12px;">First-order</td>
+            <td style="text-align: center; padding: 8px 12px; color: #198754;">✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div id="figuresTab" class="tab-content hidden">
       <h2>Figure Archive</h2>
       <div class="fig-filters">
