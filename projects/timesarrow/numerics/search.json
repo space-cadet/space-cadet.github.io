@@ -956,7 +956,7 @@
     "href": "index.html#simulation-tasks",
     "title": "TimesArrow Numerics",
     "section": "Simulation Tasks",
-    "text": "Simulation Tasks\n\n\n\nTask\nFocus\nStatus\nPriority\n\n\n\n\nT31\nSigned Volume Observable\n🟢 Phase 2 Complete\nP1\n\n\nT25\nVolume Operator Extension\n🟢 Complete\nP1\n\n\nT20\nZ₂ LGT Monte Carlo\n🟢 Phase 3 Complete\nP0\n\n\nT23\nEntanglement Entropy\n🔴 Blocked (T20)\nP1\n\n\nT22\nSpin Foam Amplitudes\n🟡 Ready\nP1\n\n\nT21\nCZX PEPS Ground State\n🔴 Blocked (T22)\nP1\n\n\nT24\nDomain Wall Dynamics\n🔴 Blocked (T20+T21)\nP2\n\n\nT26\nCoupled Matter\n🔴 Blocked (T20+T24)\nP2",
+    "text": "Simulation Tasks\n\n\n\nTask\nFocus\nStatus\nPriority\nLast Updated\n\n\n\n\nT31\nSigned Volume Observable\n🟢 Phase 2 Complete\nP1\n2026-07-10\n\n\nT25\nVolume Operator Extension\n🟢 Complete\nP1\n2026-06-29\n\n\nT20\nZ₂ LGT Monte Carlo\n🟢 Phase 3 Complete\nP0\n2026-07-10\n\n\nT23\nEntanglement Entropy\n🔴 Blocked (T20)\nP1\n—\n\n\nT22\nSpin Foam Amplitudes\n🟡 Ready\nP1\n2026-07-10\n\n\nT21\nCZX PEPS Ground State\n🔴 Blocked (T22)\nP1\n—\n\n\nT24\nDomain Wall Dynamics\n🔴 Blocked (T20+T21)\nP2\n—\n\n\nT26\nCoupled Matter\n🔴 Blocked (T20+T24)\nP2\n—",
     "crumbs": [
       "Overview",
       "TimesArrow Numerics"
