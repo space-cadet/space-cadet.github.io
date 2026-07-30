@@ -74,3 +74,4 @@ profile_summary.md
 *.rar
 *.tar
 *.zip
+.astro/
